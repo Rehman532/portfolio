@@ -1,0 +1,7 @@
+<svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="120" height="40" rx="8" fill="#1E293B"/>
+  <path d="M12 12L20 20L12 28" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M20 20H28" stroke="#3B82F6" stroke-width="2" stroke-linecap="round"/>
+  <path d="M36 16V24M40 16V24M44 16V24" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+  <text x="56" y="24" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Glowlogix</text>
+</svg>

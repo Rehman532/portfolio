@@ -1,0 +1,7 @@
+<svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="120" height="40" rx="8" fill="#0F172A"/>
+  <path d="M16 12L24 20L16 28" stroke="#06B6D4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M28 16H36M28 20H36M28 24H36" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="44" cy="20" r="6" stroke="#F59E0B" stroke-width="2"/>
+  <text x="58" y="24" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Softaxion</text>
+</svg>
