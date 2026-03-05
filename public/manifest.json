@@ -1,0 +1,25 @@
+{
+  "name": "Rehman Farouq - Flutter & Next.js Developer Portfolio",
+  "short_name": "Rehman Farouq",
+  "description": "Portfolio of Rehman Farouq, a Flutter and Next.js developer specializing in modern mobile and web applications.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["portfolio", "developer", "technology"],
+  "lang": "en",
+  "dir": "ltr"
+}
