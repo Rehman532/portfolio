@@ -74,7 +74,7 @@ const Hero = () => {
 
               {/* Main title with gradient */}
               <FadeIn delay={400} direction="up">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl lg:text-8xl font-bold mb-4 sm:mb-6">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6">
                   <span className="text-foreground dark:text-white">I'm</span>{' '}
                   <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient bg-300">
                     REHMAN FAROUQ
@@ -84,7 +84,7 @@ const Hero = () => {
               
               {/* Subtitle with typing effect */}
               <FadeIn delay={600} direction="up">
-                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-gray-700 dark:text-gray-300 mb-6 sm:mb-8 font-light">
+                <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-700 dark:text-gray-300 mb-4 sm:mb-6 md:mb-8 font-light">
                   <span className="text-blue-500 dark:text-blue-400">APP</span> &{' '}
                   <span className="text-purple-500 dark:text-purple-400">WEB</span>{' '}
                   <span className="text-foreground dark:text-white">DEVELOPER</span>
@@ -93,32 +93,32 @@ const Hero = () => {
               
               {/* Enhanced description */}
               <FadeIn delay={800} direction="up">
-                <div className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-400 mb-8 sm:mb-12 max-w-3xl mx-auto lg:mx-0 leading-relaxed px-4">
+                <div className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-600 dark:text-gray-400 mb-6 sm:mb-8 md:mb-12 max-w-3xl mx-auto lg:mx-0 leading-relaxed px-2 sm:px-4">
                   <AnimatedText text="Results-driven Full Stack Developer with 3+ years of experience building scalable mobile and web applications. Expertise in Flutter, Dart, Next.js, and modern UI/UX development with focus on performance and clean architecture." delay={100} />
                 </div>
               </FadeIn>
               
               {/* Enhanced CTA buttons */}
               <FadeIn delay={1000} direction="up">
-                <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start mb-12 sm:mb-16">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 justify-center lg:justify-start mb-8 sm:mb-12 md:mb-16">
                   <button
                     onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                    className="group relative overflow-hidden bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold transition-all duration-500 flex items-center gap-3 shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 hover:rotate-1 text-sm sm:text-base"
+                    className="group relative overflow-hidden bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-full font-semibold transition-all duration-500 flex items-center gap-2 sm:gap-3 shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 hover:rotate-1 text-xs sm:text-sm md:text-base"
                   >
-                    <span className="relative z-10 flex items-center gap-3">
+                    <span className="relative z-10 flex items-center gap-2 sm:gap-3">
                       View Projects
-                      <ArrowRight className="group-hover:translate-x-1 transition-transform duration-300" size={20} />
+                      <ArrowRight className="group-hover:translate-x-1 transition-transform duration-300" size={16} />
                     </span>
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   </button>
                   
                   <button
                     onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                    className="group relative overflow-hidden border-2 border-blue-500/50 text-blue-600 dark:text-blue-400 hover:text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold transition-all duration-500 flex items-center gap-3 hover:bg-blue-600/20 hover:border-blue-400 hover:shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 hover:-rotate-1 text-sm sm:text-base"
+                    className="group relative overflow-hidden border-2 border-blue-500/50 text-blue-600 dark:text-blue-400 hover:text-white px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-full font-semibold transition-all duration-500 flex items-center gap-2 sm:gap-3 hover:bg-blue-600/20 hover:border-blue-400 hover:shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 hover:-rotate-1 text-xs sm:text-sm md:text-base"
                   >
-                    <span className="flex items-center gap-3">
+                    <span className="flex items-center gap-2 sm:gap-3">
                       Contact Me
-                      <Download className="group-hover:rotate-12 transition-transform duration-300" size={20} />
+                      <Download className="group-hover:rotate-12 transition-transform duration-300" size={16} />
                     </span>
                   </button>
                 </div>
@@ -126,22 +126,22 @@ const Hero = () => {
 
               {/* Enhanced social links */}
               <FadeIn delay={1200} direction="up">
-                <div className="flex justify-center lg:justify-start gap-4 sm:gap-6">
+                <div className="flex justify-center lg:justify-start gap-3 sm:gap-4 md:gap-6">
                   <a
                     href="https://github.com/Rehman532"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group w-10 h-10 sm:w-12 sm:h-12 bg-gray-100/50 dark:bg-gray-800/50 backdrop-blur-sm border border-gray-300 dark:border-gray-700 rounded-full flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-white hover:bg-blue-600/20 hover:border-blue-500/50 transition-all duration-300 hover:scale-110 hover:rotate-12"
+                    className="group w-8 h-8 sm:w-10 sm:h-12 bg-gray-100/50 dark:bg-gray-800/50 backdrop-blur-sm border border-gray-300 dark:border-gray-700 rounded-full flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-white hover:bg-blue-600/20 hover:border-blue-500/50 transition-all duration-300 hover:scale-110 hover:rotate-12"
                   >
-                    <Github size={20} />
+                    <Github size={16} />
                   </a>
                   <a
                   href="https://www.linkedin.com/in/rehman-farouq-93727526b"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group w-10 h-10 sm:w-12 sm:h-12 bg-gray-100/50 dark:bg-gray-800/50 backdrop-blur-sm border border-gray-300 dark:border-gray-700 rounded-full flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-white hover:bg-purple-600/20 hover:border-purple-500/50 transition-all duration-300 hover:scale-110 hover:-rotate-12"
+                    className="group w-8 h-8 sm:w-10 sm:h-12 bg-gray-100/50 dark:bg-gray-800/50 backdrop-blur-sm border border-gray-300 dark:border-gray-700 rounded-full flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-white hover:bg-purple-600/20 hover:border-purple-500/50 transition-all duration-300 hover:scale-110 hover:-rotate-12"
                   >
-                    <Linkedin size={20} />
+                    <Linkedin size={16} />
                   </a>
                 </div>
               </FadeIn>
@@ -150,21 +150,21 @@ const Hero = () => {
 
           {/* Stats - Full width below the row */}
           <FadeIn delay={1400} direction="up">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 mt-12 sm:mt-20 max-w-2xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-6 md:gap-8 mt-8 sm:mt-12 md:mt-20 max-w-2xl mx-auto">
               <div className="text-center group">
-                <div className="text-2xl sm:text-3xl font-bold text-foreground dark:text-white mb-2 group-hover:scale-110 transition-transform duration-300">
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground dark:text-white mb-1 sm:mb-2 group-hover:scale-110 transition-transform duration-300">
                   <Counter end={3} suffix="+" className="inline-block" />
                 </div>
                 <div className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm">Years Experience</div>
               </div>
               <div className="text-center group">
-                <div className="text-2xl sm:text-3xl font-bold text-foreground dark:text-white mb-2 group-hover:scale-110 transition-transform duration-300">
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground dark:text-white mb-1 sm:mb-2 group-hover:scale-110 transition-transform duration-300">
                   <Counter end={50} suffix="+" className="inline-block" />
                 </div>
                 <div className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm">Projects Completed</div>
               </div>
               <div className="text-center group">
-                <div className="text-2xl sm:text-3xl font-bold text-foreground dark:text-white mb-2 group-hover:scale-110 transition-transform duration-300">
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground dark:text-white mb-1 sm:mb-2 group-hover:scale-110 transition-transform duration-300">
                   <Counter end={100} suffix="%" className="inline-block" />
                 </div>
                 <div className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm">Client Satisfaction</div>
