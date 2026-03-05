@@ -19,7 +19,11 @@
       "type": "image/png"
     }
   ],
-  "categories": ["portfolio", "developer", "technology"],
+  "categories": [
+    "portfolio",
+    "developer",
+    "technology"
+  ],
   "lang": "en",
   "dir": "ltr"
 }
