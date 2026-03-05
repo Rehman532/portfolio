@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://rehmanfarouq.site/sitemap
+Sitemap: https://rehmanfarouq.site/sitemap.xml
 
 # Block AI crawlers if needed
 User-agent: GPTBot
