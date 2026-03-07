@@ -142,8 +142,11 @@ export default function NextjsPortfolioTutorialPage() {
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Create Next.js App</h3>
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         Start by creating a new Next.js project with TypeScript:
-                          <div>&#125;</div>
-                        </div>
+                      </p>
+                      <div className="bg-gray-900 rounded-lg p-4 font-mono text-sm text-gray-300">
+                        <div>npx create-next-app@latest my-portfolio --typescript</div>
+                        <div>cd my-portfolio</div>
+                        <div>npm run dev</div>
                       </div>
                     </div>
 
