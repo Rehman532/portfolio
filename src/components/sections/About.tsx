@@ -81,10 +81,10 @@ const About = () => {
                   Professional <span className="text-blue-400">Summary</span>
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base lg:text-lg">
-                  I am a results-driven Flutter Developer with over 3 years of full-stack mobile and web development experience. 
-                  I excel in creating high-performance applications using Flutter and Dart. My strengths include integrating REST APIs 
-                  and implementing modern UI/UX designs, which contribute significantly to optimizing application performance 
-                  and enhancing user engagement.
+                  I am a results-driven Flutter Developer specializing in mobile and web application development. 
+I build high-performance applications using Flutter, Dart, and modern web technologies. 
+My expertise includes integrating REST APIs, developing scalable websites, and implementing 
+modern UI/UX designs to deliver efficient, responsive, and engaging digital experiences.
                 </p>
                 
                 <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6 p-3 sm:p-4 bg-gray-50/50 dark:bg-gray-900/50 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 rounded-xl hover:bg-gray-100/70 dark:hover:bg-gray-900/70 transition-colors duration-300">

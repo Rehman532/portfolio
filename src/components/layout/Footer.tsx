@@ -1,6 +1,8 @@
 'use client'
 
 import { Github, Linkedin, Mail, ArrowUp, Heart, Sparkles } from 'lucide-react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -8,6 +10,25 @@ const Footer = () => {
   }
 
   const currentYear = new Date().getFullYear()
+  const pathname = usePathname()
+
+  const getHomeLink = () => {
+    return pathname === '/' ? '#home' : '/'
+  }
+
+  const getSectionLink = (section: string) => {
+    if (pathname === '/' && section !== 'tools') {
+      return `#${section}`
+    }
+    return `/#${section}`
+  }
+
+  const getDirectLink = (page: string) => {
+    if (pathname === '/' && page !== 'tools') {
+      return `#${page}`
+    }
+    return `/${page}`
+  }
 
   return (
     <footer className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 border-t border-gray-800/50 overflow-hidden">
@@ -26,7 +47,7 @@ const Footer = () => {
                 REHMAN FAROUQ
               </h3>
               <p className="text-gray-400 leading-relaxed text-lg">
-                App & Web Developer with 3+ years of experience in Flutter and Next.js development.
+                App & Web Developer skilled in Flutter and Next.js, dedicated to building scalable, high-performance mobile and web applications with modern UI/UX.
               </p>
             </div>
             
@@ -61,58 +82,94 @@ const Footer = () => {
             <h4 className="text-xl font-semibold text-white mb-6">Quick Links</h4>
             <ul className="space-y-3">
               <li>
-                <a
-                  href="#home"
+                <Link
+                  href={getHomeLink()}
                   className="group text-gray-400 hover:text-white transition-all duration-300 flex items-center gap-2 hover:translate-x-1"
                 >
                   <span className="w-0 h-0.5 bg-blue-400 group-hover:w-4 transition-all duration-300"></span>
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#about"
+                <Link
+                  href={getDirectLink('about')}
                   className="group text-gray-400 hover:text-white transition-all duration-300 flex items-center gap-2 hover:translate-x-1"
                 >
                   <span className="w-0 h-0.5 bg-blue-400 group-hover:w-4 transition-all duration-300"></span>
                   About
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#experience"
+                <Link
+                  href={getDirectLink('experience')}
                   className="group text-gray-400 hover:text-white transition-all duration-300 flex items-center gap-2 hover:translate-x-1"
                 >
                   <span className="w-0 h-0.5 bg-blue-400 group-hover:w-4 transition-all duration-300"></span>
                   Experience
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#projects"
+                <Link
+                  href={getDirectLink('projects')}
                   className="group text-gray-400 hover:text-white transition-all duration-300 flex items-center gap-2 hover:translate-x-1"
                 >
                   <span className="w-0 h-0.5 bg-blue-400 group-hover:w-4 transition-all duration-300"></span>
                   Projects
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#skills"
+                <Link
+                  href={getDirectLink('skills')}
                   className="group text-gray-400 hover:text-white transition-all duration-300 flex items-center gap-2 hover:translate-x-1"
                 >
                   <span className="w-0 h-0.5 bg-blue-400 group-hover:w-4 transition-all duration-300"></span>
                   Skills
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#contact"
+                <Link
+                  href="/tools"
+                  className="group text-gray-400 hover:text-white transition-all duration-300 flex items-center gap-2 hover:translate-x-1"
+                >
+                  <span className="w-0 h-0.5 bg-blue-400 group-hover:w-4 transition-all duration-300"></span>
+                  Tools
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={getDirectLink('blog')}
+                  className="group text-gray-400 hover:text-white transition-all duration-300 flex items-center gap-2 hover:translate-x-1"
+                >
+                  <span className="w-0 h-0.5 bg-blue-400 group-hover:w-4 transition-all duration-300"></span>
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={getDirectLink('testimonials')}
+                  className="group text-gray-400 hover:text-white transition-all duration-300 flex items-center gap-2 hover:translate-x-1"
+                >
+                  <span className="w-0 h-0.5 bg-blue-400 group-hover:w-4 transition-all duration-300"></span>
+                  Testimonials
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={getDirectLink('certifications')}
+                  className="group text-gray-400 hover:text-white transition-all duration-300 flex items-center gap-2 hover:translate-x-1"
+                >
+                  <span className="w-0 h-0.5 bg-blue-400 group-hover:w-4 transition-all duration-300"></span>
+                  Certifications
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={getDirectLink('contact')}
                   className="group text-gray-400 hover:text-white transition-all duration-300 flex items-center gap-2 hover:translate-x-1"
                 >
                   <span className="w-0 h-0.5 bg-blue-400 group-hover:w-4 transition-all duration-300"></span>
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

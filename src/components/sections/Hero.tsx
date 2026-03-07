@@ -94,7 +94,7 @@ const Hero = () => {
               {/* Enhanced description */}
               <FadeIn delay={800} direction="up">
                 <div className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-600 dark:text-gray-400 mb-6 sm:mb-8 md:mb-12 max-w-3xl mx-auto lg:mx-0 leading-relaxed px-2 sm:px-4">
-                  <AnimatedText text="Results-driven Full Stack Developer with 3+ years of experience building scalable mobile and web applications. Expertise in Flutter, Dart, Next.js, and modern UI/UX development with focus on performance and clean architecture." delay={100} />
+                  <AnimatedText text="Results-driven Full Stack Developer specializing in building scalable mobile and web applications. Skilled in Flutter, Dart, Next.js, and modern UI/UX development with a strong focus on performance, clean architecture, and seamless user experiences." delay={50} />
                 </div>
               </FadeIn>
               

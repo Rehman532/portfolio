@@ -6,6 +6,7 @@ import Experience from '@/components/sections/Experience'
 import Projects from '@/components/sections/Projects'
 import Skills from '@/components/sections/Skills'
 import Contact from '@/components/sections/Contact'
+import Blog from '@/components/sections/Blog'
 import Footer from '@/components/layout/Footer'
 import ScrollProgress from '@/components/ui/ScrollProgress'
 import Testimonials from '@/components/sections/Testimonials'
@@ -13,10 +14,10 @@ import Certifications from '@/components/sections/Certifications'
 
 export const metadata: Metadata = {
   title: "Home | Rehman Farouq - Flutter & Next.js Developer",
-  description: "Welcome to my portfolio! I'm Rehman Farouq, a passionate Flutter and Next.js developer creating innovative mobile and web applications.",
+  description: "Welcome to my portfolio! I'm Rehman Farouq, a passionate Flutter and Next.js developer creating innovative mobile and web applications. Explore my projects, skills, and developer tools.",
   openGraph: {
     title: "Home | Rehman Farouq - Flutter & Next.js Developer",
-    description: "Welcome to my portfolio! I'm Rehman Farouq, a passionate Flutter and Next.js developer creating innovative mobile and web applications.",
+    description: "Welcome to my portfolio! I'm Rehman Farouq, a passionate Flutter and Next.js developer creating innovative mobile and web applications. Explore my projects, skills, and developer tools.",
     url: "https://rehmanfarouq.site",
   },
 }
@@ -30,6 +31,7 @@ export default function Home() {
       <Experience />
       <Projects />
       <Skills />
+      <Blog />
       <Testimonials />
       <Certifications />
       <Contact />
