@@ -157,18 +157,18 @@ export default function NextjsPortfolioTutorialPage() {
                           Create interactive project cards with hover effects:
                         </p>
                         <div className="bg-gray-900 rounded-lg p-4 font-mono text-sm text-gray-300 overflow-x-auto">
-                          <div>// src/app/components/sections/Projects.tsx</div>
+                          <div>// src/components/sections/Projects.tsx</div>
                           <div className="text-blue-400 mt-2">'use client'</div>
                           <div className="mt-2">import { motion } from 'framer-motion'</div>
                           <div>import { ExternalLink, Github } from 'lucide-react'</div>
                           <div className="mt-2">const projects = [</div>
-                          <div className="ml-4">`{`</div>
+                          <div className="ml-4">&#123;</div>
                           <div className="ml-8">title: 'E-commerce Platform',</div>
                           <div className="ml-8">description: 'Modern e-commerce solution with React and Node.js',</div>
                           <div className="ml-8">tech: ['React', 'Node.js', 'MongoDB'],</div>
                           <div className="ml-8">liveUrl: 'https://example.com',</div>
                           <div className="ml-8">githubUrl: 'https://github.com/username/project'</div>
-                          <div className="ml-4">`}`</div>
+                          <div className="ml-4">&#125;</div>
                           <div>]</div>
                         </div>
                       </div>
