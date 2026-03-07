@@ -5,12 +5,20 @@ import Link from 'next/link'
 import Footer from '@/components/layout/Footer'
 
 export const metadata: Metadata = {
-  title: "JSON Formatter Tool | Rehman Farouq Portfolio",
-  description: "Format, validate, and beautify JSON code instantly with our JSON formatter tool. Minify, validate, and download formatted JSON.",
+  title: "Free JSON Formatter Online | JSON Validator, Beautifier & Minifier Tool | Pretty Print JSON",
+  description: "Format, validate, and beautify JSON code instantly. Free online JSON formatter with syntax highlighting, error validation, minify/pretty print options, and downloadable results. Perfect for API debugging and data formatting.",
+  keywords: "JSON formatter online, JSON validator, JSON beautifier, JSON minifier, pretty print JSON, format JSON tool, JSON syntax checker, online JSON formatter, JSON parser, JSON viewer, JSON prettifier, validate JSON online, minify JSON, beautify JSON, JSON formatter with validation, API JSON formatter",
   openGraph: {
-    title: "JSON Formatter Tool | Rehman Farouq Portfolio",
-    description: "Format, validate, and beautify JSON code instantly with our JSON formatter tool. Minify, validate, and download formatted JSON.",
+    title: "Free JSON Formatter Online | JSON Validator, Beautifier & Minifier Tool | Pretty Print JSON",
+    description: "Format, validate, and beautify JSON code instantly. Free online JSON formatter with syntax highlighting, error validation, minify/pretty print options, and downloads.",
     url: "https://rehmanfarouq.site/tools/json-formatter",
+    type: "website",
+    siteName: "Rehman Farouq Developer Tools",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free JSON Formatter Online | JSON Validator, Beautifier & Minifier",
+    description: "Format, validate, and beautify JSON code instantly. Free online JSON formatter with syntax highlighting, error validation, and minify/pretty print options.",
   },
 }
 

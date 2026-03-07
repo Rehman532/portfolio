@@ -6,12 +6,20 @@ import Footer from '@/components/layout/Footer'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 
 export const metadata: Metadata = {
-  title: "Certifications | Rehman Farouq - Flutter & Next.js Developer",
-  description: "View Rehman Farouq's professional certifications and achievements. Discover verified credentials in Flutter, Next.js, and web development technologies.",
+  title: "Professional Certifications & Credentials | Flutter Developer Certificate | React, Next.js Qualifications",
+  description: "View Rehman Farouq's comprehensive professional certifications and verified credentials. Discover Flutter development certificates, React qualifications, Next.js expertise, web development certifications, programming achievements, and technical qualifications that validate expertise.",
+  keywords: "professional certifications, developer credentials, Flutter developer certificate, React development certification, Next.js qualifications, web development certificates, programming certifications, technical qualifications, software development credentials, IT certifications, professional development certificates, verified developer skills, coding certifications, technology certificates",
   openGraph: {
-    title: "Certifications | Rehman Farouq - Flutter & Next.js Developer",
-    description: "View Rehman Farouq's professional certifications and achievements. Discover verified credentials in Flutter, Next.js, and web development technologies.",
+    title: "Professional Certifications & Credentials | Flutter Developer Certificate | React, Next.js Qualifications",
+    description: "View Rehman Farouq's comprehensive professional certifications and verified credentials. Discover Flutter development certificates, React qualifications, Next.js expertise, and web development certifications.",
     url: "https://rehmanfarouq.site/certifications",
+    type: "website",
+    siteName: "Rehman Farouq Portfolio",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Professional Certifications & Credentials | Flutter Developer Certificate",
+    description: "View Rehman Farouq's comprehensive professional certifications and verified credentials. Discover Flutter development certificates, React qualifications, and Next.js expertise.",
   },
 }
 

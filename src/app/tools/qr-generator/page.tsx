@@ -6,12 +6,20 @@ import Footer from '@/components/layout/Footer'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 
 export const metadata: Metadata = {
-  title: "QR Code Generator Tool | Rehman Farouq Portfolio",
-  description: "Create QR codes for URLs and text instantly. Generate downloadable QR codes with our easy-to-use QR code generator.",
+  title: "Free QR Code Generator Online | Create Custom QR Codes | URL, Text, WiFi QR Code Maker",
+  description: "Generate custom QR codes instantly for URLs, text, WiFi, contact info, and more. Free online QR code generator with customizable colors, sizes, and downloadable formats. Perfect for business cards, marketing, and sharing information.",
+  keywords: "QR code generator online, free QR code maker, custom QR codes, URL QR code generator, text to QR code, WiFi QR code generator, QR code creator, QR code generator with logo, downloadable QR codes, QR code marketing tool, business QR code generator, QR code for social media, QR code design tool, instant QR code creation",
   openGraph: {
-    title: "QR Code Generator Tool | Rehman Farouq Portfolio",
-    description: "Create QR codes for URLs and text instantly. Generate downloadable QR codes with our easy-to-use QR code generator.",
+    title: "Free QR Code Generator Online | Create Custom QR Codes | URL, Text, WiFi QR Code Maker",
+    description: "Generate custom QR codes instantly for URLs, text, WiFi, and more. Free online QR code generator with customizable colors, sizes, and downloadable formats.",
     url: "https://rehmanfarouq.site/tools/qr-generator",
+    type: "website",
+    siteName: "Rehman Farouq Developer Tools",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free QR Code Generator Online | Create Custom QR Codes",
+    description: "Generate custom QR codes instantly for URLs, text, WiFi, and more. Free online QR code generator with customizable options and downloads.",
   },
 }
 

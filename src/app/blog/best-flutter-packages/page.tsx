@@ -5,12 +5,20 @@ import Footer from '@/components/layout/Footer'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 
 export const metadata: Metadata = {
-  title: "25 Essential Flutter Packages Every Developer Should Know | Rehman Farouq",
-  description: "Curated list of must-have Flutter packages for state management, networking, UI, animations, and productivity boosters.",
+  title: "25 Essential Flutter Packages 2024 | Best Flutter Libraries | State Management, UI, Networking Tools",
+  description: "Complete guide to the best Flutter packages and libraries for 2024. Discover essential Flutter packages for state management (Provider, BLoC, Riverpod), UI components, networking (Dio, HTTP), animations, testing, and productivity boosters. Improve your Flutter development workflow.",
+  keywords: "Flutter packages 2024, best Flutter libraries, Flutter state management packages, Provider Flutter, BLoC Flutter, Riverpod Flutter, Flutter networking packages, Dio HTTP Flutter, Flutter UI packages, Flutter animation packages, Flutter testing packages, Flutter productivity tools, Flutter development tools, Flutter app development, mobile app development, Flutter widgets, Flutter dependencies",
   openGraph: {
-    title: "25 Essential Flutter Packages Every Developer Should Know | Rehman Farouq",
-    description: "Curated list of must-have Flutter packages for state management, networking, UI, animations, and productivity boosters.",
+    title: "25 Essential Flutter Packages 2024 | Best Flutter Libraries | State Management, UI, Networking Tools",
+    description: "Complete guide to the best Flutter packages and libraries for 2024. Discover essential Flutter packages for state management, UI components, networking, animations, testing, and productivity boosters.",
     url: "https://rehmanfarouq.site/blog/best-flutter-packages",
+    type: "article",
+    siteName: "Rehman Farouq Blog",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "25 Essential Flutter Packages 2024 | Best Flutter Libraries",
+    description: "Complete guide to the best Flutter packages and libraries for 2024. Discover essential Flutter packages for state management, UI components, networking, and productivity.",
   },
 }
 

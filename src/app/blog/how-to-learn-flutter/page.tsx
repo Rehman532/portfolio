@@ -5,12 +5,20 @@ import Footer from '@/components/layout/Footer'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 
 export const metadata: Metadata = {
-  title: "Complete Guide: How to Learn Flutter from Scratch in 2024 | Rehman Farouq",
-  description: "Step-by-step learning path for Flutter beginners including resources, projects, and best practices to master Flutter development.",
+  title: "How to Learn Flutter 2024 | Complete Flutter Tutorial for Beginners | Step-by-Step Guide",
+  description: "Comprehensive Flutter learning guide for beginners 2024. Master Flutter development with step-by-step tutorials, learning path, best practices, Dart programming, Flutter widgets, state management, app projects, and career resources. Become a Flutter developer from scratch.",
+  keywords: "how to learn Flutter 2024, Flutter tutorial for beginners, Flutter learning path, Flutter development guide, Dart programming tutorial, Flutter widgets tutorial, Flutter state management, Flutter app development, mobile app development tutorial, Flutter beginner guide, learn Flutter from scratch, Flutter developer course, Flutter programming basics, Flutter project ideas, Flutter career path",
   openGraph: {
-    title: "Complete Guide: How to Learn Flutter from Scratch in 2024 | Rehman Farouq",
-    description: "Step-by-step learning path for Flutter beginners including resources, projects, and best practices to master Flutter development.",
+    title: "How to Learn Flutter 2024 | Complete Flutter Tutorial for Beginners | Step-by-Step Guide",
+    description: "Comprehensive Flutter learning guide for beginners 2024. Master Flutter development with step-by-step tutorials, learning path, best practices, Dart programming, and Flutter widgets.",
     url: "https://rehmanfarouq.site/blog/how-to-learn-flutter",
+    type: "article",
+    siteName: "Rehman Farouq Blog",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "How to Learn Flutter 2024 | Complete Flutter Tutorial for Beginners",
+    description: "Comprehensive Flutter learning guide for beginners 2024. Master Flutter development with step-by-step tutorials, learning path, and best practices.",
   },
 }
 

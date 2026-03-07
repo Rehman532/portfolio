@@ -6,12 +6,20 @@ import Footer from '@/components/layout/Footer'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 
 export const metadata: Metadata = {
-  title: "Projects | Rehman Farouq - Flutter & Next.js Developer",
-  description: "Explore Rehman Farouq's portfolio of projects. Discover mobile apps, web applications, and innovative solutions built with Flutter, Next.js, and modern technologies.",
+  title: "Portfolio Projects | Flutter Apps, Web Applications | Full Stack Developer Showcase | React, Next.js",
+  description: "Explore Rehman Farouq's complete portfolio of projects. Discover innovative Flutter mobile apps, Next.js web applications, React projects, and full stack development solutions. View case studies, live demos, and GitHub repositories of professional work.",
+  keywords: "portfolio projects, Flutter apps showcase, Next.js projects, React applications, full stack developer portfolio, web development projects, mobile app portfolio, software projects showcase, development portfolio, programming projects, tech portfolio, developer work showcase, project case studies, live demo projects, GitHub portfolio",
   openGraph: {
-    title: "Projects | Rehman Farouq - Flutter & Next.js Developer",
-    description: "Explore Rehman Farouq's portfolio of projects. Discover mobile apps, web applications, and innovative solutions built with Flutter, Next.js, and modern technologies.",
+    title: "Portfolio Projects | Flutter Apps, Web Applications | Full Stack Developer Showcase | React, Next.js",
+    description: "Explore Rehman Farouq's complete portfolio of projects. Discover innovative Flutter mobile apps, Next.js web applications, React projects, and full stack development solutions with live demos.",
     url: "https://rehmanfarouq.site/projects",
+    type: "website",
+    siteName: "Rehman Farouq Portfolio",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Portfolio Projects | Flutter Apps, Web Applications | Full Stack Developer Showcase",
+    description: "Explore Rehman Farouq's complete portfolio of projects. Discover innovative Flutter mobile apps, Next.js web applications, and full stack development solutions.",
   },
 }
 

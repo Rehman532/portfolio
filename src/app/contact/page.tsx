@@ -6,12 +6,20 @@ import Footer from '@/components/layout/Footer'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 
 export const metadata: Metadata = {
-  title: "Contact | Rehman Farouq - Flutter & Next.js Developer",
-  description: "Get in touch with Rehman Farouq for Flutter and Next.js development projects. Find contact information, social media links, and professional inquiry details.",
+  title: "Contact Rehman Farouq | Hire Full Stack Developer | Flutter, React, Next.js Development Services",
+  description: "Contact Rehman Farouq for professional Flutter, React, Next.js, and full stack development projects. Hire for freelance work, collaborations, consulting, and technical partnerships. Get in touch for web and mobile app development.",
+  keywords: "contact developer, hire full stack developer, Flutter developer for hire, React developer contact, Next.js development services, freelance web developer, mobile app developer contact, software engineer hire, development collaboration, programming services, technical consulting, web development contact, app development services, professional developer contact, hire remote developer",
   openGraph: {
-    title: "Contact | Rehman Farouq - Flutter & Next.js Developer",
-    description: "Get in touch with Rehman Farouq for Flutter and Next.js development projects. Find contact information, social media links, and professional inquiry details.",
+    title: "Contact Rehman Farouq | Hire Full Stack Developer | Flutter, React, Next.js Development Services",
+    description: "Contact Rehman Farouq for professional Flutter, React, Next.js, and full stack development projects. Hire for freelance work, collaborations, consulting, and technical partnerships.",
     url: "https://rehmanfarouq.site/contact",
+    type: "website",
+    siteName: "Rehman Farouq Portfolio",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Rehman Farouq | Hire Full Stack Developer | Flutter, React, Next.js",
+    description: "Contact Rehman Farouq for professional Flutter, React, Next.js, and full stack development projects. Hire for freelance work, collaborations, and consulting.",
   },
 }
 

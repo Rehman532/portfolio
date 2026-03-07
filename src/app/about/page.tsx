@@ -6,12 +6,20 @@ import Footer from '@/components/layout/Footer'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 
 export const metadata: Metadata = {
-  title: "About | Rehman Farouq - Flutter & Next.js Developer",
-  description: "Learn more about Rehman Farouq, a passionate Flutter and Next.js developer. Discover my skills, experience, and journey in web and mobile development.",
+  title: "About Rehman Farouq | Full Stack Developer | Flutter, Next.js, React Expert | Professional Profile",
+  description: "Meet Rehman Farouq, experienced full stack developer specializing in Flutter, Next.js, React, TypeScript, and modern web technologies. Discover professional background, technical expertise, development journey, and passion for creating innovative digital solutions.",
+  keywords: "about Rehman Farouq, full stack developer profile, Flutter developer bio, Next.js developer background, React developer expertise, TypeScript specialist, web development professional, mobile app developer, software engineer profile, developer portfolio about, technical expertise, professional developer background, programming experience, development journey",
   openGraph: {
-    title: "About | Rehman Farouq - Flutter & Next.js Developer",
-    description: "Learn more about Rehman Farouq, a passionate Flutter and Next.js developer. Discover my skills, experience, and journey in web and mobile development.",
+    title: "About Rehman Farouq | Full Stack Developer | Flutter, Next.js, React Expert | Professional Profile",
+    description: "Meet Rehman Farouq, experienced full stack developer specializing in Flutter, Next.js, React, TypeScript, and modern web technologies. Discover professional background and technical expertise.",
     url: "https://rehmanfarouq.site/about",
+    type: "profile",
+    siteName: "Rehman Farouq Portfolio",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Rehman Farouq | Full Stack Developer | Flutter, Next.js, React Expert",
+    description: "Meet Rehman Farouq, experienced full stack developer specializing in Flutter, Next.js, React, TypeScript, and modern web technologies.",
   },
 }
 

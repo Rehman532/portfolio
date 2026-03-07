@@ -5,12 +5,20 @@ import Link from 'next/link'
 import Footer from '@/components/layout/Footer'
 
 export const metadata: Metadata = {
-  title: "Password Generator Tool | Rehman Farouq Portfolio",
-  description: "Generate secure passwords with customizable options. Choose length, character types, and get real-time strength indicators.",
+  title: "Free Password Generator Online | Secure Password Creator | Strong Password Tool with Strength Checker",
+  description: "Generate strong, secure passwords online with customizable options. Choose password length, character types (uppercase, lowercase, numbers, symbols), and get real-time strength indicators. Create unhackable passwords for accounts, apps, and security.",
+  keywords: "password generator online, secure password creator, strong password generator, random password generator, password strength checker, unhackable password generator, free password tool, secure password maker, password generator with symbols, password complexity checker, online password creator, cybersecurity password tool, password security generator, customizable password generator",
   openGraph: {
-    title: "Password Generator Tool | Rehman Farouq Portfolio",
-    description: "Generate secure passwords with customizable options. Choose length, character types, and get real-time strength indicators.",
+    title: "Free Password Generator Online | Secure Password Creator | Strong Password Tool with Strength Checker",
+    description: "Generate strong, secure passwords online with customizable options. Choose password length, character types, and get real-time strength indicators for maximum security.",
     url: "https://rehmanfarouq.site/tools/password-generator",
+    type: "website",
+    siteName: "Rehman Farouq Developer Tools",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free Password Generator Online | Secure Password Creator",
+    description: "Generate strong, secure passwords online with customizable options and real-time strength indicators for maximum security.",
   },
 }
 

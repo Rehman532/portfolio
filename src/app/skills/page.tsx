@@ -6,12 +6,20 @@ import Footer from '@/components/layout/Footer'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 
 export const metadata: Metadata = {
-  title: "Skills | Rehman Farouq - Flutter & Next.js Developer",
-  description: "Discover Rehman Farouq's technical skills and expertise. Learn about programming languages, frameworks, and tools used in web and mobile development.",
+  title: "Technical Skills & Expertise | Full Stack Developer | Flutter, React, Next.js, TypeScript Skills",
+  description: "Explore Rehman Farouq's comprehensive technical skills and programming expertise. Master of Flutter, React, Next.js, TypeScript, JavaScript, Node.js, Tailwind CSS, Git, and modern web development technologies. View skill levels and proficiency.",
+  keywords: "technical skills, programming expertise, full stack developer skills, Flutter developer skills, React development expertise, Next.js proficiency, TypeScript skills, JavaScript programming, Node.js backend skills, Tailwind CSS expertise, Git version control, web development skills, mobile app development skills, programming languages, software development expertise, technical stack",
   openGraph: {
-    title: "Skills | Rehman Farouq - Flutter & Next.js Developer",
-    description: "Discover Rehman Farouq's technical skills and expertise. Learn about programming languages, frameworks, and tools used in web and mobile development.",
+    title: "Technical Skills & Expertise | Full Stack Developer | Flutter, React, Next.js, TypeScript Skills",
+    description: "Explore Rehman Farouq's comprehensive technical skills and programming expertise. Master of Flutter, React, Next.js, TypeScript, JavaScript, Node.js, and modern web development technologies.",
     url: "https://rehmanfarouq.site/skills",
+    type: "website",
+    siteName: "Rehman Farouq Portfolio",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Technical Skills & Expertise | Full Stack Developer | Flutter, React, Next.js",
+    description: "Explore Rehman Farouq's comprehensive technical skills and programming expertise. Master of Flutter, React, Next.js, TypeScript, and modern web development technologies.",
   },
 }
 

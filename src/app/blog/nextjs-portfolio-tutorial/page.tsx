@@ -5,12 +5,20 @@ import Footer from '@/components/layout/Footer'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 
 export const metadata: Metadata = {
-  title: "Next.js Portfolio Tutorial: Build Stunning Portfolio in 2024 | Rehman Farouq",
-  description: "Complete step-by-step guide to building a professional portfolio website with Next.js 16, TypeScript, Tailwind CSS, and modern animations.",
+  title: "Next.js Portfolio Tutorial 2024 | Build Professional Portfolio Website | React, TypeScript, Tailwind CSS",
+  description: "Complete Next.js portfolio tutorial 2024. Learn to build a stunning portfolio website with Next.js 16, React, TypeScript, Tailwind CSS, Framer Motion animations, responsive design, contact forms, and deployment. Step-by-step guide for developers.",
+  keywords: "Next.js portfolio tutorial 2024, build portfolio website Next.js, Next.js 16 tutorial, React portfolio tutorial, TypeScript portfolio, Tailwind CSS portfolio, Next.js developer portfolio, portfolio website tutorial, Next.js animations, Framer Motion portfolio, responsive portfolio design, Next.js contact form, portfolio deployment, web development tutorial, frontend portfolio, developer portfolio website",
   openGraph: {
-    title: "Next.js Portfolio Tutorial: Build Stunning Portfolio in 2024 | Rehman Farouq",
-    description: "Complete step-by-step guide to building a professional portfolio website with Next.js 16, TypeScript, Tailwind CSS, and modern animations.",
+    title: "Next.js Portfolio Tutorial 2024 | Build Professional Portfolio Website | React, TypeScript, Tailwind CSS",
+    description: "Complete Next.js portfolio tutorial 2024. Learn to build a stunning portfolio website with Next.js 16, React, TypeScript, Tailwind CSS, Framer Motion animations, and deployment.",
     url: "https://rehmanfarouq.site/blog/nextjs-portfolio-tutorial",
+    type: "article",
+    siteName: "Rehman Farouq Blog",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Next.js Portfolio Tutorial 2024 | Build Professional Portfolio Website",
+    description: "Complete Next.js portfolio tutorial 2024. Learn to build a stunning portfolio website with Next.js 16, React, TypeScript, Tailwind CSS, and animations.",
   },
 }
 

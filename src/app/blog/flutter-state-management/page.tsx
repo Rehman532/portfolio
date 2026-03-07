@@ -5,12 +5,20 @@ import Footer from '@/components/layout/Footer'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 
 export const metadata: Metadata = {
-  title: "Flutter State Management: Provider vs BLoC vs Riverpod | Rehman Farouq",
-  description: "In-depth comparison of popular Flutter state management solutions with examples and best practices for your apps.",
+  title: "Flutter State Management 2024 | Provider vs BLoC vs Riverpod | Complete Guide with Examples",
+  description: "Comprehensive Flutter state management guide 2024. Compare Provider vs BLoC vs Riverpod vs GetX vs Redux. Learn state management patterns, architecture best practices, performance optimization, and when to use each solution in Flutter apps.",
+  keywords: "Flutter state management 2024, Provider vs BLoC vs Riverpod, Flutter state management patterns, Provider Flutter tutorial, BLoC pattern Flutter, Riverpod Flutter, GetX Flutter, Flutter Redux, Flutter architecture, state management best practices, Flutter app architecture, Flutter performance optimization, Flutter state solutions, mobile app state management, Flutter development patterns",
   openGraph: {
-    title: "Flutter State Management: Provider vs BLoC vs Riverpod | Rehman Farouq",
-    description: "In-depth comparison of popular Flutter state management solutions with examples and best practices for your apps.",
+    title: "Flutter State Management 2024 | Provider vs BLoC vs Riverpod | Complete Guide with Examples",
+    description: "Comprehensive Flutter state management guide 2024. Compare Provider vs BLoC vs Riverpod vs GetX vs Redux. Learn state management patterns, architecture best practices, and performance optimization.",
     url: "https://rehmanfarouq.site/blog/flutter-state-management",
+    type: "article",
+    siteName: "Rehman Farouq Blog",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Flutter State Management 2024 | Provider vs BLoC vs Riverpod",
+    description: "Comprehensive Flutter state management guide 2024. Compare Provider vs BLoC vs Riverpod and learn state management patterns and best practices.",
   },
 }
 

@@ -13,12 +13,20 @@ import Testimonials from '@/components/sections/Testimonials'
 import Certifications from '@/components/sections/Certifications'
 
 export const metadata: Metadata = {
-  title: "Home | Rehman Farouq - Flutter & Next.js Developer",
-  description: "Welcome to my portfolio! I'm Rehman Farouq, a passionate Flutter and Next.js developer creating innovative mobile and web applications. Explore my projects, skills, and developer tools.",
+  title: "Rehman Farouq - Full Stack Developer | Flutter & Next.js Portfolio | React, TypeScript, Web Development",
+  description: "Professional full stack developer portfolio showcasing expertise in Flutter, Next.js, React, TypeScript, and modern web development. Explore innovative mobile apps, web applications, developer tools, and technical projects. Hire for freelance development work.",
+  keywords: "full stack developer, Flutter developer, Next.js developer, React developer, TypeScript, web development, mobile app development, portfolio, software engineer, frontend developer, backend developer, freelance developer, React Native, Tailwind CSS, Node.js, JavaScript, developer tools",
   openGraph: {
-    title: "Home | Rehman Farouq - Flutter & Next.js Developer",
-    description: "Welcome to my portfolio! I'm Rehman Farouq, a passionate Flutter and Next.js developer creating innovative mobile and web applications. Explore my projects, skills, and developer tools.",
+    title: "Rehman Farouq - Full Stack Developer | Flutter & Next.js Portfolio | React, TypeScript, Web Development",
+    description: "Professional full stack developer portfolio showcasing expertise in Flutter, Next.js, React, TypeScript, and modern web development. Explore innovative mobile apps, web applications, developer tools, and technical projects. Hire for freelance development work.",
     url: "https://rehmanfarouq.site",
+    type: "website",
+    siteName: "Rehman Farouq Portfolio",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Rehman Farouq - Full Stack Developer | Flutter & Next.js Portfolio",
+    description: "Professional full stack developer portfolio showcasing expertise in Flutter, Next.js, React, TypeScript, and modern web development.",
   },
 }
 

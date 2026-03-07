@@ -5,12 +5,20 @@ import Footer from '@/components/layout/Footer'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 
 export const metadata: Metadata = {
-  title: "Developer Tools | Rehman Farouq Portfolio",
-  description: "Collection of 12 useful developer tools including text converter, password generator, QR code generator, image resizer, JSON formatter, color converter, time converter, URL shortener, Base64 converter, unit converter, markdown editor, and hash generator.",
+  title: "Free Developer Tools Online | Web Development Utilities | Text, JSON, Password, QR Code Generators",
+  description: "Collection of 15+ free online developer tools and utilities for web development. Text converter, password generator, QR code generator, image resizer, JSON formatter, color converter, time converter, URL shortener, Base64 converter, unit converter, markdown editor, hash generator, and more developer productivity tools.",
+  keywords: "free developer tools, online web tools, developer utilities, text converter online, password generator, QR code generator, image resizer online, JSON formatter, color converter, time converter, URL shortener, Base64 converter, unit converter, markdown editor, hash generator, web development tools, coding tools, online utilities, developer productivity",
   openGraph: {
-    title: "Developer Tools | Rehman Farouq Portfolio",
-    description: "Collection of 12 useful developer tools including text converter, password generator, QR code generator, image resizer, JSON formatter, color converter, time converter, URL shortener, Base64 converter, unit converter, markdown editor, and hash generator.",
+    title: "Free Developer Tools Online | Web Development Utilities | Text, JSON, Password, QR Code Generators",
+    description: "Collection of 15+ free online developer tools and utilities for web development. Text converter, password generator, QR code generator, image resizer, JSON formatter, and more developer productivity tools.",
     url: "https://rehmanfarouq.site/tools",
+    type: "website",
+    siteName: "Rehman Farouq Developer Tools",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free Developer Tools Online | Web Development Utilities",
+    description: "Collection of 15+ free online developer tools and utilities for web development. Text converter, password generator, QR code generator, and more.",
   },
 }
 

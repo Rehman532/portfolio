@@ -6,12 +6,20 @@ import Footer from '@/components/layout/Footer'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 
 export const metadata: Metadata = {
-  title: "Testimonials | Rehman Farouq - Flutter & Next.js Developer",
-  description: "Read what clients and colleagues say about Rehman Farouq's work. Discover testimonials and reviews for Flutter and Next.js development projects.",
+  title: "Client Testimonials & Reviews | Flutter Developer Feedback | Next.js Development Recommendations",
+  description: "Read authentic client testimonials and reviews for Rehman Farouq's Flutter and Next.js development work. Discover client feedback, project recommendations, colleague endorsements, and professional references that validate expertise and quality of work.",
+  keywords: "client testimonials, developer reviews, Flutter developer feedback, Next.js development reviews, client recommendations, professional references, software developer testimonials, web development feedback, mobile app development reviews, client success stories, developer endorsements, project testimonials, coding reviews, technical testimonials, client satisfaction",
   openGraph: {
-    title: "Testimonials | Rehman Farouq - Flutter & Next.js Developer",
-    description: "Read what clients and colleagues say about Rehman Farouq's work. Discover testimonials and reviews for Flutter and Next.js development projects.",
+    title: "Client Testimonials & Reviews | Flutter Developer Feedback | Next.js Development Recommendations",
+    description: "Read authentic client testimonials and reviews for Rehman Farouq's Flutter and Next.js development work. Discover client feedback, project recommendations, and professional references.",
     url: "https://rehmanfarouq.site/testimonials",
+    type: "website",
+    siteName: "Rehman Farouq Portfolio",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Client Testimonials & Reviews | Flutter Developer Feedback",
+    description: "Read authentic client testimonials and reviews for Rehman Farouq's Flutter and Next.js development work. Discover client feedback and professional references.",
   },
 }
 

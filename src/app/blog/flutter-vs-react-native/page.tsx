@@ -5,12 +5,20 @@ import Footer from '@/components/layout/Footer'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 
 export const metadata: Metadata = {
-  title: "Flutter vs React Native: Which is Better in 2024? | Rehman Farouq",
-  description: "Detailed comparison between Flutter and React Native covering performance, development experience, ecosystem, and real-world use cases.",
+  title: "Flutter vs React Native 2024 | Complete Comparison | Performance, Development, Ecosystem",
+  description: "Comprehensive Flutter vs React Native comparison 2024. Compare performance, development speed, learning curve, ecosystem, community support, cost, and real-world use cases. Choose the best framework for your mobile app development project.",
+  keywords: "Flutter vs React Native 2024, Flutter React Native comparison, mobile app development frameworks, Flutter performance vs React Native, Flutter development speed, React Native development, cross-platform development, mobile app frameworks comparison, Flutter vs React Native ecosystem, Flutter vs React Native cost, mobile app development tools, Flutter vs React Native for startups, React Native vs Flutter for enterprise, mobile development best practices",
   openGraph: {
-    title: "Flutter vs React Native: Which is Better in 2024? | Rehman Farouq",
-    description: "Detailed comparison between Flutter and React Native covering performance, development experience, ecosystem, and real-world use cases.",
+    title: "Flutter vs React Native 2024 | Complete Comparison | Performance, Development, Ecosystem",
+    description: "Comprehensive Flutter vs React Native comparison 2024. Compare performance, development speed, ecosystem, community support, cost, and real-world use cases for mobile app development.",
     url: "https://rehmanfarouq.site/blog/flutter-vs-react-native",
+    type: "article",
+    siteName: "Rehman Farouq Blog",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Flutter vs React Native 2024 | Complete Comparison",
+    description: "Comprehensive Flutter vs React Native comparison 2024. Compare performance, development speed, ecosystem, and real-world use cases for mobile app development.",
   },
 }
 

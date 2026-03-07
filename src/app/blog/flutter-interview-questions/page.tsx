@@ -5,12 +5,20 @@ import Footer from '@/components/layout/Footer'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 
 export const metadata: Metadata = {
-  title: "Top 50 Flutter Interview Questions and Answers | Rehman Farouq",
-  description: "Comprehensive guide to Flutter interview questions covering widgets, state management, navigation, and advanced concepts with detailed answers.",
+  title: "Flutter Interview Questions 2024 | Top 50 Questions with Answers | Developer Job Preparation",
+  description: "Complete Flutter interview preparation guide 2024. Top 50 Flutter interview questions and answers covering widgets, state management, navigation, performance, architecture, and advanced concepts. Prepare for Flutter developer jobs with detailed explanations.",
+  keywords: "Flutter interview questions 2024, Flutter developer interview, Flutter job preparation, Flutter interview questions and answers, Flutter widgets interview, Flutter state management interview, Flutter navigation interview, Flutter performance questions, Flutter architecture interview, mobile developer interview, Flutter developer jobs, Flutter technical interview, Flutter coding interview, Flutter interview tips, Flutter career guide",
   openGraph: {
-    title: "Top 50 Flutter Interview Questions and Answers | Rehman Farouq",
-    description: "Comprehensive guide to Flutter interview questions covering widgets, state management, navigation, and advanced concepts with detailed answers.",
+    title: "Flutter Interview Questions 2024 | Top 50 Questions with Answers | Developer Job Preparation",
+    description: "Complete Flutter interview preparation guide 2024. Top 50 Flutter interview questions and answers covering widgets, state management, navigation, performance, architecture, and advanced concepts.",
     url: "https://rehmanfarouq.site/blog/flutter-interview-questions",
+    type: "article",
+    siteName: "Rehman Farouq Blog",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Flutter Interview Questions 2024 | Top 50 Questions with Answers",
+    description: "Complete Flutter interview preparation guide 2024. Top 50 Flutter interview questions and answers covering widgets, state management, navigation, and advanced concepts.",
   },
 }
 
