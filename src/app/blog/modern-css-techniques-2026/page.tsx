@@ -397,8 +397,8 @@ export default function ModernCSSTechniques() {
 /* JavaScript integration */
 <style>
   :root {
-    --user-color: ${userPreferredColor};
-    --dynamic-spacing: ${calculateSpacing()};
+    --user-color: \${userPreferredColor};
+    --dynamic-spacing: \${calculateSpacing()};
   }
 </style>`}
                 </pre>
