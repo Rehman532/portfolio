@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { ArrowLeft, Calendar, Clock, User, Tag, Mobile, Monitor, Tablet } from 'lucide-react'
+import { ArrowLeft, Calendar, Clock, User, Tag, Smartphone, Monitor, Tablet } from 'lucide-react'
 import Link from 'next/link'
 import Footer from '@/components/layout/Footer'
 
