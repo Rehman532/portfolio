@@ -144,11 +144,11 @@ export default Counter;`}
               <ul className="space-y-2 mb-6">
                 <li className="flex items-start gap-2">
                   <span className="text-blue-500 mt-1">•</span>
-                  <span className="text-gray-700 dark:text-gray-300">Functional updates: <code>setCount(prev => prev + 1)</code></span>
+                  <span className="text-gray-700 dark:text-gray-300">Functional updates: <code>setCount(prev =&gt; prev + 1)</code></span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-blue-500 mt-1">•</span>
-                  <span className="text-gray-700 dark:text-gray-300">Lazy initialization: <code>useState(() => computeExpensiveValue())</code></span>
+                  <span className="text-gray-700 dark:text-gray-300">Lazy initialization: <code>useState(() =&gt; computeExpensiveValue())</code></span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-blue-500 mt-1">•</span>
