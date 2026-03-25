@@ -4,25 +4,33 @@ import Link from 'next/link'
 import Footer from '@/components/layout/Footer'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 
+// Get yesterday's date
+const getYesterdayDate = () => {
+  const yesterday = new Date()
+  yesterday.setDate(yesterday.getDate() - 1)
+  return yesterday.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+}
+
 export const metadata: Metadata = {
-  title: "Flutter Interview Questions 2024 | Top 50 Questions with Answers | Developer Job Preparation",
-  description: "Complete Flutter interview preparation guide 2024. Top 50 Flutter interview questions and answers covering widgets, state management, navigation, performance, architecture, and advanced concepts. Prepare for Flutter developer jobs with detailed explanations.",
-  keywords: "Flutter interview questions 2024, Flutter developer interview, Flutter job preparation, Flutter interview questions and answers, Flutter widgets interview, Flutter state management interview, Flutter navigation interview, Flutter performance questions, Flutter architecture interview, mobile developer interview, Flutter developer jobs, Flutter technical interview, Flutter coding interview, Flutter interview tips, Flutter career guide",
+  title: "Flutter Interview Questions 2026 | Top 50 Questions with Answers | Developer Job Preparation",
+  description: "Complete Flutter interview preparation guide 2026. Top 50 Flutter interview questions and answers covering widgets, state management, navigation, performance, architecture, and advanced concepts. Prepare for Flutter developer jobs with detailed explanations.",
+  keywords: "Flutter interview questions 2026, Flutter developer interview, Flutter job preparation, Flutter interview questions and answers, Flutter widgets interview, Flutter state management interview, Flutter navigation interview, Flutter performance questions, Flutter architecture interview, mobile developer interview, Flutter developer jobs, Flutter technical interview, Flutter coding interview, Flutter interview tips, Flutter career guide",
   openGraph: {
-    title: "Flutter Interview Questions 2024 | Top 50 Questions with Answers | Developer Job Preparation",
-    description: "Complete Flutter interview preparation guide 2024. Top 50 Flutter interview questions and answers covering widgets, state management, navigation, performance, architecture, and advanced concepts.",
+    title: "Flutter Interview Questions 2026 | Top 50 Questions with Answers | Developer Job Preparation",
+    description: "Complete Flutter interview preparation guide 2026. Top 50 Flutter interview questions and answers covering widgets, state management, navigation, performance, architecture, and advanced concepts.",
     url: "https://rehmanfarouq.site/blog/flutter-interview-questions",
     type: "article",
     siteName: "Rehman Farouq Blog",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Flutter Interview Questions 2024 | Top 50 Questions with Answers",
-    description: "Complete Flutter interview preparation guide 2024. Top 50 Flutter interview questions and answers covering widgets, state management, navigation, and advanced concepts.",
+    title: "Flutter Interview Questions 2026 | Top 50 Questions with Answers",
+    description: "Complete Flutter interview preparation guide 2026. Top 50 Flutter interview questions and answers covering widgets, state management, navigation, and advanced concepts.",
   },
 }
 
 export default function FlutterInterviewQuestionsPage() {
+  const yesterdayDate = getYesterdayDate()
   return (
     <div className="min-h-screen bg-background dark:bg-gray-900 flex flex-col">
       {/* Navigation Header */}
@@ -57,7 +65,7 @@ export default function FlutterInterviewQuestionsPage() {
                 </span>
                 <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-sm">
                   <Calendar size={14} />
-                  March 15, 2024
+                  {yesterdayDate}
                 </div>
                 <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-sm">
                   <Clock size={14} />
@@ -364,7 +372,7 @@ export default function FlutterInterviewQuestionsPage() {
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
                   <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                    Flutter vs React Native: Which is Better in 2024?
+                    Flutter vs React Native: Which is Better in 2026?
                   </h4>
                   <p className="text-gray-600 dark:text-gray-400 mb-4">
                     Detailed comparison between Flutter and React Native covering performance, development experience...

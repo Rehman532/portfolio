@@ -207,11 +207,28 @@ const Footer = () => {
 
         <div className="mt-16 pt-8 border-t border-gray-800/50">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="flex items-center gap-2 text-gray-400 text-sm">
-              <span>© {currentYear} REHMAN FAROUQ. All rights reserved.</span>
-              <Heart className="text-red-500" size={14} />
-              <span>Made with</span>
-              <Sparkles className="text-blue-400" size={14} />
+            <div className="flex flex-col gap-2">
+              <div className="flex items-center gap-2 text-gray-400 text-sm">
+                <span>© {currentYear} REHMAN FAROUQ. All rights reserved.</span>
+                <Heart className="text-red-500" size={14} />
+                <span>Made with</span>
+                <Sparkles className="text-blue-400" size={14} />
+              </div>
+              <div className="flex items-center gap-4 text-sm">
+                <Link 
+                  href="/privacy-policy"
+                  className="text-gray-400 hover:text-white transition-colors hover:underline"
+                >
+                  Privacy Policy
+                </Link>
+                <span className="text-gray-600">•</span>
+                <Link 
+                  href="/terms-of-service"
+                  className="text-gray-400 hover:text-white transition-colors hover:underline"
+                >
+                  Terms of Service
+                </Link>
+              </div>
             </div>
             
             <button

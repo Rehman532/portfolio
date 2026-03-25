@@ -16,15 +16,17 @@
 
 ## 🎯 Overview
 
-**Rehman Farouq Portfolio** is a modern, responsive portfolio website showcasing the work and skills of a Flutter & Next.js developer. The site features a clean, professional design with smooth animations, dark mode support, and a comprehensive suite of developer tools.
+**Rehman Farouq Portfolio** is a modern, responsive portfolio website showcasing the work and skills of a Flutter & Next.js developer. The site features a clean, professional design with smooth animations, dark mode support, a comprehensive suite of developer tools, and an extensive blog section.
 
 ### 🌟 Key Features
 - **Responsive Design**: Fully responsive across all devices
 - **Dark Mode**: Complete dark/light theme support
-- **Developer Tools**: 5 utility tools for developers
+- **Developer Tools**: 12 utility tools for developers
+- **Blog Section**: 6 comprehensive technical articles with dynamic dates
 - **SEO Optimized**: Complete SEO implementation
 - **Modern Animations**: Smooth transitions and micro-interactions
 - **Performance**: Optimized for speed and accessibility
+- **Legal Compliance**: Privacy Policy and Terms of Service pages
 
 ---
 
@@ -63,7 +65,37 @@ Portfolio/
 │   │   ├── layout.tsx         # Root layout with SEO
 │   │   ├── page.tsx           # Home page
 │   │   ├── globals.css        # Global styles
-│   │   └── sitemap.ts         # SEO sitemap
+│   │   ├── sitemap.ts         # SEO sitemap
+│   │   ├── blog/              # Blog section
+│   │   │   ├── page.tsx       # Blog listing page
+│   │   │   ├── flutter-vs-nextjs/ # Flutter vs Next.js comparison
+│   │   │   ├── how-to-build-password-generator-react/ # Password generator tutorial
+│   │   │   ├── vscode-extensions-flutter-web/ # VS Code extensions guide
+│   │   │   ├── react-hooks-complete-guide/ # React hooks guide
+│   │   │   ├── typescript-react-guide/ # TypeScript React guide
+│   │   │   ├── modern-css-techniques-2026/ # Modern CSS techniques
+│   │   │   ├── best-flutter-packages/ # Flutter packages guide
+│   │   │   ├── flutter-interview-questions/ # Flutter interview Q&A
+│   │   │   ├── flutter-state-management/ # Flutter state management
+│   │   │   ├── flutter-vs-react-native/ # Flutter vs React Native
+│   │   │   ├── how-to-learn-flutter/ # Flutter learning guide
+│   │   │   └── nextjs-portfolio-tutorial/ # Next.js portfolio tutorial
+│   │   ├── tools/             # Developer tools pages
+│   │   │   ├── page.tsx       # Tools listing page
+│   │   │   ├── password-generator/
+│   │   │   ├── text-converter/
+│   │   │   ├── qr-generator/
+│   │   │   ├── image-resize/
+│   │   │   ├── json-formatter/
+│   │   │   ├── base64-converter/
+│   │   │   ├── color-converter/
+│   │   │   ├── hash-generator/
+│   │   │   ├── markdown-editor/
+│   │   │   ├── time-converter/
+│   │   │   ├── unit-converter/
+│   │   │   └── url-shortener/
+│   │   ├── privacy-policy/    # Privacy policy page
+│   │   └── terms-of-service/  # Terms of service page
 │   └── components/
 │       ├── layout/            # Layout components
 │       │   ├── Navbar.tsx     # Navigation bar
@@ -139,11 +171,12 @@ Portfolio/
 - **Interactive hover states**
 
 ### 6. **Tools Section** (`Tools.tsx`)
-- **5 developer utility tools**
+- **12 developer utility tools**
 - **Tab-based navigation**
 - **Modern glass morphism design**
 - **Responsive tool cards**
 - **Interactive tool switching**
+- **Individual tool pages with dedicated URLs**
 
 ### 7. **Testimonials Section** (`Testimonials.tsx`)
 - **Client testimonials carousel**
@@ -165,6 +198,19 @@ Portfolio/
 - **Email and phone information**
 - **Location details**
 - **Form submission handling**
+
+### 10. **Blog Section** (`Blog.tsx`)
+- **6 comprehensive technical articles**
+- **Dynamic date system (always shows yesterday's date)**
+- **Search and filter functionality**
+- **Featured article highlighting**
+- **Responsive grid layout**
+- **SEO-optimized article pages**
+
+### 11. **Legal Pages**
+- **Privacy Policy**: GDPR-compliant data protection policy
+- **Terms of Service**: Complete terms and conditions for site usage
+- **Professional legal templates with contact information**
 
 ---
 
@@ -211,6 +257,62 @@ Portfolio/
 - **Copy formatted JSON**
 - **Download JSON file**
 - **Sample JSON loader**
+
+### 6. **Base64 Converter Tool**
+- **Text to Base64 encoding**
+- **Base64 to text decoding**
+- **File upload for Base64 conversion**
+- **Copy to clipboard functionality**
+- **Real-time conversion**
+- **Error handling**
+
+### 7. **Color Converter Tool**
+- **HEX to RGB conversion**
+- **RGB to HEX conversion**
+- **HSL to HEX conversion**
+- **Color picker interface**
+- **Copy color codes**
+- **Visual color preview**
+
+### 8. **Hash Generator Tool**
+- **MD5 hash generation**
+- **SHA-1, SHA-256 hash generation**
+- **Text and file hashing**
+- **Copy hash results**
+- **Multiple hash algorithms**
+- **Instant processing**
+
+### 9. **Markdown Editor Tool**
+- **Live markdown preview**
+- **Syntax highlighting**
+- **Export to HTML**
+- **Copy formatted markdown**
+- **Common markdown shortcuts**
+- **Real-time preview updates**
+
+### 10. **Time Converter Tool**
+- **Unix timestamp conversion**
+- **Timezone conversion**
+- **Date format conversion**
+- **Multiple time formats**
+- **Current time display**
+- **Copy timestamp**
+
+### 11. **Unit Converter Tool**
+- **Length units conversion**
+- **Weight units conversion**
+- **Temperature conversion**
+- **Volume units conversion**
+- **Area units conversion**
+- **Instant calculations**
+
+### 12. **URL Shortener Tool**
+- **Custom URL shortening**
+- **QR code generation for URLs**
+- **Click tracking simulation**
+- **Copy shortened URL**
+- **URL validation**
+- **Statistics display**
 
 ---
 
@@ -424,20 +526,48 @@ npm run lint     # Run ESLint
 
 ---
 
+## 📈 Recent Enhancements
+
+### Completed Features
+- **Blog Section**: 6 comprehensive technical articles with dynamic dates
+- **Expanded Tools**: 12 developer utility tools with dedicated pages
+- **Legal Compliance**: Privacy Policy and Terms of Service pages
+- **Enhanced SEO**: Improved metadata and structured data
+- **Responsive Design**: Mobile-first responsive layout
+- **Modern Animations**: Smooth transitions and micro-interactions
+
+### Blog Articles Added
+- **Flutter vs Next.js Comparison**: Comprehensive framework comparison
+- **Password Generator Tutorial**: Step-by-step React tutorial
+- **VS Code Extensions Guide**: Essential tools for developers
+- **React Hooks Complete Guide**: Modern React patterns
+- **TypeScript React Guide**: Type-safe React development
+- **Modern CSS Techniques**: Grid, Flexbox, Container Queries
+
+### New Developer Tools
+- **Base64 Converter**: Text and file encoding/decoding
+- **Color Converter**: HEX, RGB, HSL color conversions
+- **Hash Generator**: Multiple hash algorithms
+- **Markdown Editor**: Live preview with syntax highlighting
+- **Time Converter**: Timestamp and timezone conversions
+- **Unit Converter**: Length, weight, temperature, volume, area
+- **URL Shortener**: Custom URL shortening with QR codes
+
 ## 📈 Future Enhancements
 
 ### Planned Features
-- **Blog Section**: Articles and tutorials
-- **More Tools**: Additional developer utilities
+- **More Blog Articles**: Additional technical tutorials
 - **Internationalization**: Multi-language support
 - **PWA Features**: Offline functionality
 - **Advanced Animations**: More interactive elements
+- **User Authentication**: Personalized experiences
 
 ### Technical Improvements
 - **Server Components**: Next.js 13+ features
 - **Database Integration**: Dynamic content management
 - **API Integration**: External service connections
 - **Testing**: Unit and integration tests
+- **Performance Monitoring**: Advanced analytics and insights
 
 ---
 
@@ -448,6 +578,10 @@ This project is open source and available under the [MIT License](LICENSE).
 ---
 
 **Last Updated**: March 2026
-**Version**: 1.0.0
+**Version**: 2.0.0
 **Framework**: Next.js 16.1.6
 **Author**: Rehman Farouq
+**Total Blog Articles**: 13
+**Developer Tools**: 12
+**Legal Pages**: 2 (Privacy Policy, Terms of Service)
+**Content Word Count**: 10,000+ words

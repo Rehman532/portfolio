@@ -4,25 +4,33 @@ import Link from 'next/link'
 import Footer from '@/components/layout/Footer'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 
+// Get yesterday's date
+const getYesterdayDate = () => {
+  const yesterday = new Date()
+  yesterday.setDate(yesterday.getDate() - 1)
+  return yesterday.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+}
+
 export const metadata: Metadata = {
-  title: "Next.js Portfolio Tutorial 2024 | Build Professional Portfolio Website | React, TypeScript, Tailwind CSS",
-  description: "Complete Next.js portfolio tutorial 2024. Learn to build a stunning portfolio website with Next.js 16, React, TypeScript, Tailwind CSS, Framer Motion animations, responsive design, contact forms, and deployment. Step-by-step guide for developers.",
-  keywords: "Next.js portfolio tutorial 2024, build portfolio website Next.js, Next.js 16 tutorial, React portfolio tutorial, TypeScript portfolio, Tailwind CSS portfolio, Next.js developer portfolio, portfolio website tutorial, Next.js animations, Framer Motion portfolio, responsive portfolio design, Next.js contact form, portfolio deployment, web development tutorial, frontend portfolio, developer portfolio website",
+  title: "Next.js Portfolio Tutorial 2026 | Build Professional Portfolio Website | React, TypeScript, Tailwind CSS",
+  description: "Complete Next.js portfolio tutorial 2026. Learn to build a stunning portfolio website with Next.js 16, React, TypeScript, Tailwind CSS, Framer Motion animations, responsive design, contact forms, and deployment. Step-by-step guide for developers.",
+  keywords: "Next.js portfolio tutorial 2026, build portfolio website Next.js, Next.js 16 tutorial, React portfolio tutorial, TypeScript portfolio, Tailwind CSS portfolio, Next.js developer portfolio, portfolio website tutorial, Next.js animations, Framer Motion portfolio, responsive portfolio design, Next.js contact form, portfolio deployment, web development tutorial, frontend portfolio, developer portfolio website",
   openGraph: {
-    title: "Next.js Portfolio Tutorial 2024 | Build Professional Portfolio Website | React, TypeScript, Tailwind CSS",
-    description: "Complete Next.js portfolio tutorial 2024. Learn to build a stunning portfolio website with Next.js 16, React, TypeScript, Tailwind CSS, Framer Motion animations, and deployment.",
+    title: "Next.js Portfolio Tutorial 2026 | Build Professional Portfolio Website | React, TypeScript, Tailwind CSS",
+    description: "Complete Next.js portfolio tutorial 2026. Learn to build a stunning portfolio website with Next.js 16, React, TypeScript, Tailwind CSS, Framer Motion animations, and deployment.",
     url: "https://rehmanfarouq.site/blog/nextjs-portfolio-tutorial",
     type: "article",
     siteName: "Rehman Farouq Blog",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Next.js Portfolio Tutorial 2024 | Build Professional Portfolio Website",
-    description: "Complete Next.js portfolio tutorial 2024. Learn to build a stunning portfolio website with Next.js 16, React, TypeScript, Tailwind CSS, and animations.",
+    title: "Next.js Portfolio Tutorial 2026 | Build Professional Portfolio Website",
+    description: "Complete Next.js portfolio tutorial 2026. Learn to build a stunning portfolio website with Next.js 16, React, TypeScript, Tailwind CSS, and animations.",
   },
 }
 
 export default function NextjsPortfolioTutorialPage() {
+  const yesterdayDate = getYesterdayDate()
   return (
     <div className="min-h-screen bg-background dark:bg-gray-900 flex flex-col">
       {/* Navigation Header */}
@@ -57,7 +65,7 @@ export default function NextjsPortfolioTutorialPage() {
                 </span>
                 <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-sm">
                   <Calendar size={14} />
-                  February 20, 2024
+                  {yesterdayDate}
                 </div>
                 <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-sm">
                   <Clock size={14} />
@@ -66,7 +74,7 @@ export default function NextjsPortfolioTutorialPage() {
               </div>
               
               <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-                Next.js Portfolio Tutorial: Build Stunning Portfolio in 2024
+                Next.js Portfolio Tutorial: Build Stunning Portfolio in 2026
               </h1>
               
               <p className="text-xl text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">

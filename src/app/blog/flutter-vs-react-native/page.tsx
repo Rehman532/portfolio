@@ -4,25 +4,33 @@ import Link from 'next/link'
 import Footer from '@/components/layout/Footer'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 
+// Get yesterday's date
+const getYesterdayDate = () => {
+  const yesterday = new Date()
+  yesterday.setDate(yesterday.getDate() - 1)
+  return yesterday.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+}
+
 export const metadata: Metadata = {
-  title: "Flutter vs React Native 2024 | Complete Comparison | Performance, Development, Ecosystem",
-  description: "Comprehensive Flutter vs React Native comparison 2024. Compare performance, development speed, learning curve, ecosystem, community support, cost, and real-world use cases. Choose the best framework for your mobile app development project.",
-  keywords: "Flutter vs React Native 2024, Flutter React Native comparison, mobile app development frameworks, Flutter performance vs React Native, Flutter development speed, React Native development, cross-platform development, mobile app frameworks comparison, Flutter vs React Native ecosystem, Flutter vs React Native cost, mobile app development tools, Flutter vs React Native for startups, React Native vs Flutter for enterprise, mobile development best practices",
+  title: "Flutter vs React Native 2026 | Complete Comparison | Performance, Development, Ecosystem",
+  description: "Comprehensive Flutter vs React Native comparison 2026. Compare performance, development speed, learning curve, ecosystem, community support, cost, and real-world use cases. Choose the best framework for your mobile app development project.",
+  keywords: "Flutter vs React Native 2026, Flutter React Native comparison, mobile app development frameworks, Flutter performance vs React Native, Flutter development speed, React Native development, cross-platform development, mobile app frameworks comparison, Flutter vs React Native ecosystem, Flutter vs React Native cost, mobile app development tools, Flutter vs React Native for startups, React Native vs Flutter for enterprise, mobile development best practices",
   openGraph: {
-    title: "Flutter vs React Native 2024 | Complete Comparison | Performance, Development, Ecosystem",
-    description: "Comprehensive Flutter vs React Native comparison 2024. Compare performance, development speed, ecosystem, community support, cost, and real-world use cases for mobile app development.",
+    title: "Flutter vs React Native 2026 | Complete Comparison | Performance, Development, Ecosystem",
+    description: "Comprehensive Flutter vs React Native comparison 2026. Compare performance, development speed, ecosystem, community support, cost, and real-world use cases for mobile app development.",
     url: "https://rehmanfarouq.site/blog/flutter-vs-react-native",
     type: "article",
     siteName: "Rehman Farouq Blog",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Flutter vs React Native 2024 | Complete Comparison",
-    description: "Comprehensive Flutter vs React Native comparison 2024. Compare performance, development speed, ecosystem, and real-world use cases for mobile app development.",
+    title: "Flutter vs React Native 2026 | Complete Comparison",
+    description: "Comprehensive Flutter vs React Native comparison 2026. Compare performance, development speed, ecosystem, and real-world use cases for mobile app development.",
   },
 }
 
 export default function FlutterVsReactNativePage() {
+  const yesterdayDate = getYesterdayDate()
   return (
     <div className="min-h-screen bg-background dark:bg-gray-900 flex flex-col">
       {/* Navigation Header */}
@@ -57,7 +65,7 @@ export default function FlutterVsReactNativePage() {
                 </span>
                 <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-sm">
                   <Calendar size={14} />
-                  March 10, 2024
+                  {yesterdayDate}
                 </div>
                 <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-sm">
                   <Clock size={14} />
@@ -66,7 +74,7 @@ export default function FlutterVsReactNativePage() {
               </div>
               
               <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-                Flutter vs React Native: Which is Better in 2024?
+                Flutter vs React Native: Which is Better in 2026?
               </h1>
               
               <p className="text-xl text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
@@ -343,7 +351,7 @@ export default function FlutterVsReactNativePage() {
                   </p>
                   <p className="text-gray-600 dark:text-gray-400 leading-relaxed mt-4">
                     Your choice should depend on your team's skills, project requirements, and long-term maintenance considerations. 
-                    Both frameworks are actively developed and have strong corporate backing, ensuring their relevance in 2024 and beyond.
+                    Both frameworks are actively developed and have strong corporate backing, ensuring their relevance in 2026 and beyond.
                   </p>
                 </section>
               </div>

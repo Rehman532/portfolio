@@ -7,26 +7,103 @@ const BlogSection = () => {
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('all')
 
-  const blogPosts = [
+  const getYesterdayDate = () => {
+  const yesterday = new Date()
+  yesterday.setDate(yesterday.getDate() - 1)
+  return yesterday.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+}
+
+const blogPosts = [
+    {
+      id: 'flutter-vs-nextjs',
+      title: 'Flutter vs Next.js for Web Development in 2026: A Complete Comparison',
+      excerpt: 'Comprehensive comparison between Flutter and Next.js for web development. Learn key differences, use cases, performance, learning curve, job market, and when to choose each framework in 2026.',
+      category: 'Comparison',
+      author: 'Rehman Farouq',
+      date: getYesterdayDate(),
+      readTime: '15 min',
+      image: '/blog/flutter-vs-nextjs.jpg',
+      tags: ['Flutter', 'Next.js', 'Web Development', 'Comparison'],
+      featured: true
+    },
+    {
+      id: 'how-to-build-password-generator-react',
+      title: 'How to Build a Password Generator in React & Next.js: Complete Tutorial',
+      excerpt: 'Step-by-step tutorial on building a secure password generator tool in React/Next.js. Learn to create length sliders, character options, strength indicators, and copy functionality with code examples.',
+      category: 'Tutorial',
+      author: 'Rehman Farouq',
+      date: getYesterdayDate(),
+      readTime: '12 min',
+      image: '/blog/password-generator-tutorial.jpg',
+      tags: ['React', 'Next.js', 'Tutorial', 'Password Generator', 'Security'],
+      featured: true
+    },
+    {
+      id: 'vscode-extensions-flutter-web',
+      title: 'Top 10 VS Code Extensions for Flutter & Web Developers',
+      excerpt: 'Curated list of essential VS Code extensions for Flutter and web developers. Boost productivity with Dart, Flutter, React, Next.js, Prettier, ESLint, and more must-have extensions.',
+      category: 'Tools',
+      author: 'Rehman Farouq',
+      date: getYesterdayDate(),
+      readTime: '10 min',
+      image: '/blog/vscode-extensions.jpg',
+      tags: ['VS Code', 'Extensions', 'Flutter', 'Web Development', 'Productivity'],
+      featured: true
+    },
+    {
+      id: 'react-hooks-complete-guide',
+      title: 'React Hooks Complete Guide 2026: Master Modern React Development',
+      excerpt: 'Everything you need to know about React Hooks - from basics to advanced patterns. Learn useState, useEffect, useContext, and create your own custom hooks.',
+      category: 'Tutorial',
+      author: 'Rehman Farouq',
+      date: getYesterdayDate(),
+      readTime: '18 min',
+      image: '/blog/react-hooks-guide.jpg',
+      tags: ['React', 'Hooks', 'Tutorial', 'useState', 'useEffect'],
+      featured: true
+    },
+    {
+      id: 'typescript-react-guide',
+      title: 'TypeScript for React Developers 2026: Build Type-Safe Applications',
+      excerpt: 'Master TypeScript in React development. Learn interfaces, generics, props typing, hooks, and advanced TypeScript patterns for building type-safe React applications.',
+      category: 'Tutorial',
+      author: 'Rehman Farouq',
+      date: getYesterdayDate(),
+      readTime: '15 min',
+      image: '/blog/typescript-react.jpg',
+      tags: ['TypeScript', 'React', 'Tutorial', 'Type Safety', 'Interfaces'],
+      featured: true
+    },
+    {
+      id: 'modern-css-techniques-2026',
+      title: 'Modern CSS Techniques 2026: Build Responsive, Maintainable Styles',
+      excerpt: 'Master CSS Grid, Flexbox, Container Queries, CSS Custom Properties, and advanced layout techniques. Learn practical techniques for building beautiful, responsive web layouts.',
+      category: 'Tutorial',
+      author: 'Rehman Farouq',
+      date: getYesterdayDate(),
+      readTime: '16 min',
+      image: '/blog/modern-css.jpg',
+      tags: ['CSS', 'Grid', 'Flexbox', 'Container Queries', 'Responsive'],
+      featured: true
+    },
     {
       id: 'flutter-interview-questions',
       title: 'Top 50 Flutter Interview Questions and Answers',
       excerpt: 'Comprehensive guide to Flutter interview questions covering widgets, state management, navigation, and advanced concepts with detailed answers.',
       category: 'Flutter',
       author: 'Rehman Farouq',
-      date: '2024-03-15',
+      date: getYesterdayDate(),
       readTime: '15 min',
       image: '/blog/flutter-interview.jpg',
-      tags: ['Flutter', 'Interview', 'Questions', 'Career'],
-      featured: true
+      tags: ['Flutter', 'Interview', 'Questions', 'Career']
     },
     {
       id: 'flutter-vs-react-native',
-      title: 'Flutter vs React Native: Which is Better in 2024?',
+      title: 'Flutter vs React Native: Which is Better in 2026?',
       excerpt: 'Detailed comparison between Flutter and React Native covering performance, development experience, ecosystem, and real-world use cases.',
       category: 'Comparison',
       author: 'Rehman Farouq',
-      date: '2024-03-10',
+      date: getYesterdayDate(),
       readTime: '12 min',
       image: '/blog/flutter-react-native.jpg',
       tags: ['Flutter', 'React Native', 'Comparison', 'Mobile Dev']
@@ -37,18 +114,18 @@ const BlogSection = () => {
       excerpt: 'Curated list of must-have Flutter packages for state management, networking, UI, animations, and productivity boosters.',
       category: 'Flutter',
       author: 'Rehman Farouq',
-      date: '2024-03-05',
+      date: getYesterdayDate(),
       readTime: '10 min',
       image: '/blog/flutter-packages.jpg',
       tags: ['Flutter', 'Packages', 'Tools', 'Productivity']
     },
     {
       id: 'how-to-learn-flutter',
-      title: 'Complete Guide: How to Learn Flutter from Scratch in 2024',
+      title: 'Complete Guide: How to Learn Flutter from Scratch in 2026',
       excerpt: 'Step-by-step learning path for Flutter beginners including resources, projects, and best practices to master Flutter development.',
       category: 'Tutorial',
       author: 'Rehman Farouq',
-      date: '2024-02-28',
+      date: getYesterdayDate(),
       readTime: '18 min',
       image: '/blog/learn-flutter.jpg',
       tags: ['Flutter', 'Learning', 'Tutorial', 'Beginner']
@@ -59,7 +136,7 @@ const BlogSection = () => {
       excerpt: 'Learn how to create a professional portfolio website using Next.js, Tailwind CSS, and modern web development practices.',
       category: 'Tutorial',
       author: 'Rehman Farouq',
-      date: '2024-02-20',
+      date: getYesterdayDate(),
       readTime: '20 min',
       image: '/blog/nextjs-portfolio.jpg',
       tags: ['Next.js', 'Portfolio', 'Tutorial', 'Web Dev']
@@ -70,10 +147,46 @@ const BlogSection = () => {
       excerpt: 'In-depth comparison of popular Flutter state management solutions with examples and best practices for your apps.',
       category: 'Flutter',
       author: 'Rehman Farouq',
-      date: '2024-02-15',
+      date: getYesterdayDate(),
       readTime: '14 min',
       image: '/blog/state-management.jpg',
       tags: ['Flutter', 'State Management', 'BLoC', 'Provider', 'Riverpod']
+    },
+    {
+      id: 'javascript-es6-features',
+      title: 'JavaScript ES6+ Features 2026: Complete Modern JavaScript Guide',
+      excerpt: 'Master modern JavaScript development with ES6+ features including arrow functions, destructuring, async/await, and latest ES2020-ES2026 updates.',
+      category: 'Web Dev',
+      author: 'Rehman Farouq',
+      date: getYesterdayDate(),
+      readTime: '20 min',
+      image: '/blog/javascript-es6.jpg',
+      tags: ['JavaScript', 'ES6', 'ES2020', 'ES2026', 'Modern JavaScript', 'Async Await'],
+      featured: true
+    },
+    {
+      id: 'responsive-web-design-2026',
+      title: 'Responsive Web Design 2026: Complete Mobile-First Guide',
+      excerpt: 'Master responsive web design with mobile-first approach, CSS Grid, Flexbox, and modern techniques. Build websites that work perfectly on all devices.',
+      category: 'Web Dev',
+      author: 'Rehman Farouq',
+      date: getYesterdayDate(),
+      readTime: '18 min',
+      image: '/blog/responsive-design.jpg',
+      tags: ['Responsive Design', 'CSS Grid', 'Flexbox', 'Mobile First', 'CSS'],
+      featured: true
+    },
+    {
+      id: 'html5-css3-features',
+      title: 'HTML5 & CSS3 Features 2026: Complete Modern Web Standards Guide',
+      excerpt: 'Master modern HTML5 semantic elements and CSS3 advanced features including Grid, animations, custom properties, and cutting-edge web standards.',
+      category: 'Web Dev',
+      author: 'Rehman Farouq',
+      date: getYesterdayDate(),
+      readTime: '22 min',
+      image: '/blog/html5-css3.jpg',
+      tags: ['HTML5', 'CSS3', 'Semantic HTML', 'CSS Grid', 'Web Standards', 'Modern CSS'],
+      featured: true
     }
   ]
 

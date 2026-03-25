@@ -4,25 +4,33 @@ import Link from 'next/link'
 import Footer from '@/components/layout/Footer'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 
+// Get yesterday's date
+const getYesterdayDate = () => {
+  const yesterday = new Date()
+  yesterday.setDate(yesterday.getDate() - 1)
+  return yesterday.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+}
+
 export const metadata: Metadata = {
-  title: "How to Learn Flutter 2024 | Complete Flutter Tutorial for Beginners | Step-by-Step Guide",
-  description: "Comprehensive Flutter learning guide for beginners 2024. Master Flutter development with step-by-step tutorials, learning path, best practices, Dart programming, Flutter widgets, state management, app projects, and career resources. Become a Flutter developer from scratch.",
-  keywords: "how to learn Flutter 2024, Flutter tutorial for beginners, Flutter learning path, Flutter development guide, Dart programming tutorial, Flutter widgets tutorial, Flutter state management, Flutter app development, mobile app development tutorial, Flutter beginner guide, learn Flutter from scratch, Flutter developer course, Flutter programming basics, Flutter project ideas, Flutter career path",
+  title: "How to Learn Flutter 2026 | Complete Flutter Tutorial for Beginners | Step-by-Step Guide",
+  description: "Comprehensive Flutter learning guide for beginners 2026. Master Flutter development with step-by-step tutorials, learning path, best practices, Dart programming, Flutter widgets, state management, app projects, and career resources. Become a Flutter developer from scratch.",
+  keywords: "how to learn Flutter 2026, Flutter tutorial for beginners, Flutter learning path, Flutter development guide, Dart programming tutorial, Flutter widgets tutorial, Flutter state management, Flutter app development, mobile app development tutorial, Flutter beginner guide, learn Flutter from scratch, Flutter developer course, Flutter programming basics, Flutter project ideas, Flutter career path",
   openGraph: {
-    title: "How to Learn Flutter 2024 | Complete Flutter Tutorial for Beginners | Step-by-Step Guide",
-    description: "Comprehensive Flutter learning guide for beginners 2024. Master Flutter development with step-by-step tutorials, learning path, best practices, Dart programming, and Flutter widgets.",
+    title: "How to Learn Flutter 2026 | Complete Flutter Tutorial for Beginners | Step-by-Step Guide",
+    description: "Comprehensive Flutter learning guide for beginners 2026. Master Flutter development with step-by-step tutorials, learning path, best practices, Dart programming, and Flutter widgets.",
     url: "https://rehmanfarouq.site/blog/how-to-learn-flutter",
     type: "article",
     siteName: "Rehman Farouq Blog",
   },
   twitter: {
     card: "summary_large_image",
-    title: "How to Learn Flutter 2024 | Complete Flutter Tutorial for Beginners",
-    description: "Comprehensive Flutter learning guide for beginners 2024. Master Flutter development with step-by-step tutorials, learning path, and best practices.",
+    title: "How to Learn Flutter 2026 | Complete Flutter Tutorial for Beginners",
+    description: "Comprehensive Flutter learning guide for beginners 2026. Master Flutter development with step-by-step tutorials, learning path, and best practices.",
   },
 }
 
 export default function HowToLearnFlutterPage() {
+  const yesterdayDate = getYesterdayDate()
   return (
     <div className="min-h-screen bg-background dark:bg-gray-900 flex flex-col">
       {/* Navigation Header */}
@@ -57,7 +65,7 @@ export default function HowToLearnFlutterPage() {
                 </span>
                 <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-sm">
                   <Calendar size={14} />
-                  February 28, 2024
+                  {yesterdayDate}
                 </div>
                 <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-sm">
                   <Clock size={14} />
@@ -66,7 +74,7 @@ export default function HowToLearnFlutterPage() {
               </div>
               
               <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-                Complete Guide: How to Learn Flutter from Scratch in 2024
+                Complete Guide: How to Learn Flutter from Scratch in 2026
               </h1>
               
               <p className="text-xl text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
