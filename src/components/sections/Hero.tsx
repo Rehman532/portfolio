@@ -52,7 +52,7 @@ const Hero = () => {
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-lg opacity-50 group-hover:opacity-70 transition-opacity duration-300"></div>
                   <div className="relative w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 rounded-full overflow-hidden border-4 border-gray-200/50 dark:border-gray-800/50 shadow-2xl group-hover:scale-105 transition-transform duration-300">
                     <img 
-                      src="/images/profile-photo.jpeg" 
+                      src="/images/profile-photo.png" 
                       alt="REHMAN FAROUQ" 
                       className="w-full h-full object-cover"
                     />
