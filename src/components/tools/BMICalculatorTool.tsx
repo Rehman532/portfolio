@@ -6,7 +6,7 @@ import { Heart, Activity, TrendingUp, AlertCircle } from 'lucide-react'
 const BMICalculatorTool = () => {
   const [height, setHeight] = useState('')
   const [weight, setWeight] = useState('')
-  const [bmi, setBmi] = useState(null)
+  const [bmi, setBmi] = useState('')
   const [category, setCategory] = useState('')
 
   const calculateBMI = () => {
@@ -14,7 +14,7 @@ const BMICalculatorTool = () => {
     const weightInKg = parseFloat(weight)
 
     if (!heightInMeters || !weightInKg || heightInMeters <= 0 || weightInKg <= 0) {
-      setBmi(null)
+      setBmi('')
       setCategory('')
       return
     }
@@ -69,7 +69,7 @@ const BMICalculatorTool = () => {
         advice: 'Consult with a healthcare provider for a comprehensive weight management plan.'
       }
     }
-    return categories[cat] || categories.normal
+    return (categories as any)[cat] || categories.normal
   }
 
   const getIdealWeight = () => {
@@ -94,7 +94,7 @@ const BMICalculatorTool = () => {
   const clearAll = () => {
     setHeight('')
     setWeight('')
-    setBmi(null)
+    setBmi('')
     setCategory('')
   }
 
@@ -221,7 +221,7 @@ const BMICalculatorTool = () => {
               <h3 className="font-semibold text-gray-900 dark:text-white mb-3">Ideal Weight Range</h3>
               <div className="text-center">
                 <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">
-                  {getIdealWeight().min} - {getIdealWeight().max} kg
+                  {getIdealWeight()?.min || 'N/A'} - {getIdealWeight()?.max || 'N/A'} kg
                 </div>
                 <div className="text-sm text-gray-600 dark:text-gray-400 mt-2">
                   For your height of {height} cm

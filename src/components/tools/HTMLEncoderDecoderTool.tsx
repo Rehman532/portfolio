@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Globe, Copy, RefreshCw, Eye, EyeOff } from 'lucide-react'
 
 const HTMLEncoderDecoderTool = () => {
@@ -69,7 +69,7 @@ const HTMLEncoderDecoderTool = () => {
     'ω': '&omega;'
   }
 
-  const decodeHTML = (text) => {
+  const decodeHTML = (text: string) => {
     let decoded = text
     Object.entries(htmlEntities).forEach(([entity, code]) => {
       decoded = decoded.replace(new RegExp(code.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'), entity)
@@ -77,7 +77,7 @@ const HTMLEncoderDecoderTool = () => {
     return decoded
   }
 
-  const encodeHTML = (text) => {
+  const encodeHTML = (text: string) => {
     let encoded = text
     Object.entries(htmlEntities).forEach(([entity, code]) => {
       encoded = encoded.replace(new RegExp(entity.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'), code)
@@ -119,7 +119,7 @@ const HTMLEncoderDecoderTool = () => {
     }
   }
 
-  useState(() => {
+  useEffect(() => {
     processText()
   }, [inputText, mode])
 

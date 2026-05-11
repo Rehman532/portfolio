@@ -177,7 +177,7 @@ export default function RomanNumeralTool() {
       {/* Roman to Number Converter */}
       <div className="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg border border-green-200 dark:border-green-800">
         <h3 className="text-lg font-semibold text-green-900 dark:text-green-100 mb-4 flex items-center gap-2">
-          <ArrowRightRight size={20} />
+          <ArrowRightLeft size={20} />
           Roman Numeral to Number
         </h3>
         

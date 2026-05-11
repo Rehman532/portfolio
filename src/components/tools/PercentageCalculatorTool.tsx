@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Percent, Calculator, TrendingUp, TrendingDown } from 'lucide-react'
 
 const PercentageCalculatorTool = () => {
@@ -14,7 +14,7 @@ const PercentageCalculatorTool = () => {
   // Percentage change calculator
   const [fromValue, setFromValue] = useState('')
   const [toValue, setToValue] = useState('')
-  const [changeResult, setChangeResult] = useState('')
+  const [changeResult, setChangeResult] = useState<any>('')
 
   // Percentage increase/decrease
   const [originalValue, setOriginalValue] = useState('')
@@ -67,15 +67,15 @@ const PercentageCalculatorTool = () => {
   }
 
   // Auto-calculate on input change
-  useState(() => {
+  useEffect(() => {
     calculateBasic()
   }, [percentage, ofValue])
 
-  useState(() => {
+  useEffect(() => {
     calculateChange()
   }, [fromValue, toValue])
 
-  useState(() => {
+  useEffect(() => {
     calculateNewValue()
   }, [originalValue, percentChange])
 
