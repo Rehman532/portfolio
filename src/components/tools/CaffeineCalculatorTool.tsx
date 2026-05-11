@@ -87,13 +87,13 @@ export default function CaffeineCalculatorTool() {
       recommendations = ['Caffeine level is within safe limits', 'You can consume more if needed']
     } else if (totalCaffeine <= 200) {
       safeLevel = 'moderate'
-      recommendations = ['Moderate caffeine intake', 'Consider timing your consumption', 'Monitor for side effects'])
+      recommendations = ['Moderate caffeine intake', 'Consider timing your consumption', 'Monitor for side effects']
     } else if (totalCaffeine <= 400) {
       safeLevel = 'high'
-      recommendations = ['High caffeine intake - be cautious', 'Avoid additional caffeine today', 'Monitor for anxiety or sleep issues'])
+      recommendations = ['High caffeine intake - be cautious', 'Avoid additional caffeine today', 'Monitor for anxiety or sleep issues']
     } else {
       safeLevel = 'dangerous'
-      recommendations = ['Dangerous caffeine level - stop consumption', 'Seek medical attention if symptoms occur', 'Stay hydrated and rest'])
+      recommendations = ['Dangerous caffeine level - stop consumption', 'Seek medical attention if symptoms occur', 'Stay hydrated and rest']
     }
 
     // Calculate time to metabolize (average 5-6 hours to eliminate half)

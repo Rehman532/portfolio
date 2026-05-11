@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Globe, Tachometer, Copy, AlertTriangle, Check, RefreshCw } from 'lucide-react'
+import { Globe, Gauge, Copy, AlertTriangle, Check, RefreshCw } from 'lucide-react'
 
 interface SpeedMetrics {
   url: string
@@ -220,7 +220,7 @@ export default function WebsiteSpeedCheckerTool() {
             {isChecking ? (
               <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
             ) : (
-              <Tachometer size={16} />
+              <Gauge size={16} />
             )}
             {isChecking ? 'Checking...' : 'Check Speed'}
           </button>

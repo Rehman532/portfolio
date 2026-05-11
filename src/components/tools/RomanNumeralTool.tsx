@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { ArrowRightLeft, ArrowRightRight, Copy, History } from 'lucide-react'
+import { ArrowRightLeft, Copy, History } from 'lucide-react'
 
 const romanNumerals = [
   { value: 1000, numeral: 'M' },
