@@ -48,7 +48,7 @@ const AgeCalculatorTool = () => {
     }
 
     // Calculate total days, hours, minutes
-    const totalMilliseconds = current - birth
+    const totalMilliseconds = current.getTime() - birth.getTime()
     const totalDays = Math.floor(totalMilliseconds / (1000 * 60 * 60 * 24))
     const totalHours = Math.floor(totalMilliseconds / (1000 * 60 * 60))
     const totalMinutes = Math.floor(totalMilliseconds / (1000 * 60))
@@ -59,7 +59,7 @@ const AgeCalculatorTool = () => {
       nextBirth.setFullYear(current.getFullYear() + 1)
     }
     
-    const daysUntilBirthday = Math.floor((nextBirth - current) / (1000 * 60 * 60 * 24))
+    const daysUntilBirthday = Math.floor((nextBirth.getTime() - current.getTime()) / (1000 * 60 * 60 * 24))
 
     // Calculate zodiac sign
     const zodiacSign = getZodiacSign(birth.getDate(), birth.getMonth() + 1)
