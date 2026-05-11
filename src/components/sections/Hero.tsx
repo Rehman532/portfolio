@@ -46,21 +46,40 @@ const Hero = () => {
           {/* Row layout for Profile Photo and Main Content */}
           <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-12">
             {/* Left Column - Profile Photo */}
-            <FadeIn delay={300} direction="left" className="lg:sticky lg:top-1/2 lg:-translate-y-1/2">
-              <div className="flex justify-center lg:justify-start">
-                <div className="relative group">
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-lg opacity-50 group-hover:opacity-70 transition-opacity duration-300"></div>
-                  <div className="relative w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 rounded-full overflow-hidden border-4 border-gray-200/50 dark:border-gray-800/50 shadow-2xl group-hover:scale-105 transition-transform duration-300">
-                    <img 
-                      src="/images/profile-photo.png" 
-                      alt="REHMAN FAROUQ" 
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="absolute bottom-2 right-2 w-4 h-4 bg-green-400 rounded-full border-2 border-background dark:border-gray-900 animate-pulse"></div>
-                </div>
-              </div>
-            </FadeIn>
+           <FadeIn delay={300} direction="left" className="lg:sticky lg:top-1/2 lg:-translate-y-1/2">
+  <div className="flex justify-center lg:justify-start">
+    <div className="relative group">
+
+      {/* Glow Background */}
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-3xl blur-xl opacity-50 group-hover:opacity-70 transition-opacity duration-300"></div>
+
+      {/* Image Container */}
+      <div className="
+        relative 
+        w-56 h-72        /* mobile */
+        sm:w-64 sm:h-80  /* small tablets */
+        md:w-72 md:h-96  /* tablets */
+        lg:w-80 lg:h-[28rem] /* desktop */
+        rounded-3xl 
+        overflow-hidden 
+        border-4 border-gray-200/50 dark:border-gray-800/50 
+        shadow-2xl 
+        group-hover:scale-105 
+        transition-transform duration-300
+      ">
+        <img 
+          src="/images/profile-photo.png" 
+          alt="REHMAN FAROUQ" 
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      {/* Online Status */}
+      <div className="absolute bottom-4 right-4 w-5 h-5 bg-green-400 rounded-full border-2 border-white dark:border-gray-900 animate-pulse"></div>
+
+    </div>
+  </div>
+</FadeIn>
 
             {/* Right Column - Main Content */}
             <div className="flex-1 text-center lg:text-left mt-25">
@@ -91,13 +110,12 @@ const Hero = () => {
                 </h2>
               </FadeIn>
               
-              {/* Enhanced description */}
-              <FadeIn delay={800} direction="up">
-                <div className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-600 dark:text-gray-400 mb-6 sm:mb-8 md:mb-12 max-w-3xl mx-auto lg:mx-0 leading-relaxed px-2 sm:px-4">
-                  <AnimatedText text="Results-driven Full Stack Developer specializing in building scalable mobile and web applications. Skilled in Flutter, Dart, Next.js, and modern UI/UX development with a strong focus on performance, clean architecture, and seamless user experiences." delay={50} />
-                </div>
-              </FadeIn>
-              
+{/* Enhanced description */}
+<FadeIn direction="up">
+  <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-600 dark:text-gray-400 mb-6 sm:mb-8 md:mb-12 max-w-3xl mx-auto lg:mx-0 leading-relaxed px-2 sm:px-4">
+    I'm a self-driven Full Stack Developer with extensive hands-on experience delivering production-ready mobile and web applications. I've worked with startups and established tech firms, engineering cross-platform Flutter apps and high-performance Next.js platforms that are live on the Google Play Store. My expertise spans the entire development lifecycle — from UI/UX design and API integration to deployment, debugging, and performance optimization. I bring clean architecture, sharp problem-solving, and a relentless commitment to quality, ensuring every product feels smooth, intuitive, and user-focused.
+  </p>
+</FadeIn>
               {/* Enhanced CTA buttons */}
               <FadeIn delay={1000} direction="up">
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 justify-center lg:justify-start mb-8 sm:mb-12 md:mb-16">

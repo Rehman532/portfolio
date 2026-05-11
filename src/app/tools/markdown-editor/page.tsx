@@ -1,20 +1,15 @@
 import { Metadata } from 'next'
-import MarkdownEditorTool from '@/components/tools/MarkdownEditorTool'
 import { ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
 import Footer from '@/components/layout/Footer'
+import AnimatedSection from '@/components/ui/AnimatedSection'
+import ToolSEO from '@/components/seo/ToolSEO'
+import { generateToolSEO } from '@/utils/seo-generator'
+import MarkdownEditorTool from '@/components/tools/MarkdownEditorTool'
 
-export const metadata: Metadata = {
-  title: "Markdown Editor Tool | Rehman Farouq Portfolio",
-  description: "Write and preview markdown with live rendering. Export to HTML, download as files, and use toolbar shortcuts for formatting.",
-  openGraph: {
-    title: "Markdown Editor Tool | Rehman Farouq Portfolio",
-    description: "Write and preview markdown with live rendering. Export to HTML, download as files, and use toolbar shortcuts for formatting.",
-    url: "https://rehmanfarouq.site/tools/markdown-editor",
-  },
-}
+export const metadata: Metadata = generateToolSEO('markdown-editor', 'Markdown Editor Tool')
 
-export default function MarkdownEditorPage() {
+export default function MarkdownEditorToolPage() {
   return (
     <div className="min-h-screen bg-background dark:bg-gray-900 flex flex-col">
       {/* Navigation Header */}
@@ -31,7 +26,7 @@ export default function MarkdownEditorPage() {
             <div className="flex items-center gap-2">
               <span className="text-sm text-gray-500 dark:text-gray-400">Developer Tools</span>
               <span className="text-gray-300 dark:text-gray-600">|</span>
-              <span className="text-sm font-medium text-teal-600 dark:text-teal-400">Markdown Editor</span>
+              <span className="text-sm font-medium text-blue-600 dark:text-blue-400">Markdown Editor Tool</span>
             </div>
           </div>
         </div>
@@ -39,11 +34,24 @@ export default function MarkdownEditorPage() {
 
       {/* Main Content */}
       <main className="flex-grow">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-xl border border-gray-200/50 dark:border-gray-700/50 rounded-3xl p-8 shadow-2xl ring-4 ring-white/10">
-            <MarkdownEditorTool />
+        <AnimatedSection delay={200}>
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-xl border border-gray-200/50 dark:border-gray-700/50 rounded-3xl p-8 shadow-2xl ring-4 ring-white/10">
+              <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+                Free Markdown Editor Tool Online - Professional Tool
+              </h1>
+              <ToolSEO 
+                toolId="markdown-editor" 
+                toolName="Markdown Editor Tool" 
+                toolDescription="Professional markdown editor tool tool for accurate and fast results."
+                useCases={['for professionals', 'for developers', 'for students', 'for business', 'for personal use']}
+              />
+              <div className="mt-8">
+                <MarkdownEditorTool />
+              </div>
+            </div>
           </div>
-        </div>
+        </AnimatedSection>
       </main>
 
       {/* Footer */}

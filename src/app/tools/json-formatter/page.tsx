@@ -1,28 +1,15 @@
 import { Metadata } from 'next'
-import JSONFormatterTool from '@/components/tools/JSONFormatterTool'
 import { ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
 import Footer from '@/components/layout/Footer'
+import AnimatedSection from '@/components/ui/AnimatedSection'
+import ToolSEO from '@/components/seo/ToolSEO'
+import { generateToolSEO } from '@/utils/seo-generator'
+import JSONFormatterTool from '@/components/tools/JSONFormatterTool'
 
-export const metadata: Metadata = {
-  title: "Free JSON Formatter Online | JSON Validator, Beautifier & Minifier Tool | Pretty Print JSON",
-  description: "Format, validate, and beautify JSON code instantly. Free online JSON formatter with syntax highlighting, error validation, minify/pretty print options, and downloadable results. Perfect for API debugging and data formatting.",
-  keywords: "JSON formatter online, JSON validator, JSON beautifier, JSON minifier, pretty print JSON, format JSON tool, JSON syntax checker, online JSON formatter, JSON parser, JSON viewer, JSON prettifier, validate JSON online, minify JSON, beautify JSON, JSON formatter with validation, API JSON formatter",
-  openGraph: {
-    title: "Free JSON Formatter Online | JSON Validator, Beautifier & Minifier Tool | Pretty Print JSON",
-    description: "Format, validate, and beautify JSON code instantly. Free online JSON formatter with syntax highlighting, error validation, minify/pretty print options, and downloads.",
-    url: "https://rehmanfarouq.site/tools/json-formatter",
-    type: "website",
-    siteName: "Rehman Farouq Developer Tools",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Free JSON Formatter Online | JSON Validator, Beautifier & Minifier",
-    description: "Format, validate, and beautify JSON code instantly. Free online JSON formatter with syntax highlighting, error validation, and minify/pretty print options.",
-  },
-}
+export const metadata: Metadata = generateToolSEO('json-formatter', 'J S O N Formatter Tool')
 
-export default function JSONFormatterPage() {
+export default function JSONFormatterToolPage() {
   return (
     <div className="min-h-screen bg-background dark:bg-gray-900 flex flex-col">
       {/* Navigation Header */}
@@ -30,7 +17,7 @@ export default function JSONFormatterPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link 
-              href="/#tools"
+              href="/tools"
               className="flex items-center gap-3 text-gray-600 dark:text-gray-300 hover:text-foreground dark:hover:text-white transition-colors duration-200"
             >
               <ArrowLeft size={20} />
@@ -39,7 +26,7 @@ export default function JSONFormatterPage() {
             <div className="flex items-center gap-2">
               <span className="text-sm text-gray-500 dark:text-gray-400">Developer Tools</span>
               <span className="text-gray-300 dark:text-gray-600">|</span>
-              <span className="text-sm font-medium text-indigo-600 dark:text-indigo-400">JSON Formatter</span>
+              <span className="text-sm font-medium text-blue-600 dark:text-blue-400">J S O N Formatter Tool</span>
             </div>
           </div>
         </div>
@@ -47,11 +34,24 @@ export default function JSONFormatterPage() {
 
       {/* Main Content */}
       <main className="flex-grow">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-xl border border-gray-200/50 dark:border-gray-700/50 rounded-3xl p-8 shadow-2xl ring-4 ring-white/10">
-            <JSONFormatterTool />
+        <AnimatedSection delay={200}>
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-xl border border-gray-200/50 dark:border-gray-700/50 rounded-3xl p-8 shadow-2xl ring-4 ring-white/10">
+              <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+                Free J S O N Formatter Tool Online - Professional Tool
+              </h1>
+              <ToolSEO 
+                toolId="json-formatter" 
+                toolName="J S O N Formatter Tool" 
+                toolDescription="Professional j s o n formatter tool tool for accurate and fast results."
+                useCases={['for professionals', 'for developers', 'for students', 'for business', 'for personal use']}
+              />
+              <div className="mt-8">
+                <JSONFormatterTool />
+              </div>
+            </div>
           </div>
-        </div>
+        </AnimatedSection>
       </main>
 
       {/* Footer */}

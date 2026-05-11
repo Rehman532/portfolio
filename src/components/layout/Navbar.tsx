@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Sparkles } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
@@ -12,7 +12,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
+      setScrolled(window.scrollY > 20)
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
@@ -27,75 +27,102 @@ const Navbar = () => {
     { label: 'Tools', href: '/tools' },
     { label: 'Blog', href: '/blog' },
     { label: 'Testimonials', href: '/testimonials' },
-    { label: 'Certifications', href: '/certifications' },
-    { label: 'Contact', href: '/contact' }
+    // { label: 'Contact', href: '/contact' }
   ]
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href)
-    element?.scrollIntoView({ behavior: 'smooth' })
-    setIsOpen(false)
-  }
-
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-      scrolled ? 'bg-background/90 dark:bg-gray-900/90 backdrop-blur-xl shadow-2xl border-b border-gray-200/50 dark:border-gray-800/50' : 'bg-transparent'
-    }`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex-shrink-0">
-              <Link href="/" className="text-foreground dark:text-white text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">RF</Link>
+    <nav
+      className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl mx-auto rounded-2xl transition-all duration-500 ${
+        scrolled
+          ? 'bg-white/60 dark:bg-gray-900/60 backdrop-blur-2xl shadow-2xl shadow-blue-500/5 border border-white/20 dark:border-gray-800/50'
+          : 'bg-white/20 dark:bg-gray-900/20 backdrop-blur-xl shadow-lg shadow-black/5 border border-transparent'
+      }`}
+    >
+      <div className="px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          
+          {/* Logo - glowing circle + initials */}
+          <Link href="/" className="flex items-center gap-2 group">
+            <div className="w-9 h-9 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-blue-500/25 group-hover:shadow-blue-500/40 transition-shadow">
+              RF
             </div>
+            <span className="font-semibold text-gray-800 dark:text-white hidden sm:inline group-hover:text-blue-600 dark:group-hover:text-blue-400 transition">
+              Rehman Farouq
+            </span>
+          </Link>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-4 sm:space-x-8">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.label}
-                    href={item.href}
-                    className={`text-gray-600 dark:text-gray-300 hover:text-foreground dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:bg-white/10 dark:hover:bg-white/10 hover:scale-105 ${
-                      pathname === item.href ? 'text-foreground dark:text-white bg-white/10 dark:bg-white/10' : ''
-                    }`}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* Mobile menu button */}
-            <div className="md:hidden">
-              <button
-                onClick={() => setIsOpen(!isOpen)}
-                className="inline-flex items-center justify-center p-2 rounded-md text-gray-500 dark:text-gray-400 hover:text-foreground dark:hover:text-white hover:bg-white/10 dark:hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white transition-all duration-300"
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center gap-1">
+            {navItems.map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                className={`relative px-3 py-2 text-sm font-medium rounded-xl transition-all duration-300 ${
+                  pathname === item.href
+                    ? 'text-white dark:text-white bg-blue-500 shadow-lg shadow-blue-500/30'
+                    : 'text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100/80 dark:hover:bg-gray-800/80'
+                }`}
               >
-                {isOpen ? <X size={24} /> : <Menu size={24} />}
-              </button>
-            </div>
+                {item.label}
+                {/* Inactive underline animation */}
+                {pathname !== item.href && (
+                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-blue-500 rounded-full transition-all duration-300 group-hover:w-3/4 opacity-0 group-hover:opacity-100"></span>
+                )}
+              </Link>
+            ))}
+            
+            {/* CTA Button */}
+            <Link
+              href="/contact"
+              className="ml-3 px-5 py-2.5 text-sm font-semibold rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 hover:scale-105 transition-all duration-300 flex items-center gap-2"
+            >
+              <Sparkles size={16} />
+              Let&apos;s Talk
+            </Link>
           </div>
 
-          {/* Mobile Navigation */}
-          {isOpen && (
-            <div className="md:hidden">
-              <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-background/95 dark:bg-gray-900/95 backdrop-blur-xl rounded-lg mt-2 border border-gray-200/50 dark:border-gray-700/50">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.label}
-                    href={item.href}
-                    className={`text-gray-600 dark:text-gray-300 hover:text-foreground dark:hover:text-white block px-3 py-3 text-base font-medium w-full text-left transition-all duration-300 hover:bg-white/10 dark:hover:bg-white/10 rounded-lg hover:translate-x-1 ${
-                      pathname === item.href ? 'text-foreground dark:text-white bg-white/10 dark:bg-white/10' : ''
-                    }`}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          )}
+          {/* Mobile Button */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
         </div>
-      </nav>
+
+        {/* Mobile Menu - smooth dropdown */}
+        <div
+          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+            isOpen ? 'max-h-[500px] opacity-100 pb-4' : 'max-h-0 opacity-0'
+          }`}
+        >
+          <div className="rounded-2xl bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl border border-gray-200/50 dark:border-gray-800/50 p-2 space-y-1">
+            {navItems.map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                onClick={() => setIsOpen(false)}
+                className={`block px-4 py-2.5 rounded-xl text-sm font-medium transition-all ${
+                  pathname === item.href
+                    ? 'bg-blue-500 text-white shadow-md shadow-blue-500/20'
+                    : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
+                }`}
+              >
+                {item.label}
+              </Link>
+            ))}
+            <Link
+              href="/contact"
+              onClick={() => setIsOpen(false)}
+              className="block px-4 py-2.5 mt-2 rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 text-white text-sm font-semibold text-center shadow-lg shadow-purple-500/20"
+            >
+              Let&apos;s Talk
+            </Link>
+          </div>
+        </div>
+      </div>
+    </nav>
   )
 }
 

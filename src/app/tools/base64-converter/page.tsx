@@ -1,20 +1,15 @@
 import { Metadata } from 'next'
-import Base64ConverterTool from '@/components/tools/Base64ConverterTool'
 import { ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
 import Footer from '@/components/layout/Footer'
+import AnimatedSection from '@/components/ui/AnimatedSection'
+import ToolSEO from '@/components/seo/ToolSEO'
+import { generateToolSEO } from '@/utils/seo-generator'
+import Base64ConverterTool from '@/components/tools/Base64ConverterTool'
 
-export const metadata: Metadata = {
-  title: "Base64 Converter Tool | Rehman Farouq Portfolio",
-  description: "Encode and decode text to/from Base64 format. Upload files, convert bidirectional, and download results instantly.",
-  openGraph: {
-    title: "Base64 Converter Tool | Rehman Farouq Portfolio",
-    description: "Encode and decode text to/from Base64 format. Upload files, convert bidirectional, and download results instantly.",
-    url: "https://rehmanfarouq.site/tools/base64-converter",
-  },
-}
+export const metadata: Metadata = generateToolSEO('base64-converter', 'Base64 Converter Tool')
 
-export default function Base64ConverterPage() {
+export default function Base64ConverterToolPage() {
   return (
     <div className="min-h-screen bg-background dark:bg-gray-900 flex flex-col">
       {/* Navigation Header */}
@@ -31,7 +26,7 @@ export default function Base64ConverterPage() {
             <div className="flex items-center gap-2">
               <span className="text-sm text-gray-500 dark:text-gray-400">Developer Tools</span>
               <span className="text-gray-300 dark:text-gray-600">|</span>
-              <span className="text-sm font-medium text-indigo-600 dark:text-indigo-400">Base64 Converter</span>
+              <span className="text-sm font-medium text-blue-600 dark:text-blue-400">Base64 Converter Tool</span>
             </div>
           </div>
         </div>
@@ -39,11 +34,24 @@ export default function Base64ConverterPage() {
 
       {/* Main Content */}
       <main className="flex-grow">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-xl border border-gray-200/50 dark:border-gray-700/50 rounded-3xl p-8 shadow-2xl ring-4 ring-white/10">
-            <Base64ConverterTool />
+        <AnimatedSection delay={200}>
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-xl border border-gray-200/50 dark:border-gray-700/50 rounded-3xl p-8 shadow-2xl ring-4 ring-white/10">
+              <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+                Free Base64 Converter Tool Online - Professional Tool
+              </h1>
+              <ToolSEO 
+                toolId="base64-converter" 
+                toolName="Base64 Converter Tool" 
+                toolDescription="Professional base64 converter tool tool for accurate and fast results."
+                useCases={['for professionals', 'for developers', 'for students', 'for business', 'for personal use']}
+              />
+              <div className="mt-8">
+                <Base64ConverterTool />
+              </div>
+            </div>
           </div>
-        </div>
+        </AnimatedSection>
       </main>
 
       {/* Footer */}

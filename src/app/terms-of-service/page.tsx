@@ -89,21 +89,21 @@ export default function TermsOfService() {
               </div>
               <div className="prose prose-gray dark:prose-invert max-w-none">
                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                  Our Service provides:
+                  Our Service provides the following portfolio and development services:
                 </p>
                 <ul className="mt-4 space-y-3">
                   <li className="flex items-start gap-3">
                     <span className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></span>
                     <div>
                       <strong className="text-gray-900 dark:text-white">Portfolio Showcase:</strong>
-                      <span className="text-gray-600 dark:text-gray-400"> Display of professional work, projects, and skills.</span>
+                      <span className="text-gray-600 dark:text-gray-400"> Display of Flutter and Next.js projects, professional experience, and technical skills.</span>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></span>
                     <div>
                       <strong className="text-gray-900 dark:text-white">Developer Tools:</strong>
-                      <span className="text-gray-600 dark:text-gray-400"> Free-to-use utility tools for developers.</span>
+                      <span className="text-gray-600 dark:text-gray-400"> 49+ free-to-use utility tools including text converters, calculators, validators, generators, and more.</span>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
@@ -117,7 +117,7 @@ export default function TermsOfService() {
                     <span className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></span>
                     <div>
                       <strong className="text-gray-900 dark:text-white">Contact Form:</strong>
-                      <span className="text-gray-600 dark:text-gray-400"> Communication channel for professional inquiries.</span>
+                      <span className="text-gray-600 dark:text-gray-400"> Secure contact form powered by Formspree for professional inquiries and project collaborations.</span>
                     </div>
                   </li>
                 </ul>
@@ -194,11 +194,44 @@ export default function TermsOfService() {
               </div>
             </section>
 
-            {/* User-Generated Content */}
+            {/* Developer Tools Usage */}
             <section>
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 bg-indigo-100 dark:bg-indigo-900 rounded-xl flex items-center justify-center">
                   <Users className="text-indigo-600 dark:text-indigo-400" size={24} />
+                </div>
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Developer Tools Usage</h2>
+              </div>
+              <div className="prose prose-gray dark:prose-invert max-w-none">
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                  Our 49+ developer and utility tools are provided free of charge with the following terms:
+                </p>
+                <div className="bg-indigo-50 dark:bg-indigo-900/20 rounded-lg p-4 mt-4">
+                  <h4 className="font-semibold text-indigo-800 dark:text-indigo-200 mb-3">Tool Usage Guidelines:</h4>
+                  <ul className="space-y-2 text-indigo-700 dark:text-indigo-300">
+                    <li>• All tools process data entirely in your browser (client-side)</li>
+                    <li>• No data is stored, tracked, or transmitted to our servers</li>
+                    <li>• Tools are provided "as is" without warranties</li>
+                    <li>• Not responsible for data loss or calculation errors</li>
+                    <li>• Commercial use permitted with attribution</li>
+                    <li>• No redistribution or resale of tool functionality</li>
+                  </ul>
+                </div>
+                <div className="bg-yellow-50 dark:bg-yellow-900/20 rounded-lg p-4 mt-4">
+                  <h4 className="font-semibold text-yellow-800 dark:text-yellow-200 mb-2">Disclaimer:</h4>
+                  <p className="text-yellow-700 dark:text-yellow-300 text-sm">
+                    While our tools are designed for accuracy, users should verify critical calculations and data. 
+                    We are not liable for decisions made based on tool outputs.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            {/* User-Generated Content */}
+            <section>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-xl flex items-center justify-center">
+                  <Users className="text-purple-600 dark:text-purple-400" size={24} />
                 </div>
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white">User-Generated Content</h2>
               </div>
@@ -307,10 +340,13 @@ export default function TermsOfService() {
               </div>
               <div className="prose prose-gray dark:prose-invert max-w-none">
                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                  These Terms shall be interpreted and governed by the laws of the jurisdiction in which our servers are located, without regard to conflict of law provisions.
+                  <strong>Governing Law:</strong> These Terms shall be interpreted and governed by the laws of Pakistan, where our business is established. Our servers are located in the United States, and these Terms shall be interpreted in accordance with applicable federal and state laws of the United States, without regard to conflict of law provisions.
                 </p>
                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed mt-4">
-                  Any disputes arising from these Terms will be resolved in the appropriate courts of that jurisdiction.
+                  <strong>Dispute Resolution:</strong> Any disputes arising from these Terms shall be resolved through amicable negotiations. If a resolution cannot be reached, disputes shall be resolved in the appropriate courts of Pakistan, with preference for alternative dispute resolution methods including mediation and arbitration.
+                </p>
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed mt-4">
+                  <strong>Service Availability:</strong> We reserve the right to modify, suspend, or discontinue the Service at any time without prior notice. We are not liable for any modifications, suspensions, or discontinuations of the Service.
                 </p>
               </div>
             </section>

@@ -5,20 +5,24 @@ import { ExternalLink } from 'lucide-react'
 const Projects = () => {
   const projects = [
     {
-  title: 'Binomical',
-  description: 'Your AI-Powered Partner for Automated Business Processes. From data to insights to automation powered by AI using optimized design. Specializing in Salesforce implementation and intelligent workflow automation.',
-  techStack: ['Flutter', 'Next.js', 'AI/ML','React', 'TypeScript', 'Tailwind CSS', 'Blockchain', 'Cloud Computing', ],
-  liveDemo: 'https://binomical.com',
-  featured: true,
-  gradient: 'from-blue-500 to-cyan-500'
-},
+      title: 'Binomical',
+      description: 'Your AI-Powered Partner for Automated Business Processes. From data to insights to automation powered by AI using optimized design. Specializing in Salesforce implementation and intelligent workflow automation.',
+      techStack: ['Flutter', 'Next.js', 'AI/ML','React', 'TypeScript', 'Tailwind CSS', 'Blockchain', 'Cloud Computing', ],
+      liveDemo: 'https://binomical.com',
+      featured: true,
+      gradient: 'from-blue-500 to-cyan-500',
+      projectType: 'AI-Powered Business Automation',
+      client: 'Binomical Inc.'
+    },
     {
       title: 'GIGSTRAP',
       description: 'Gigstrap is an AI-powered service marketplace that connects users with service providers instantly through intelligent matching. It combines blockchain technology for secure transactions with features like multi-role access, Gigtoken rewards, and enterprise workforce management tools.',
       techStack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'AI/ML', 'Blockchain', 'Cloud Computing', 'Flutter'],
       liveDemo: 'https://gigstrap.com',
       featured: false,
-      gradient: 'from-purple-500 to-pink-500'
+      gradient: 'from-purple-500 to-pink-500',
+      projectType: 'Service Marketplace',
+      client: 'GIGSTRAP Technologies'
     },
     {
       title: 'SaraaKuch - Beauty & Lifestyle E-Commerce ',
@@ -26,16 +30,20 @@ const Projects = () => {
       techStack: ['Flutter', 'Firebase', 'Next.js', 'React', 'Node.js', 'MongoDB'],
       liveDemo: '',
       featured: false,
-      gradient: 'from-green-500 to-teal-500'
+      gradient: 'from-green-500 to-teal-500',
+      projectType: 'E-Commerce Platform',
+      client: 'SaraaKuch Store'
     },
     {
-  title: 'GleamHR - AI-Powered HR Management',
-  description: 'Comprehensive cloud-based HR platform with AI-assisted recruitment, employee onboarding, time tracking, payroll processing, and performance reviews. Features face attendance, asset tracking, custom workflows, Pumble integration, and real-time analytics for data-driven HR decisions.',
-  techStack: ['Flutter', 'Next.js', 'PostgreSQL', 'Redis', 'AI/ML', 'Node.js'],
-  liveDemo: 'https://play.google.com/store/apps/details?id=com.glowlogix.gleamhr&hl=en',
-  featured: false,
-  gradient: 'from-blue-500 to-teal-500'
-},
+      title: 'GleamHR - AI-Powered HR Management',
+      description: 'Comprehensive cloud-based HR platform with AI-assisted recruitment, employee onboarding, time tracking, payroll processing, and performance reviews. Features face attendance, asset tracking, custom workflows, Pumble integration, and real-time analytics for data-driven HR decisions.',
+      techStack: ['Flutter', 'Next.js', 'PostgreSQL', 'Redis', 'AI/ML', 'Node.js'],
+      liveDemo: 'https://play.google.com/store/apps/details?id=com.glowlogix.gleamhr&hl=en',
+      featured: false,
+      gradient: 'from-blue-500 to-teal-500',
+      projectType: 'HR Management System',
+      client: 'Glowlogix'
+    },
   ]
 
   return (
@@ -65,12 +73,17 @@ const Projects = () => {
                 project.featured ? 'ring-2 ring-blue-500/50' : ''
               }`}
             >
-              {/* Featured badge */}
-              {project.featured && (
-                <div className="absolute top-4 right-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1">
-                  <span>Featured</span>
-                </div>
-              )}
+              {/* Top badges: project type (left) and featured (right) */}
+              <div className="flex justify-between items-start mb-4">
+                <span className="bg-gray-700/60 backdrop-blur-sm text-gray-300 text-xs font-medium px-3 py-1 rounded-full">
+                  {project.projectType}
+                </span>
+                {project.featured && (
+                  <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-white text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1">
+                    Featured
+                  </span>
+                )}
+              </div>
 
               {/* Project header */}
               <div className="mb-6">
@@ -79,6 +92,9 @@ const Projects = () => {
                 </h3>
                 <p className="text-gray-300 leading-relaxed text-lg">
                   {project.description}
+                </p>
+                <p className="text-gray-400 text-sm mt-3 flex items-center gap-2">
+                  <span>👤</span> {project.client}
                 </p>
               </div>
               
@@ -100,7 +116,9 @@ const Projects = () => {
                   href={project.liveDemo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-2 text-blue-400 hover:text-blue-300 font-medium transition-all duration-300 hover:bg-blue-600/10 px-4 py-2 rounded-lg"
+                  className={`group flex items-center gap-2 text-blue-400 hover:text-blue-300 font-medium transition-all duration-300 hover:bg-blue-600/10 px-4 py-2 rounded-lg ${
+                    !project.liveDemo ? 'pointer-events-none opacity-50' : ''
+                  }`}
                 >
                   <ExternalLink size={16} className="group-hover:translate-x-1 transition-transform" />
                   <span>Live Demo</span>

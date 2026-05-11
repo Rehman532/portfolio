@@ -77,53 +77,17 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Essential Links */}
           <div>
-            <h4 className="text-xl font-semibold text-white mb-6">Quick Links</h4>
+            <h4 className="text-xl font-semibold text-white mb-6">Essential Links</h4>
             <ul className="space-y-3">
               <li>
                 <Link
-                  href={getHomeLink()}
+                  href="/blog"
                   className="group text-gray-400 hover:text-white transition-all duration-300 flex items-center gap-2 hover:translate-x-1"
                 >
                   <span className="w-0 h-0.5 bg-blue-400 group-hover:w-4 transition-all duration-300"></span>
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={getDirectLink('about')}
-                  className="group text-gray-400 hover:text-white transition-all duration-300 flex items-center gap-2 hover:translate-x-1"
-                >
-                  <span className="w-0 h-0.5 bg-blue-400 group-hover:w-4 transition-all duration-300"></span>
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={getDirectLink('experience')}
-                  className="group text-gray-400 hover:text-white transition-all duration-300 flex items-center gap-2 hover:translate-x-1"
-                >
-                  <span className="w-0 h-0.5 bg-blue-400 group-hover:w-4 transition-all duration-300"></span>
-                  Experience
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={getDirectLink('projects')}
-                  className="group text-gray-400 hover:text-white transition-all duration-300 flex items-center gap-2 hover:translate-x-1"
-                >
-                  <span className="w-0 h-0.5 bg-blue-400 group-hover:w-4 transition-all duration-300"></span>
-                  Projects
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={getDirectLink('skills')}
-                  className="group text-gray-400 hover:text-white transition-all duration-300 flex items-center gap-2 hover:translate-x-1"
-                >
-                  <span className="w-0 h-0.5 bg-blue-400 group-hover:w-4 transition-all duration-300"></span>
-                  Skills
+                  Blog & Tutorials
                 </Link>
               </li>
               <li>
@@ -132,43 +96,16 @@ const Footer = () => {
                   className="group text-gray-400 hover:text-white transition-all duration-300 flex items-center gap-2 hover:translate-x-1"
                 >
                   <span className="w-0 h-0.5 bg-blue-400 group-hover:w-4 transition-all duration-300"></span>
-                  Tools
+                  Developer Tools
                 </Link>
               </li>
               <li>
                 <Link
-                  href={getDirectLink('blog')}
+                  href="/contact"
                   className="group text-gray-400 hover:text-white transition-all duration-300 flex items-center gap-2 hover:translate-x-1"
                 >
                   <span className="w-0 h-0.5 bg-blue-400 group-hover:w-4 transition-all duration-300"></span>
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={getDirectLink('testimonials')}
-                  className="group text-gray-400 hover:text-white transition-all duration-300 flex items-center gap-2 hover:translate-x-1"
-                >
-                  <span className="w-0 h-0.5 bg-blue-400 group-hover:w-4 transition-all duration-300"></span>
-                  Testimonials
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={getDirectLink('certifications')}
-                  className="group text-gray-400 hover:text-white transition-all duration-300 flex items-center gap-2 hover:translate-x-1"
-                >
-                  <span className="w-0 h-0.5 bg-blue-400 group-hover:w-4 transition-all duration-300"></span>
-                  Certifications
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={getDirectLink('contact')}
-                  className="group text-gray-400 hover:text-white transition-all duration-300 flex items-center gap-2 hover:translate-x-1"
-                >
-                  <span className="w-0 h-0.5 bg-blue-400 group-hover:w-4 transition-all duration-300"></span>
-                  Contact
+                  Get In Touch
                 </Link>
               </li>
             </ul>
