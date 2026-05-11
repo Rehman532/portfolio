@@ -115,7 +115,7 @@ export default function ASCIIArtTool() {
     const chars = upperText.split('')
     
     chars.forEach(char => {
-      const charArt = font[char] || font[' ']
+      const charArt = (font as any)[char] || (font as any)[' ']
       const charLines = charArt.split('\n')
       
       for (let i = 0; i < 5; i++) {
