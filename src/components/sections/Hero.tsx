@@ -54,19 +54,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-3xl blur-xl opacity-50 group-hover:opacity-70 transition-opacity duration-300"></div>
 
       {/* Image Container */}
-      <div className="
-        relative 
-        w-56 h-72        /* mobile */
-        sm:w-64 sm:h-80  /* small tablets */
-        md:w-72 md:h-96  /* tablets */
-        lg:w-80 lg:h-[28rem] /* desktop */
-        rounded-3xl 
-        overflow-hidden 
-        border-4 border-gray-200/50 dark:border-gray-800/50 
-        shadow-2xl 
-        group-hover:scale-105 
-        transition-transform duration-300
-      ">
+      <div className="relative w-56 h-72 sm:w-64 sm:h-80 md:w-72 md:h-96 lg:w-80 lg:h-[28rem] rounded-3xl overflow-hidden border-4 border-gray-200/50 dark:border-gray-800/50 shadow-2xl group-hover:scale-105 transition-transform duration-300">
         <img 
           src="/images/profile-photo.png" 
           alt="REHMAN FAROUQ" 
@@ -82,7 +70,7 @@ const Hero = () => {
 </FadeIn>
 
             {/* Right Column - Main Content */}
-            <div className="flex-1 text-center lg:text-left mt-25">
+            <div className="flex-1 text-center lg:text-left mt-24">
               {/* Badge */}
               <FadeIn delay={200} direction="down">
                 <div className="inline-flex items-center gap-2 bg-blue-600/10 dark:bg-blue-600/20 backdrop-blur-sm border border-blue-500/30 dark:border-blue-500/30 rounded-full px-3 sm:px-4 py-2 mb-6 sm:mb-8 hover:scale-105 transition-transform duration-300">

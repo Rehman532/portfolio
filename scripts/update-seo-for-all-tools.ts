@@ -1,67 +1,7 @@
-#!/usr/bin/env ts-node
+import type { Metadata } from 'next'
 
-import fs from 'fs'
-import path from 'path'
-import { fileURLToPath } from 'url'
-
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
-
-// List of all tool pages
-const tools = [
-  'text-converter',
-  'password-generator',
-  'qr-generator',
-  'image-resize',
-  'json-formatter',
-  'color-converter',
-  'time-converter',
-  'url-shortener',
-  'base64-converter',
-  'unit-converter',
-  'markdown-editor',
-  'hash-generator',
-  'wifi-password-generator',
-  'css-minifier',
-  'html-encoder-decoder',
-  'json-to-csv',
-  'email-validator',
-  'age-calculator',
-  'bmi-calculator',
-  'tip-calculator',
-  'discount-calculator',
-  'fuel-cost-calculator',
-  'recipe-scaler',
-  'sleep-calculator',
-  'water-intake',
-  'calorie-calculator',
-  'phone-number-formatter',
-  'word-counter',
-  'calorie-burner',
-  'pregnancy-calculator',
-  'caffeine-calculator',
-  'grade-calculator',
-  'random-generator',
-  'timezone-converter',
-  'roman-numeral',
-  'ascii-art',
-  'password-strength',
-  'text-statistics',
-  'unit-converter-pro',
-  'file-converter',
-  'project-cost-estimator',
-  'color-palette-pro',
-  'app-vs-website',
-  'website-speed-checker',
-  'roi-calculator',
-  'credit-card-validator',
-  'loan-calculator',
-  'percentage-calculator',
-  'lorem-ipsum'
-]
-
-// Tool names (capitalized)
-const toolNames = {
+// ─── Proper display names ─────────────────────────────────────────────────────
+const TOOL_DISPLAY_NAMES: Record<string, string> = {
   'text-converter': 'Text Converter',
   'password-generator': 'Password Generator',
   'qr-generator': 'QR Code Generator',
@@ -76,7 +16,7 @@ const toolNames = {
   'hash-generator': 'Hash Generator',
   'wifi-password-generator': 'WiFi Password Generator',
   'css-minifier': 'CSS Minifier',
-  'html-encoder-decoder': 'HTML Encoder/Decoder',
+  'html-encoder-decoder': 'HTML Encoder / Decoder',
   'json-to-csv': 'JSON to CSV Converter',
   'email-validator': 'Email Validator',
   'age-calculator': 'Age Calculator',
@@ -110,107 +50,648 @@ const toolNames = {
   'credit-card-validator': 'Credit Card Validator',
   'loan-calculator': 'Loan Calculator',
   'percentage-calculator': 'Percentage Calculator',
-  'lorem-ipsum': 'Lorem Ipsum Generator'
+  'lorem-ipsum': 'Lorem Ipsum Generator',
 }
 
-// Generate page template with SEO
-function generatePageTemplate(toolId: string, toolName: string): string {
-  return `import { Metadata } from 'next'
-import { ArrowLeft } from 'lucide-react'
-import Link from 'next/link'
-import Footer from '@/components/layout/Footer'
-import AnimatedSection from '@/components/ui/AnimatedSection'
-import ToolSEO from '@/components/seo/ToolSEO'
-import { generateToolSEO } from '@/utils/seo-generator'
-
-export const metadata: Metadata = generateToolSEO('${toolId}', '${toolName}')
-
-export default function ${toolName.replace(/[^a-zA-Z0-9]/g, '')}Page() {
-  return (
-    <div className="min-h-screen bg-background dark:bg-gray-900 flex flex-col">
-      {/* Navigation Header */}
-      <nav className="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border-b border-gray-200/50 dark:border-gray-700/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <Link 
-              href="/tools"
-              className="flex items-center gap-3 text-gray-600 dark:text-gray-300 hover:text-foreground dark:hover:text-white transition-colors duration-200"
-            >
-              <ArrowLeft size={20} />
-              <span className="font-medium">Back to Tools</span>
-            </Link>
-            <div className="flex items-center gap-2">
-              <span className="text-sm text-gray-500 dark:text-gray-400">Developer Tools</span>
-              <span className="text-gray-300 dark:text-gray-600">|</span>
-              <span className="text-sm font-medium text-blue-600 dark:text-blue-400">${toolName}</span>
-            </div>
-          </div>
-        </div>
-      </nav>
-
-      {/* Main Content */}
-      <main className="flex-grow">
-        <AnimatedSection delay={200}>
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-xl border border-gray-200/50 dark:border-gray-700/50 rounded-3xl p-8 shadow-2xl ring-4 ring-white/10">
-              <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 text-center">
-                Free ${toolName} Online - Professional Tool
-              </h1>
-              <ToolSEO 
-                toolId="${toolId}" 
-                toolName="${toolName}" 
-                toolDescription="Professional ${toolName.toLowerCase()} tool for accurate and fast results."
-                useCases={['for professionals', 'for developers', 'for students', 'for business', 'for personal use']}
-              />
-              <div className="mt-8">
-                <div className="text-center">
-                  <div className="bg-yellow-50 dark:bg-yellow-900/20 rounded-xl p-6">
-                    <p className="text-yellow-800 dark:text-yellow-200">
-                      🚧 Tool coming soon! This tool is under development.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </AnimatedSection>
-      </main>
-
-      {/* Footer */}
-      <Footer />
-    </div>
-  )
-}
-`
+// ─── Clean SEO titles (max ~60 chars) ─────────────────────────────────────────
+// Format: "Free [Tool Name] Online – [Short benefit]"
+const TOOL_SEO_TITLES: Record<string, string> = {
+  'text-converter': 'Free Text Converter Online – Case, Reverse & Format',
+  'password-generator': 'Free Password Generator Online – Secure & Random',
+  'qr-generator': 'Free QR Code Generator Online – Custom & Instant',
+  'image-resize': 'Free Image Resizer Online – Resize Without Losing Quality',
+  'json-formatter': 'Free JSON Formatter Online – Beautify & Validate',
+  'color-converter': 'Free Color Converter Online – HEX, RGB, HSL',
+  'time-converter': 'Free Time Zone Converter Online – World Clock',
+  'url-shortener': 'Free URL Shortener Online – Short Links Instantly',
+  'base64-converter': 'Free Base64 Encoder Decoder Online',
+  'unit-converter': 'Free Unit Converter Online – Length, Weight, Temp',
+  'markdown-editor': 'Free Markdown Editor Online – Live Preview',
+  'hash-generator': 'Free Hash Generator Online – MD5, SHA256 & More',
+  'wifi-password-generator': 'Free WiFi Password Generator Online – WPA2/WPA3',
+  'css-minifier': 'Free CSS Minifier Online – Compress & Optimize',
+  'html-encoder-decoder': 'Free HTML Encoder Decoder Online',
+  'json-to-csv': 'Free JSON to CSV Converter Online',
+  'email-validator': 'Free Email Validator Online – Check Email Instantly',
+  'age-calculator': 'Free Age Calculator Online – Exact Age in Seconds',
+  'bmi-calculator': 'Free BMI Calculator Online – Body Mass Index Tool',
+  'tip-calculator': 'Free Tip Calculator Online – Split Bills Easily',
+  'discount-calculator': 'Free Discount Calculator Online – Price & Savings',
+  'fuel-cost-calculator': 'Free Fuel Cost Calculator Online – Trip Estimator',
+  'recipe-scaler': 'Free Recipe Scaler Online – Adjust Servings',
+  'sleep-calculator': 'Free Sleep Calculator Online – Optimal Bedtime',
+  'water-intake': 'Free Water Intake Calculator Online – Daily Goals',
+  'calorie-calculator': 'Free Calorie Calculator Online – Daily Needs',
+  'phone-number-formatter': 'Free Phone Number Formatter Online – Any Country',
+  'word-counter': 'Free Word Counter Online – Characters & Reading Time',
+  'calorie-burner': 'Free Calories Burned Calculator Online',
+  'pregnancy-calculator': 'Free Pregnancy Calculator Online – Due Date',
+  'caffeine-calculator': 'Free Caffeine Calculator Online – Safe Daily Limit',
+  'grade-calculator': 'Free Grade & GPA Calculator Online',
+  'random-generator': 'Free Random Number Generator Online',
+  'timezone-converter': 'Free Timezone Converter Online – World Clock',
+  'roman-numeral': 'Free Roman Numeral Converter Online',
+  'ascii-art': 'Free ASCII Art Generator Online – Text to Art',
+  'password-strength': 'Free Password Strength Checker Online',
+  'text-statistics': 'Free Text Statistics Analyzer Online – Readability',
+  'unit-converter-pro': 'Free Advanced Unit Converter Online – 500+ Units',
+  'file-converter': 'Free File Format Converter Online – JSON, XML, CSV',
+  'project-cost-estimator': 'Free Project Cost Estimator Online',
+  'color-palette-pro': 'Free Color Palette Generator Online – Pro Tool',
+  'app-vs-website': 'App vs Website Calculator – Which Should You Build?',
+  'website-speed-checker': 'Free Website Speed Checker Online – Core Web Vitals',
+  'roi-calculator': 'Free ROI Calculator Online – Return on Investment',
+  'credit-card-validator': 'Free Credit Card Validator Online – Luhn Algorithm',
+  'loan-calculator': 'Free Loan Calculator Online – EMI & Amortization',
+  'percentage-calculator': 'Free Percentage Calculator Online – Fast & Accurate',
+  'lorem-ipsum': 'Free Lorem Ipsum Generator Online – Dummy Text',
 }
 
-// Update all tool pages
-function updateAllToolPages() {
-  const toolsDir = path.join(__dirname, '../src/app/tools')
-  
-  tools.forEach(toolId => {
-    const toolDir = path.join(toolsDir, toolId)
-    const pageFile = path.join(toolDir, 'page.tsx')
-    
-    // Check if directory exists
-    if (!fs.existsSync(toolDir)) {
-      console.log(`Directory not found: ${toolDir}`)
-      return
-    }
-    
-    // Generate and write new page content
-    const toolName = toolNames[toolId as keyof typeof toolNames] || toolId
-    const pageContent = generatePageTemplate(toolId, toolName)
-    
-    try {
-      fs.writeFileSync(pageFile, pageContent, 'utf8')
-      console.log(`✅ Updated: ${toolId}/page.tsx`)
-    } catch (error) {
-      console.log(`❌ Error updating ${toolId}:`, error)
-    }
-  })
+// ─── Clean meta descriptions (150–160 chars) ─────────────────────────────────
+const TOOL_DESCRIPTIONS: Record<string, string> = {
+  'text-converter': 'Free online text converter tool. Convert text to uppercase, lowercase, title case, reverse text, remove spaces and more. No signup required.',
+  'password-generator': 'Generate strong, secure random passwords online for free. Customize length, symbols, numbers and letters. No registration needed.',
+  'qr-generator': 'Free online QR code generator. Create custom QR codes for URLs, text, WiFi and more. Download instantly in high quality PNG.',
+  'image-resize': 'Resize images online for free. Maintain aspect ratio, reduce file size, and support multiple formats. Fast and secure.',
+  'json-formatter': 'Free online JSON formatter, beautifier and validator. Format, minify and validate JSON code with error detection. Instant results.',
+  'color-converter': 'Convert colors between HEX, RGB, HSL and CMYK formats online for free. Generate random colors and copy color codes instantly.',
+  'time-converter': 'Free online time zone converter. Convert time between world time zones, calculate time differences and view a world clock.',
+  'url-shortener': 'Shorten long URLs instantly for free. Create short, memorable links with unique codes. No signup or registration required.',
+  'base64-converter': 'Free online Base64 encoder and decoder. Encode or decode text, images and files to/from Base64 format instantly.',
+  'unit-converter': 'Free online unit converter. Convert length, weight, temperature, data storage and more. Fast, accurate and easy to use.',
+  'markdown-editor': 'Free online Markdown editor with live preview. Write markdown and see the rendered output in real time. Export to HTML.',
+  'hash-generator': 'Generate MD5, SHA-1, SHA-256 and SHA-512 hashes online for free. Secure, fast and no registration required.',
+  'wifi-password-generator': 'Generate secure WiFi passwords online for free. Supports WPA2 and WPA3. Create strong, memorable router passwords.',
+  'css-minifier': 'Minify and compress CSS code online for free. Remove whitespace and comments to reduce file size and improve load speed.',
+  'html-encoder-decoder': 'Encode and decode HTML entities and special characters online for free. Safe and instant bidirectional conversion.',
+  'json-to-csv': 'Convert JSON data to CSV format online for free. Download the converted file instantly. Supports nested JSON objects.',
+  'email-validator': 'Validate email addresses online for free. Check format, domain, MX records and detect disposable emails instantly.',
+  'age-calculator': 'Calculate your exact age in years, months, days, hours and minutes online for free. Includes zodiac sign and life stats.',
+  'bmi-calculator': 'Free BMI calculator online. Calculate your Body Mass Index using kg/cm or lbs/feet. Get health recommendations instantly.',
+  'tip-calculator': 'Calculate restaurant tips and split bills among groups online for free. Supports custom tip percentages and multiple people.',
+  'discount-calculator': 'Calculate discount prices and savings online for free. Find the final price after discount, or the original price before discount.',
+  'fuel-cost-calculator': 'Calculate fuel costs for your trip online for free. Enter distance, fuel efficiency and price to estimate total cost.',
+  'recipe-scaler': 'Scale recipe ingredients up or down by serving size online for free. Maintains proper ratios with fraction support.',
+  'sleep-calculator': 'Find your optimal bedtime based on sleep cycles online for free. Calculate wake-up times for maximum sleep quality.',
+  'water-intake': 'Calculate your daily water intake needs online for free. Based on weight, activity level and climate conditions.',
+  'calorie-calculator': 'Calculate your daily calorie needs online for free. Based on age, gender, weight, height and activity level.',
+  'phone-number-formatter': 'Format phone numbers to international standards online for free. Supports all countries and E.164 format.',
+  'word-counter': 'Count words, characters, sentences, paragraphs and reading time in text online for free. Perfect for writers and SEO.',
+  'calorie-burner': 'Calculate calories burned during different exercises online for free. Based on activity type, duration and body weight.',
+  'pregnancy-calculator': 'Calculate your pregnancy due date, current week and trimester online for free. Track important milestones.',
+  'caffeine-calculator': 'Track your daily caffeine intake and check safe consumption limits online for free. Covers coffee, tea and energy drinks.',
+  'grade-calculator': 'Calculate GPA, final grades and required scores for academic goals online for free. Supports weighted grades.',
+  'random-generator': 'Generate random numbers within any custom range online for free. Supports integers, decimals and multiple numbers.',
+  'timezone-converter': 'Convert time between any two time zones worldwide online for free. Real-time world clock with DST support.',
+  'roman-numeral': 'Convert between Roman numerals and Arabic numbers online for free. Supports validation and large numbers.',
+  'ascii-art': 'Generate ASCII art from text online for free. Choose from multiple fonts and styles. Copy and share instantly.',
+  'password-strength': 'Check your password strength online for free. Get security score, crack time estimate and improvement tips.',
+  'text-statistics': 'Analyze text readability, word frequency and linguistic patterns online for free. Get Flesch-Kincaid score.',
+  'unit-converter-pro': 'Advanced unit converter with 500+ units across 20+ categories online for free. Precision control and history.',
+  'file-converter': 'Convert between JSON, XML, CSV, YAML and Base64 file formats online for free. Instant and secure conversion.',
+  'project-cost-estimator': 'Estimate project costs with detailed task breakdown and timeline analysis online for free. Budget and plan smarter.',
+  'color-palette-pro': 'Generate professional color palettes online for free. Multiple color schemes with CSS and Tailwind export.',
+  'app-vs-website': 'Compare app vs website development: cost, features and benefits. Make the right decision for your product.',
+  'website-speed-checker': 'Check your website speed and Core Web Vitals online for free. Get performance score and optimization tips.',
+  'roi-calculator': 'Calculate Return on Investment (ROI) online for free. Analyze investment returns with detailed projections.',
+  'credit-card-validator': 'Validate credit card numbers using the Luhn algorithm online for free. Detect card type and check validity.',
+  'loan-calculator': 'Calculate loan payments, interest and amortization schedule online for free. Supports all loan types.',
+  'percentage-calculator': 'Calculate percentages, percentage changes and discounts online for free. Fast, accurate and easy to use.',
+  'lorem-ipsum': 'Generate Lorem Ipsum dummy text online for free. Multiple styles, languages and lengths. Copy instantly.',
 }
 
-// Run the update
-updateAllToolPages()
-console.log('\n🎉 SEO update completed for all tool pages!')
+// ─── 20 keywords per tool ─────────────────────────────────────────────────────
+const TOOL_KEYWORDS: Record<string, string[]> = {
+  'text-converter': [
+    'free text converter online', 'text case converter', 'uppercase to lowercase',
+    'lowercase to uppercase', 'camel case converter', 'snake case converter',
+    'title case converter', 'sentence case converter', 'text reverser online',
+    'remove extra spaces tool', 'text manipulation tool', 'string converter online',
+    'text formatting tool', 'text cleaner free', 'word case changer',
+    'text transformer free', 'online text formatter', 'text case changer online',
+    'text tools free', 'convert text case online',
+  ],
+  'password-generator': [
+    'free password generator online', 'secure password generator', 'random password generator',
+    'strong password maker', 'password creator online', 'custom password generator',
+    'password generator with symbols', 'password generator with numbers',
+    'memorable password generator', 'bulk password generator',
+    'one click password generator', 'complex password generator',
+    'password generator no registration', 'best password generator 2025',
+    'military grade password generator', 'wifi password generator',
+    'password maker free', 'instant password generator',
+    'password generator online free', 'safe password creator',
+  ],
+  'qr-generator': [
+    'free qr code generator online', 'qr code maker free', 'custom qr code generator',
+    'wifi qr code generator', 'qr code for url', 'qr code download png',
+    'bulk qr code generator', 'high resolution qr code', 'qr code with logo free',
+    'qr code for business card', 'payment qr code generator', 'vcard qr code generator',
+    'qr code size customizer', 'instant qr code generator', 'qr code creator no signup',
+    'qr code for text online', 'color qr code generator', 'qr code generator free download',
+    'dynamic qr code generator', 'qr code for social media',
+  ],
+  'image-resize': [
+    'free image resizer online', 'resize image without losing quality', 'bulk image resizer',
+    'image compressor online', 'resize jpg online free', 'resize png online free',
+    'image resize for social media', 'image resize pixels online', 'crop and resize image free',
+    'image size reducer online', 'convert image size free', 'image resize mb reducer',
+    'thumbnail maker online', 'photo resizer free', 'image optimizer online',
+    'image dimension converter', 'image scale tool free', 'online image resizer no signup',
+    'resize image to kb free', 'image resize tool download',
+  ],
+  'json-formatter': [
+    'json formatter online free', 'json beautifier free', 'json validator online',
+    'json minifier tool', 'json pretty print online', 'json syntax checker',
+    'json editor online', 'json to string converter', 'minify json online',
+    'json lint checker', 'json parser online free', 'json viewer online',
+    'json indentation tool', 'json error checker', 'format json code online',
+    'json structure viewer', 'json tester online', 'beautify json online',
+    'json format tool free', 'online json formatter no signup',
+  ],
+  'color-converter': [
+    'free color converter online', 'hex to rgb converter', 'rgb to hex converter',
+    'rgb to hsl converter', 'hsl to hex converter', 'color code converter online',
+    'color palette generator free', 'cmyk to rgb converter', 'hex color code finder',
+    'color name finder online', 'pantone to hex converter', 'web color converter',
+    'css color converter', 'rgba color converter', 'color transparency converter',
+    'oklch color converter', 'color model converter online', 'color picker tool online',
+    'color format converter free', 'color value translator',
+  ],
+  'time-converter': [
+    'free time zone converter online', 'world clock online', 'time difference calculator',
+    'convert time zones online', 'utc time converter', 'gmt converter online',
+    'military time converter', 'am pm to 24 hour converter', '24 hour to 12 hour converter',
+    'epoch time converter', 'unix timestamp converter', 'time format converter',
+    'dst time converter', 'meeting timezone planner', 'international time converter',
+    'time overlap finder', 'best time zone converter', 'live world time converter',
+    'time zone offset calculator', 'time converter no signup',
+  ],
+  'url-shortener': [
+    'free url shortener online', 'link shortener free', 'shorten url online',
+    'best url shortener free', 'url shortener no signup', 'custom url shortener',
+    'url shortener with analytics', 'tiny url generator online', 'short link creator free',
+    'branded link shortener', 'url redirect tool', 'link tracker free',
+    'qr code url shortener', 'bulk url shortener', 'link management tool',
+    'url alias generator', 'click tracking url tool', 'short url maker online',
+    'compress url free', 'url shortener instant',
+  ],
+  'base64-converter': [
+    'base64 encoder online free', 'base64 decoder online', 'encode text to base64',
+    'decode base64 to text', 'base64 file converter', 'base64 image converter',
+    'base64 string encoder', 'base64 url encoder', 'convert image to base64',
+    'base64 to image converter', 'base64 pdf converter', 'online base64 tool',
+    'base64 encode decode free', 'binary to base64 converter', 'hex to base64 converter',
+    'base64 data uri converter', 'base64 encoding tool online', 'safe base64 converter',
+    'base64 converter no signup', 'base64 tool free',
+  ],
+  'unit-converter': [
+    'free unit converter online', 'measurement converter online', 'length converter free',
+    'weight converter online', 'temperature converter free', 'metric to imperial converter',
+    'imperial to metric converter', 'distance converter online', 'area converter online',
+    'volume converter free', 'speed converter online', 'pressure converter online',
+    'energy converter free', 'data storage converter', 'cooking measurement converter',
+    'science unit converter', 'engineering unit converter', 'unit conversion tool online',
+    'unit converter calculator', 'unit converter no signup',
+  ],
+  'markdown-editor': [
+    'free markdown editor online', 'markdown preview tool', 'markdown to html converter',
+    'markdown live preview', 'markdown formatter online', 'markdown writer online',
+    'github markdown editor', 'readme markdown editor', 'markdown table generator',
+    'markdown to pdf converter', 'markdown cheat sheet tool', 'real time markdown editor',
+    'markdown export tool', 'best markdown editor online', 'markdown document editor',
+    'markdown syntax editor', 'markdown code editor', 'online markdown editor no signup',
+    'markdown editor free download', 'markdown editor with toolbar',
+  ],
+  'hash-generator': [
+    'free hash generator online', 'md5 hash generator', 'sha1 hash generator',
+    'sha256 hash generator', 'sha512 hash generator', 'hash calculator online',
+    'checksum generator online', 'file hash generator', 'password hash generator',
+    'text hash generator', 'hash verifier online', 'md5 checksum tool',
+    'cryptographic hash generator', 'hash comparison tool', 'data integrity checker',
+    'hash encode decode', 'bcrypt hash generator', 'hash string online',
+    'hash generator no signup', 'sha hash tool free',
+  ],
+  'wifi-password-generator': [
+    'wifi password generator online', 'secure wifi password maker', 'strong wifi password generator',
+    'random wifi password generator', 'wpa2 password generator', 'wpa3 password generator',
+    'wifi password strength checker', 'best wifi password generator', 'network password generator',
+    'router password generator', 'hotspot password generator', 'wifi security password tool',
+    'easy wifi password maker', 'wifi key generator online', 'custom wifi password tool',
+    'memorable wifi password maker', 'instant wifi password generator', 'free wifi password tool',
+    'wifi password no signup', 'wifi password creator free',
+  ],
+  'css-minifier': [
+    'css minifier online free', 'css compressor tool', 'css optimizer online',
+    'minify css online', 'compress css free', 'css whitespace remover',
+    'css comment remover', 'css file size reducer', 'css code compressor',
+    'online css minifier', 'css beautifier online', 'css formatter free',
+    'css pretty print', 'css clean tool', 'css performance optimizer',
+    'css bundle minifier', 'css stylesheet minifier', 'css uglifier online',
+    'instant css minifier', 'css minifier no signup',
+  ],
+  'html-encoder-decoder': [
+    'html encoder online free', 'html decoder tool', 'html entity encoder',
+    'html character encoder', 'html entity decoder', 'special character encoder',
+    'html escape tool online', 'html unescape tool', 'encode html online',
+    'decode html online', 'html to text converter', 'html sanitizer online',
+    'html special chars encoder', 'ampersand encoder online', 'xml encoder online',
+    'url encode html tool', 'html code cleaner', 'html character reference tool',
+    'nbsp encoder online', 'html safe encoder free',
+  ],
+  'json-to-csv': [
+    'json to csv converter online', 'convert json to csv', 'json to spreadsheet converter',
+    'json to excel converter', 'csv to json converter', 'json to table converter',
+    'parse json to csv online', 'bulk json to csv converter', 'nested json to csv tool',
+    'json data to csv download', 'json array to csv online', 'json object to csv tool',
+    'api json to csv converter', 'json to csv no signup', 'json to csv free download',
+    'json schema to csv', 'json to flat csv converter', 'online data format converter',
+    'json csv tool free', 'json to csv instant',
+  ],
+  'email-validator': [
+    'email validator online free', 'email verification tool', 'email format checker',
+    'bulk email validator free', 'disposable email detector', 'mx record checker online',
+    'email syntax checker', 'email domain validator', 'email list cleaner free',
+    'verify email address online', 'email bounce checker', 'real email checker free',
+    'email deliverability checker', 'email existence checker', 'smtp email validator',
+    'email typo checker online', 'free email verification tool', 'email validator no signup',
+    'check email validity online', 'email address checker free',
+  ],
+  'age-calculator': [
+    'free age calculator online', 'exact age calculator', 'how old am i calculator',
+    'age in years months days', 'age calculator with zodiac', 'age difference calculator',
+    'age from birthday free', 'chronological age calculator', 'retirement age calculator',
+    'age by date calculator', 'next birthday calculator', 'age in weeks calculator',
+    'age in days calculator', 'age calculator no signup', 'birthday age calculator',
+    'calculate age online', 'past age calculator', 'future age calculator',
+    'age in hours calculator', 'age in minutes calculator',
+  ],
+  'bmi-calculator': [
+    'free bmi calculator online', 'body mass index calculator', 'bmi calculator for adults',
+    'bmi calculator for men', 'bmi calculator for women', 'bmi calculator kg cm',
+    'bmi calculator lbs feet', 'healthy bmi range calculator', 'bmi checker online',
+    'overweight bmi calculator', 'underweight bmi checker', 'obese bmi calculator',
+    'ideal weight calculator', 'bmi health indicator', 'bmi body fat estimator',
+    'bmi with age calculator', 'bmi calculator for teens', 'bmi calculator for children',
+    'metric bmi calculator', 'imperial bmi calculator',
+  ],
+  'tip-calculator': [
+    'free tip calculator online', 'restaurant tip calculator', 'bill tip calculator',
+    'split bill tip calculator', 'multiple people bill splitter', 'tip calculator with tax',
+    'how much to tip calculator', 'uber tip calculator', 'delivery tip calculator',
+    'hotel tip calculator', 'salon tip calculator', 'group dining tip calculator',
+    'custom tip percentage tool', 'tip and tax calculator', 'fair tip calculator',
+    'bill divider with tip', 'gratuity calculator online', 'quick tip calculator free',
+    'tip calculator no signup', 'service tip calculator',
+  ],
+  'discount-calculator': [
+    'free discount calculator online', 'percentage discount calculator', 'sale price calculator',
+    'price after discount calculator', 'original price calculator', 'savings calculator online',
+    'markdown calculator free', 'coupon savings calculator', 'buy one get one calculator',
+    'flash sale calculator', 'clearance price calculator', 'discount amount finder',
+    'how much saved calculator', 'retail discount tool', 'ecommerce discount calculator',
+    'bulk discount calculator', 'seasonal sale calculator', 'final price after discount',
+    'multi discount calculator', 'instant discount calculator',
+  ],
+  'fuel-cost-calculator': [
+    'free fuel cost calculator online', 'trip fuel cost calculator', 'gas cost calculator free',
+    'fuel efficiency calculator', 'petrol cost calculator', 'diesel cost estimator',
+    'road trip cost calculator', 'mpg cost calculator', 'km per litre cost calculator',
+    'car fuel expense tracker', 'fuel budget calculator', 'commute cost calculator',
+    'fuel mileage calculator', 'price per mile calculator', 'fuel consumption calculator',
+    'monthly fuel cost estimator', 'annual fuel cost calculator', 'drive cost estimator online',
+    'vehicle fuel cost estimator', 'fuel cost no signup',
+  ],
+  'recipe-scaler': [
+    'free recipe scaler online', 'recipe multiplier tool', 'recipe serving size calculator',
+    'cooking measurement converter', 'recipe ingredient calculator', 'scale recipe servings free',
+    'baking recipe scaler', 'recipe portion calculator', 'recipe quantity adjuster',
+    'halve recipe calculator', 'double recipe calculator', 'recipe ratio converter',
+    'meal prep recipe scaler', 'catering recipe calculator', 'restaurant recipe scaler',
+    'recipe yield calculator', 'cooking ratio tool', 'food scale converter online',
+    'recipe conversion tool free', 'recipe scaler no signup',
+  ],
+  'sleep-calculator': [
+    'free sleep calculator online', 'sleep cycle calculator', 'bedtime calculator free',
+    'wake up time calculator', 'optimal sleep time calculator', 'sleep schedule calculator',
+    'rem cycle calculator', 'how many hours of sleep', 'best bedtime calculator',
+    'sleep tracker online', 'nap time calculator', 'sleep debt calculator',
+    'circadian rhythm calculator', 'sleep deprivation calculator', 'recommended sleep hours tool',
+    'healthy sleep calculator', 'deep sleep estimator', 'sleep onset time tool',
+    'power nap calculator free', 'sleep calculator no signup',
+  ],
+  'water-intake': [
+    'free water intake calculator online', 'daily water intake calculator', 'hydration calculator free',
+    'how much water to drink', 'water consumption calculator', 'water intake by weight',
+    'water intake for exercise', 'water intake for weight loss', 'daily hydration tracker',
+    'water intake recommendation tool', 'water needs calculator', 'fluid intake calculator',
+    'how many glasses of water', 'water intake for athletes', 'water intake for pregnancy',
+    'personalized hydration calculator', 'water intake reminder tool', 'water intake no signup',
+    'healthy water intake tool', 'water intake goal calculator',
+  ],
+  'calorie-calculator': [
+    'free calorie calculator online', 'daily calorie needs calculator', 'calorie deficit calculator',
+    'calorie surplus calculator', 'bmr calculator online', 'tdee calculator free',
+    'calories to lose weight', 'calories to gain muscle', 'weight loss calorie calculator',
+    'calorie calculator by age', 'calorie calculator by gender', 'activity level calorie tool',
+    'recommended calorie intake tool', 'calorie calculator for women', 'calorie calculator for men',
+    'metabolic calorie calculator', 'accurate calorie estimator', 'calorie intake calculator',
+    'calorie counter free', 'calorie calculator no signup',
+  ],
+  'phone-number-formatter': [
+    'free phone number formatter online', 'international phone formatter', 'phone number validator online',
+    'format phone number online', 'country code phone formatter', 'us phone number formatter',
+    'uk phone number formatter', 'e164 phone formatter', 'phone number standardizer',
+    'mobile number format tool', 'phone number cleanup tool', 'phone number parser online',
+    'national phone format converter', 'phone number display formatter', 'bulk phone number formatter',
+    'contact list phone formatter', 'phone number mask tool', 'phone number beautifier free',
+    'phone number converter free', 'phone formatter no signup',
+  ],
+  'word-counter': [
+    'free word counter online', 'character counter online', 'reading time calculator',
+    'sentence counter online', 'paragraph counter free', 'word frequency counter',
+    'essay word counter', 'blog word counter', 'seo word count checker',
+    'character limit checker', 'twitter character counter', 'keyword density counter',
+    'syllable counter online', 'unique words counter', 'text length calculator',
+    'writing stats tool free', 'text word count tool', 'text analyzer free',
+    'words and characters counter', 'word counter no signup',
+  ],
+  'calorie-burner': [
+    'free calories burned calculator online', 'exercise calorie calculator', 'activity calorie calculator',
+    'mets calorie calculator', 'calories burned by exercise', 'workout calorie counter',
+    'calories burned walking', 'calories burned running', 'calories burned cycling',
+    'calories burned swimming', 'calories burned gym workout', 'body weight calorie burn tool',
+    'fitness calorie tracker', 'exercise intensity calorie tool', 'calories per hour calculator',
+    'daily activity calorie tracker', 'sports calorie calculator', 'home workout calorie burner',
+    'accurate calorie burn estimator', 'calorie burn no signup',
+  ],
+  'pregnancy-calculator': [
+    'free pregnancy calculator online', 'due date calculator free', 'pregnancy week calculator',
+    'pregnancy trimester calculator', 'pregnancy tracker online', 'lmp due date calculator',
+    'conception date calculator', 'gestational age calculator', 'pregnancy milestone tracker',
+    'ivf due date calculator', 'pregnancy progress tracker', 'baby due date estimator',
+    'pregnancy month calculator', 'expected delivery date tool', 'prenatal week tracker',
+    'pregnancy calendar online', 'fetal age calculator', 'first trimester calculator',
+    'second trimester calculator', 'third trimester calculator',
+  ],
+  'caffeine-calculator': [
+    'free caffeine calculator online', 'daily caffeine intake calculator', 'caffeine consumption tracker',
+    'caffeine limit calculator', 'caffeine safe dose tool', 'coffee caffeine calculator',
+    'tea caffeine calculator', 'energy drink caffeine tracker', 'caffeine half life calculator',
+    'caffeine per body weight', 'caffeine withdrawal tracker', 'daily caffeine limit tool',
+    'caffeine health checker', 'how much caffeine is safe', 'caffeine in beverages calculator',
+    'caffeine metabolism tool', 'max caffeine per day tool', 'caffeine overdose risk checker',
+    'free caffeine monitoring tool', 'caffeine calculator no signup',
+  ],
+  'grade-calculator': [
+    'free grade calculator online', 'gpa calculator free', 'final grade calculator',
+    'cumulative gpa calculator', 'semester gpa calculator', 'weighted grade calculator',
+    'grade point average tool', 'college gpa calculator', 'high school gpa calculator',
+    'target grade calculator', 'what grade do i need calculator', 'pass fail grade calculator',
+    'letter grade calculator', 'percentage grade converter', 'class grade tracker',
+    'assignment grade calculator', 'exam grade calculator', 'credit hour gpa tool',
+    'student performance calculator', 'grade calculator no signup',
+  ],
+  'random-generator': [
+    'free random number generator online', 'random integer generator', 'random number in range',
+    'random number picker', 'lottery number generator', 'dice roller online',
+    'random list picker', 'coin flip simulator', 'random decision maker',
+    'random sequence generator', 'random number for testing', 'random seed generator',
+    'unique random number tool', 'bulk random number generator', 'random float generator',
+    'random percent generator', 'random range selector', 'game random number tool',
+    'truly random number generator', 'random number no signup',
+  ],
+  'timezone-converter': [
+    'free timezone converter online', 'world clock converter', 'time zone difference tool',
+    'convert timezone online', 'utc to local time converter', 'dst aware timezone converter',
+    'meeting timezone planner', 'global time converter free', 'city time zone converter',
+    'country time zone tool', 'real time world clock', 'timezone offset calculator',
+    'unix to timezone converter', 'best time to call tool', 'timezone overlap finder',
+    'time zone map online', 'remote team time planner', 'asia timezone converter',
+    'europe timezone converter', 'us timezone converter',
+  ],
+  'roman-numeral': [
+    'free roman numeral converter online', 'number to roman numeral', 'roman to arabic converter',
+    'arabic to roman converter', 'roman numeral translator', 'roman numerals 1 to 1000',
+    'roman numeral date converter', 'year in roman numerals', 'roman numeral decoder',
+    'large roman numeral converter', 'roman numeral validator', 'clock roman numeral tool',
+    'tattoo roman numeral converter', 'roman numeral birthday', 'anniversary roman numeral',
+    'roman numeral list generator', 'learn roman numerals tool', 'roman numeral generator free',
+    'roman numeral calculator online', 'roman numeral no signup',
+  ],
+  'ascii-art': [
+    'free ascii art generator online', 'text to ascii art converter', 'ascii art creator free',
+    'ascii art font generator', 'ascii text banner maker', 'figlet ascii generator',
+    'fancy text ascii generator', 'ascii art for social media', 'ascii art logo maker',
+    'terminal ascii generator', 'ascii art style chooser', 'ascii art copy paste',
+    'ascii art big text', 'ascii art symbols generator', 'ascii art header maker',
+    'ascii art name generator', 'best ascii art tool free', 'ascii art online no signup',
+    'ascii art word art', 'text to art converter free',
+  ],
+  'password-strength': [
+    'free password strength checker online', 'password analyzer tool', 'how strong is my password',
+    'password vulnerability checker', 'password score calculator', 'password entropy calculator',
+    'password crack time estimator', 'password weakness finder', 'safe password checker',
+    'password complexity checker', 'password audit tool free', 'password risk analyzer',
+    'password health checker', 'password brute force estimator', 'weak password detector',
+    'strong password verifier', 'account password checker', 'password pattern analyzer',
+    'real time password strength', 'password checker no signup',
+  ],
+  'text-statistics': [
+    'free text statistics analyzer online', 'text readability checker', 'readability score calculator',
+    'flesch kincaid calculator', 'gunning fog index tool', 'text complexity analyzer',
+    'sentence length analyzer', 'passive voice checker', 'average word length tool',
+    'text grade level checker', 'content readability tool', 'blog readability analyzer',
+    'seo content scorer', 'text density analyzer', 'unique word ratio calculator',
+    'vocabulary richness checker', 'reading ease calculator', 'text sentiment analyzer',
+    'writing quality checker free', 'text statistics no signup',
+  ],
+  'unit-converter-pro': [
+    'free advanced unit converter online', 'professional unit converter', 'all in one unit converter',
+    '500 units converter tool', 'scientific unit converter', 'engineering unit converter pro',
+    'unit converter 20 categories', 'comprehensive unit converter', 'precise unit converter online',
+    'unit conversion all types', 'unit converter with history', 'unit converter with formula',
+    'chemistry unit converter', 'physics unit converter', 'math unit converter online',
+    'best unit converter free', 'instant unit converter', 'multi unit converter online',
+    'unit converter pro free', 'advanced unit converter no signup',
+  ],
+  'file-converter': [
+    'free file converter online', 'json to xml converter', 'xml to json converter',
+    'csv to json converter', 'yaml to json converter', 'json to yaml converter',
+    'base64 file converter', 'data format converter', 'api response converter',
+    'document format converter', 'convert file extension online', 'file type changer free',
+    'multi format file converter', 'structured data converter', 'config file converter',
+    'data interchange converter', 'developer file tool', 'format migration tool',
+    'free online file transformer', 'file converter no signup',
+  ],
+  'project-cost-estimator': [
+    'free project cost estimator online', 'project cost calculator', 'software project estimator',
+    'project budget calculator', 'task cost breakdown tool', 'development cost estimator',
+    'freelance project cost tool', 'agile cost estimator', 'sprint cost calculator',
+    'project timeline cost tool', 'hourly rate cost estimator', 'project roi estimator',
+    'project profit calculator', 'cost per task calculator', 'project scope cost tool',
+    'web project cost estimator', 'mobile app cost estimator', 'team cost calculator',
+    'project management cost tool', 'cost estimation no signup',
+  ],
+  'color-palette-pro': [
+    'free color palette generator online', 'color scheme generator', 'professional color palette tool',
+    'ui color palette generator', 'brand color palette creator', 'complementary color generator',
+    'analogous color palette', 'triadic color scheme tool', 'monochromatic palette tool',
+    'color palette export tool', 'css color palette generator', 'tailwind color palette tool',
+    'material design palette', 'color harmony generator', 'random color palette tool',
+    'accessible color palette tool', 'dark mode palette generator', 'color swatch generator free',
+    'split complementary colors', 'color palette no signup',
+  ],
+  'app-vs-website': [
+    'app vs website comparison tool', 'should i build app or website', 'app vs website cost comparison',
+    'native app vs website tool', 'mobile app vs website guide', 'web app vs mobile app tool',
+    'product strategy decision tool', 'startup app vs website tool', 'app vs website pros cons',
+    'progressive web app vs native', 'app vs website seo comparison', 'app vs website development cost',
+    'cross platform vs website', 'react native vs website', 'flutter vs website tool',
+    'app or website for business', 'digital product strategy tool', 'free app vs website analyzer',
+    'app vs website benefits', 'app vs website no signup',
+  ],
+  'website-speed-checker': [
+    'free website speed checker online', 'website speed test tool', 'website performance analyzer',
+    'core web vitals checker', 'page loading speed test', 'website load time tester',
+    'lcp checker online', 'cls checker online', 'fid checker online',
+    'website optimization checker', 'website performance score', 'seo speed analyzer',
+    'mobile speed checker', 'desktop speed checker', 'server response time checker',
+    'ttfb checker online', 'website benchmark tool', 'free site speed audit tool',
+    'cdn performance tester', 'page speed no signup',
+  ],
+  'roi-calculator': [
+    'free roi calculator online', 'return on investment calculator', 'business roi calculator',
+    'roi percentage calculator', 'marketing roi calculator', 'digital marketing roi tool',
+    'ad spend roi calculator', 'project roi calculator', 'ecommerce roi calculator',
+    'startup roi estimator', 'campaign roi tracker', 'roi analysis tool free',
+    'net profit roi calculator', 'roi with tax calculator', 'annual roi calculator',
+    'roi comparison tool', 'roi forecasting tool', 'investment return estimator',
+    'free roi analysis calculator', 'roi calculator no signup',
+  ],
+  'credit-card-validator': [
+    'free credit card validator online', 'credit card number checker', 'luhn algorithm checker',
+    'credit card format validator', 'visa card validator', 'mastercard validator online',
+    'amex card validator', 'discover card validator', 'test credit card validator',
+    'credit card bin checker', 'credit card issuer identifier', 'credit card type detector',
+    'credit card length checker', 'dev credit card tester', 'card number format checker',
+    'payment card validator', 'ecommerce card tester', 'free card validation tool',
+    'credit card checker no signup', 'card validator instant',
+  ],
+  'loan-calculator': [
+    'free loan calculator online', 'loan payment calculator', 'loan interest calculator',
+    'monthly loan payment tool', 'amortization calculator', 'mortgage calculator online',
+    'personal loan calculator', 'auto loan calculator free', 'student loan calculator',
+    'home loan emi calculator', 'loan repayment schedule', 'interest rate calculator',
+    'total interest paid calculator', 'loan term calculator', 'early repayment calculator',
+    'loan comparison tool', 'fixed rate loan calculator', 'variable rate loan tool',
+    'loan affordability calculator', 'loan calculator no signup',
+  ],
+  'percentage-calculator': [
+    'free percentage calculator online', 'percentage change calculator', 'percent increase calculator',
+    'percent decrease calculator', 'percentage of number calculator', 'discount percentage calculator',
+    'percentage difference calculator', 'reverse percentage calculator', 'percentage markup calculator',
+    'sales tax percentage tool', 'grade percentage calculator', 'cgpa percentage converter',
+    'percentage to fraction converter', 'profit percentage calculator', 'loss percentage calculator',
+    'percentage growth calculator', 'ratio to percentage converter', 'fraction to percentage online',
+    'instant percent calculator', 'percentage calculator no signup',
+  ],
+  'lorem-ipsum': [
+    'free lorem ipsum generator online', 'lorem ipsum text generator', 'dummy text generator free',
+    'placeholder text generator', 'lorem ipsum paragraph maker', 'design filler text tool',
+    'ipsum generator for mockups', 'lorem ipsum words generator', 'lorem ipsum for developers',
+    'fake text generator online', 'sample text generator free', 'lorem ipsum copy paste',
+    'lorem ipsum multiple languages', 'lorem ipsum custom length', 'hipster lorem ipsum',
+    'lorem ipsum html format', 'realistic placeholder text', 'lorem ipsum bulk generator',
+    'instant dummy text generator', 'lorem ipsum no signup',
+  ],
+}
+
+// ─── Main export ──────────────────────────────────────────────────────────────
+export function generateToolSEO(toolId: string, _toolNameParam?: string): Metadata {
+  // Always use the hardcoded display name — never rely on the passed param
+  const displayName = TOOL_DISPLAY_NAMES[toolId] ?? _toolNameParam ?? toolId
+  const title = TOOL_SEO_TITLES[toolId] ?? `Free ${displayName} Online – Professional Tool`
+  const description = TOOL_DESCRIPTIONS[toolId] ?? `Free ${displayName} tool online. Fast, accurate and no registration required.`
+  const keywords = TOOL_KEYWORDS[toolId] ?? TOOL_KEYWORDS['text-converter']
+
+  return {
+    title,
+    description,
+    keywords: keywords.join(', '),
+    openGraph: {
+      title,
+      description,
+      url: `https://rehmanfarouq.site/tools/${toolId}`,
+      type: 'website',
+      siteName: 'Rehman Farouq Tools',
+      images: [
+        {
+          url: `https://rehmanfarouq.site/images/${toolId}-og.png`,
+          width: 1200,
+          height: 630,
+          alt: `${displayName} – ${title}`,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [`https://rehmanfarouq.site/images/${toolId}-og.png`],
+    },
+    alternates: {
+      canonical: `https://rehmanfarouq.site/tools/${toolId}`,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
+  }
+}
+
+// ─── Helper exports (used by ToolSEO component) ───────────────────────────────
+export function getToolDisplayName(toolId: string): string {
+  return TOOL_DISPLAY_NAMES[toolId] ?? toolId
+}
+
+export function generateToolHeadings(toolId: string) {
+  const name = getToolDisplayName(toolId)
+  return {
+    h1: `Free ${name} Online – Professional Tool`,
+    h2: [`How to Use ${name}`, `Features of Our ${name}`, `Benefits`, `FAQ`],
+  }
+}
+
+export function generateToolFAQ(toolId: string): { question: string; answer: string }[] {
+  const name = getToolDisplayName(toolId)
+  return [
+    {
+      question: `Is the ${name} really free?`,
+      answer: `Yes! Our ${name} is completely free with no hidden costs or registration.`,
+    },
+    {
+      question: `Do I need to sign up to use the ${name}?`,
+      answer: `No. You can use our ${name} instantly without creating an account.`,
+    },
+    {
+      question: `Is my data safe?`,
+      answer: `All processing happens in your browser. Your data never leaves your device.`,
+    },
+    {
+      question: `Does the ${name} work on mobile?`,
+      answer: `Yes! It is fully responsive and works on smartphones, tablets and desktops.`,
+    },
+    {
+      question: `How accurate is the ${name}?`,
+      answer: `It uses industry-standard algorithms and provides professional-grade accuracy.`,
+    },
+  ]
+}

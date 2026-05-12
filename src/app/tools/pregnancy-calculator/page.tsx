@@ -7,7 +7,7 @@ import ToolSEO from '@/components/seo/ToolSEO'
 import { generateToolSEO } from '@/utils/seo-generator'
 import PregnancyCalculatorTool from '@/components/tools/PregnancyCalculatorTool'
 
-export const metadata: Metadata = generateToolSEO('pregnancy-calculator', 'Pregnancy Calculator Tool')
+export const metadata: Metadata = generateToolSEO('pregnancy-calculator', 'Pregnancy Calculator')
 
 export default function PregnancyCalculatorToolPage() {
   return (
@@ -16,7 +16,7 @@ export default function PregnancyCalculatorToolPage() {
       <nav className="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border-b border-gray-200/50 dark:border-gray-700/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <Link 
+            <Link
               href="/tools"
               className="flex items-center gap-3 text-gray-600 dark:text-gray-300 hover:text-foreground dark:hover:text-white transition-colors duration-200"
             >
@@ -26,7 +26,7 @@ export default function PregnancyCalculatorToolPage() {
             <div className="flex items-center gap-2">
               <span className="text-sm text-gray-500 dark:text-gray-400">Developer Tools</span>
               <span className="text-gray-300 dark:text-gray-600">|</span>
-              <span className="text-sm font-medium text-blue-600 dark:text-blue-400">Pregnancy Calculator Tool</span>
+              <span className="text-sm font-medium text-blue-600 dark:text-blue-400">Pregnancy Calculator</span>
             </div>
           </div>
         </div>
@@ -38,13 +38,13 @@ export default function PregnancyCalculatorToolPage() {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-xl border border-gray-200/50 dark:border-gray-700/50 rounded-3xl p-8 shadow-2xl ring-4 ring-white/10">
               <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 text-center">
-                Free Pregnancy Calculator Tool Online - Professional Tool
+                Free Pregnancy Calculator Online — Professional Tool
               </h1>
-              <ToolSEO 
-                toolId="pregnancy-calculator" 
-                toolName="Pregnancy Calculator Tool" 
-                toolDescription="Professional pregnancy calculator tool tool for accurate and fast results."
-                useCases={['for professionals', 'for developers', 'for students', 'for business', 'for personal use']}
+              <ToolSEO
+                toolId="pregnancy-calculator"
+                toolName="Pregnancy Calculator"
+                toolDescription="Professional Pregnancy Calculator for accurate and fast results. Free to use, no registration required."
+                useCases={["for expectant mothers","for healthcare providers","for planning"]}
               />
               <div className="mt-8">
                 <PregnancyCalculatorTool />
@@ -54,7 +54,6 @@ export default function PregnancyCalculatorToolPage() {
         </AnimatedSection>
       </main>
 
-      {/* Footer */}
       <Footer />
     </div>
   )
