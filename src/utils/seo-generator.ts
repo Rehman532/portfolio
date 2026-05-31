@@ -1316,6 +1316,7 @@ export function generateToolSEO(toolId: string, toolName: string): Metadata {
     title,
     description: `${toolInfo.description} ${descKeywords}`,
     keywords: keywords.join(', '),
+    authors: [{ name: 'Rehman Farouq' }],
     openGraph: {
       title,
       description: `${toolInfo.description} ${descKeywords}`,
@@ -1335,7 +1336,8 @@ export function generateToolSEO(toolId: string, toolName: string): Metadata {
       card: 'summary_large_image',
       title,
       description: `${toolInfo.description} ${descKeywords}`,
-      images: [`https://rehmanfarouq.site/images/${toolId}-og.png`]
+      images: [`https://rehmanfarouq.site/images/${toolId}-og.png`],
+      creator: '@rehmanfarouq'
     },
     alternates: {
       canonical: `https://rehmanfarouq.site/tools/${toolId}`

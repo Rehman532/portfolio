@@ -15,17 +15,44 @@ export const metadata: Metadata = {
   title: "Next.js Portfolio Tutorial 2026 | Build Professional Portfolio Website | React, TypeScript, Tailwind CSS",
   description: "Complete Next.js portfolio tutorial 2026. Learn to build a stunning portfolio website with Next.js 16, React, TypeScript, Tailwind CSS, Framer Motion animations, responsive design, contact forms, and deployment. Step-by-step guide for developers.",
   keywords: "Next.js portfolio tutorial 2026, build portfolio website Next.js, Next.js 16 tutorial, React portfolio tutorial, TypeScript portfolio, Tailwind CSS portfolio, Next.js developer portfolio, portfolio website tutorial, Next.js animations, Framer Motion portfolio, responsive portfolio design, Next.js contact form, portfolio deployment, web development tutorial, frontend portfolio, developer portfolio website",
+  authors: [{ name: "Rehman Farouq" }],
   openGraph: {
     title: "Next.js Portfolio Tutorial 2026 | Build Professional Portfolio Website | React, TypeScript, Tailwind CSS",
     description: "Complete Next.js portfolio tutorial 2026. Learn to build a stunning portfolio website with Next.js 16, React, TypeScript, Tailwind CSS, Framer Motion animations, and deployment.",
     url: "https://rehmanfarouq.site/blog/nextjs-portfolio-tutorial",
     type: "article",
     siteName: "Rehman Farouq Blog",
+    images: [
+      {
+        url: "https://rehmanfarouq.site/blog/nextjs-portfolio-tutorial/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Next.js Portfolio Tutorial",
+      },
+    ],
+    publishedTime: new Date().toISOString(),
+    authors: ["Rehman Farouq"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Next.js Portfolio Tutorial 2026 | Build Professional Portfolio Website",
     description: "Complete Next.js portfolio tutorial 2026. Learn to build a stunning portfolio website with Next.js 16, React, TypeScript, Tailwind CSS, and animations.",
+    images: ["https://rehmanfarouq.site/blog/nextjs-portfolio-tutorial/twitter-image.jpg"],
+    creator: "@rehmanfarouq",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://rehmanfarouq.site/blog/nextjs-portfolio-tutorial",
   },
 }
 

@@ -14,6 +14,18 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Rehman Farouq Portfolio",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Terms of Service | Rehman Farouq Portfolio",
+    description: "Terms and conditions for using our portfolio website and services.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://rehmanfarouq.site/terms-of-service",
+  },
 }
 
 export default function TermsOfService() {

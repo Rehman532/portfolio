@@ -14,17 +14,44 @@ export const metadata: Metadata = {
   title: "HTML5 & CSS3 Features 2026 | Modern Web Standards Guide | Semantic HTML & Advanced CSS",
   description: "Complete guide to HTML5 and CSS3 features including semantic elements, forms, multimedia, CSS Grid, animations, custom properties, and modern web standards. Master modern web development with practical examples.",
   keywords: "HTML5 features, CSS3 features, semantic HTML, modern web standards, CSS Grid, Flexbox, CSS animations, custom properties, web forms, multimedia, responsive design, web development, frontend development, HTML5 semantic elements, CSS3 advanced features",
+  authors: [{ name: "Rehman Farouq" }],
   openGraph: {
     title: "HTML5 & CSS3 Features 2026 | Modern Web Standards Guide | Semantic HTML & Advanced CSS",
     description: "Complete guide to HTML5 and CSS3 features with practical examples and modern web standards.",
     url: "https://rehmanfarouq.site/blog/html5-css3-features",
     type: "article",
     siteName: "Rehman Farouq Blog",
+    images: [
+      {
+        url: "https://rehmanfarouq.site/blog/html5-css3-features/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "HTML5 CSS3 Features Tutorial",
+      },
+    ],
+    publishedTime: new Date().toISOString(),
+    authors: ["Rehman Farouq"],
   },
   twitter: {
     card: "summary_large_image",
     title: "HTML5 & CSS3 Features 2026 | Modern Web Standards Guide",
     description: "Complete guide to HTML5 and CSS3 features with practical examples and modern web standards.",
+    images: ["https://rehmanfarouq.site/blog/html5-css3-features/twitter-image.jpg"],
+    creator: "@rehmanfarouq",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://rehmanfarouq.site/blog/html5-css3-features",
   },
 }
 

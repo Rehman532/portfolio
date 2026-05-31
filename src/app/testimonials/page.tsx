@@ -21,6 +21,13 @@ export const metadata: Metadata = {
     title: "Client Testimonials & Reviews | Flutter Developer Feedback",
     description: "Read authentic client testimonials and reviews for Rehman Farouq's Flutter and Next.js development work. Discover client feedback and professional references.",
   },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://rehmanfarouq.site/testimonials",
+  },
 }
 
 export default function TestimonialsPage() {

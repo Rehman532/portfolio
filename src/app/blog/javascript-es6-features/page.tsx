@@ -14,17 +14,44 @@ export const metadata: Metadata = {
   title: "JavaScript ES6+ Features 2026 | Modern JavaScript Guide | ES2020-ES2026 Updates",
   description: "Complete guide to JavaScript ES6+ features including arrow functions, destructuring, async/await, modules, classes, and latest ES2020-ES2026 features. Master modern JavaScript development with practical examples.",
   keywords: "JavaScript ES6 features, modern JavaScript, ES2020, ES2021, ES2022, ES2023, ES2024, ES2025, ES2026, arrow functions, destructuring, async await, JavaScript modules, JavaScript classes, template literals, spread operator, JavaScript development, web development, frontend development",
+  authors: [{ name: "Rehman Farouq" }],
   openGraph: {
     title: "JavaScript ES6+ Features 2026 | Modern JavaScript Guide | ES2020-ES2026 Updates",
     description: "Complete guide to JavaScript ES6+ features with practical examples and latest updates.",
     url: "https://rehmanfarouq.site/blog/javascript-es6-features",
     type: "article",
     siteName: "Rehman Farouq Blog",
+    images: [
+      {
+        url: "https://rehmanfarouq.site/blog/javascript-es6-features/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "JavaScript ES6+ Features Tutorial",
+      },
+    ],
+    publishedTime: new Date().toISOString(),
+    authors: ["Rehman Farouq"],
   },
   twitter: {
     card: "summary_large_image",
     title: "JavaScript ES6+ Features 2026 | Modern JavaScript Guide",
     description: "Complete guide to JavaScript ES6+ features with practical examples and latest updates.",
+    images: ["https://rehmanfarouq.site/blog/javascript-es6-features/twitter-image.jpg"],
+    creator: "@rehmanfarouq",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://rehmanfarouq.site/blog/javascript-es6-features",
   },
 }
 

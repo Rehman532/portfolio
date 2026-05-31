@@ -15,17 +15,44 @@ export const metadata: Metadata = {
   title: "Flutter State Management 2026 | Provider vs BLoC vs Riverpod | Complete Guide with Examples",
   description: "Comprehensive Flutter state management guide 2026. Compare Provider vs BLoC vs Riverpod vs GetX vs Redux. Learn state management patterns, architecture best practices, performance optimization, and when to use each solution in Flutter apps.",
   keywords: "Flutter state management 2026, Provider vs BLoC vs Riverpod, Flutter state management patterns, Provider Flutter tutorial, BLoC pattern Flutter, Riverpod Flutter, GetX Flutter, Flutter Redux, Flutter architecture, state management best practices, Flutter app architecture, Flutter performance optimization, Flutter state solutions, mobile app state management, Flutter development patterns",
+  authors: [{ name: "Rehman Farouq" }],
   openGraph: {
     title: "Flutter State Management 2026 | Provider vs BLoC vs Riverpod | Complete Guide with Examples",
     description: "Comprehensive Flutter state management guide 2026. Compare Provider vs BLoC vs Riverpod vs GetX vs Redux. Learn state management patterns, architecture best practices, and performance optimization.",
     url: "https://rehmanfarouq.site/blog/flutter-state-management",
     type: "article",
     siteName: "Rehman Farouq Blog",
+    images: [
+      {
+        url: "https://rehmanfarouq.site/blog/flutter-state-management/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Flutter State Management Tutorial",
+      },
+    ],
+    publishedTime: new Date().toISOString(),
+    authors: ["Rehman Farouq"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Flutter State Management 2026 | Provider vs BLoC vs Riverpod",
     description: "Comprehensive Flutter state management guide 2026. Compare Provider vs BLoC vs Riverpod and learn state management patterns and best practices.",
+    images: ["https://rehmanfarouq.site/blog/flutter-state-management/twitter-image.jpg"],
+    creator: "@rehmanfarouq",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://rehmanfarouq.site/blog/flutter-state-management",
   },
 }
 

@@ -187,10 +187,103 @@ const blogPosts = [
       image: '/blog/html5-css3.jpg',
       tags: ['HTML5', 'CSS3', 'Semantic HTML', 'CSS Grid', 'Web Standards', 'Modern CSS'],
       featured: true
+    },
+    {
+      id: 'typescript-advanced-patterns',
+      title: 'TypeScript Advanced Patterns 2026: Generics, Utility Types, Decorators & More',
+      excerpt: 'Master advanced TypeScript patterns including generics, utility types, decorators, conditional types, and type guards. Learn to write type-safe, maintainable code with practical examples.',
+      category: 'Tutorial',
+      author: 'Rehman Farouq',
+      date: getYesterdayDate(),
+      readTime: '22 min',
+      image: '/blog/typescript-advanced.jpg',
+      tags: ['TypeScript', 'Generics', 'Utility Types', 'Decorators', 'Type Safety'],
+      featured: true
+    },
+    {
+      id: 'nextjs-15-features',
+      title: 'Next.js 15 Features 2026: Server Actions, Partial Prerendering & More',
+      excerpt: 'Explore Next.js 15 features including server actions, partial prerendering, improved app router, enhanced performance, and new developer experience improvements.',
+      category: 'Tutorial',
+      author: 'Rehman Farouq',
+      date: getYesterdayDate(),
+      readTime: '18 min',
+      image: '/blog/nextjs-15.jpg',
+      tags: ['Next.js', 'Server Actions', 'Partial Prerendering', 'App Router', 'Performance'],
+      featured: true
+    },
+    {
+      id: 'flutter-3-24-updates',
+      title: 'Flutter 3.24 Updates 2026: New Widgets, Performance Improvements & More',
+      excerpt: 'Explore Flutter 3.24 updates including new widgets, performance improvements, enhanced web support, better tooling, and new platform capabilities.',
+      category: 'Flutter',
+      author: 'Rehman Farouq',
+      date: getYesterdayDate(),
+      readTime: '16 min',
+      image: '/blog/flutter-3-24.jpg',
+      tags: ['Flutter', 'Material 3', 'Performance', 'Web Support', 'Widgets']
+    },
+    {
+      id: 'react-server-components',
+      title: 'React Server Components 2026: Deep Dive with Examples & Best Practices',
+      excerpt: 'Master React Server Components with practical examples. Learn server-side rendering, data fetching, streaming, and how to build performant React applications.',
+      category: 'Tutorial',
+      author: 'Rehman Farouq',
+      date: getYesterdayDate(),
+      readTime: '20 min',
+      image: '/blog/rsc.jpg',
+      tags: ['React', 'Server Components', 'SSR', 'Streaming', 'Performance'],
+      featured: true
+    },
+    {
+      id: 'docker-compose-development',
+      title: 'Docker Compose for Development 2026: Multi-Container Setups & Best Practices',
+      excerpt: 'Master Docker Compose for development environments. Learn multi-container setups, development workflows, service orchestration, and best practices for local development.',
+      category: 'Tools',
+      author: 'Rehman Farouq',
+      date: getYesterdayDate(),
+      readTime: '18 min',
+      image: '/blog/docker-compose.jpg',
+      tags: ['Docker', 'DevOps', 'Development', 'Containers', 'Orchestration']
+    },
+    {
+      id: 'git-workflows',
+      title: 'Git Workflows 2026: GitFlow, Trunk-Based Development & Best Practices',
+      excerpt: 'Master Git workflows including GitFlow, trunk-based development, feature branch workflow, and best practices for team collaboration and version control.',
+      category: 'Tools',
+      author: 'Rehman Farouq',
+      date: getYesterdayDate(),
+      readTime: '17 min',
+      image: '/blog/git-workflows.jpg',
+      tags: ['Git', 'GitFlow', 'Version Control', 'Collaboration', 'DevOps']
+    },
+    {
+      id: 'web-accessibility-a11y',
+      title: 'Web Accessibility (a11y) 2026: ARIA, Keyboard Navigation & Best Practices',
+      excerpt: 'Master web accessibility with ARIA, keyboard navigation, semantic HTML, and WCAG compliance. Build inclusive web applications that work for everyone.',
+      category: 'Web Dev',
+      author: 'Rehman Farouq',
+      date: getYesterdayDate(),
+      readTime: '19 min',
+      image: '/blog/a11y.jpg',
+      tags: ['Accessibility', 'ARIA', 'WCAG', 'Keyboard Navigation', 'Inclusive Design'],
+      featured: true
+    },
+    {
+      id: 'state-management-comparison',
+      title: 'State Management Comparison 2026: Redux, Zustand, Jotai & More',
+      excerpt: 'Compare state management solutions including Redux, Zustand, Jotai, Recoil, and Context API. Learn which one to choose for your React application.',
+      category: 'Tutorial',
+      author: 'Rehman Farouq',
+      date: getYesterdayDate(),
+      readTime: '21 min',
+      image: '/blog/state-management.jpg',
+      tags: ['React', 'Redux', 'Zustand', 'Jotai', 'State Management'],
+      featured: true
     }
   ]
 
-  const categories = ['all', 'Flutter', 'Tutorial', 'Comparison', 'Web Dev']
+  const categories = ['all', 'Flutter', 'Tutorial', 'Comparison', 'Web Dev', 'Tools']
 
   const filteredPosts = blogPosts.filter(post => {
     const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||

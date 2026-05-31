@@ -15,17 +15,44 @@ export const metadata: Metadata = {
   title: "25 Essential Flutter Packages 2026 | Best Flutter Libraries | State Management, UI, Networking Tools",
   description: "Complete guide to the best Flutter packages and libraries for 2026. Discover essential Flutter packages for state management (Provider, BLoC, Riverpod), UI components, networking (Dio, HTTP), animations, testing, and productivity boosters. Improve your Flutter development workflow.",
   keywords: "Flutter packages 2026, best Flutter libraries, Flutter state management packages, Provider Flutter, BLoC Flutter, Riverpod Flutter, Flutter networking packages, Dio HTTP Flutter, Flutter UI packages, Flutter animation packages, Flutter testing packages, Flutter productivity tools, Flutter development tools, Flutter app development, mobile app development, Flutter widgets, Flutter dependencies",
+  authors: [{ name: "Rehman Farouq" }],
   openGraph: {
     title: "25 Essential Flutter Packages 2026 | Best Flutter Libraries | State Management, UI, Networking Tools",
     description: "Complete guide to the best Flutter packages and libraries for 2026. Discover essential Flutter packages for state management, UI components, networking, animations, testing, and productivity boosters.",
     url: "https://rehmanfarouq.site/blog/best-flutter-packages",
     type: "article",
     siteName: "Rehman Farouq Blog",
+    images: [
+      {
+        url: "https://rehmanfarouq.site/blog/best-flutter-packages/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Best Flutter Packages Tutorial",
+      },
+    ],
+    publishedTime: new Date().toISOString(),
+    authors: ["Rehman Farouq"],
   },
   twitter: {
     card: "summary_large_image",
     title: "25 Essential Flutter Packages 2026 | Best Flutter Libraries",
     description: "Complete guide to the best Flutter packages and libraries for 2026. Discover essential Flutter packages for state management, UI components, networking, and productivity.",
+    images: ["https://rehmanfarouq.site/blog/best-flutter-packages/twitter-image.jpg"],
+    creator: "@rehmanfarouq",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://rehmanfarouq.site/blog/best-flutter-packages",
   },
 }
 

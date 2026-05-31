@@ -15,17 +15,44 @@ export const metadata: Metadata = {
   title: "How to Learn Flutter 2026 | Complete Flutter Tutorial for Beginners | Step-by-Step Guide",
   description: "Comprehensive Flutter learning guide for beginners 2026. Master Flutter development with step-by-step tutorials, learning path, best practices, Dart programming, Flutter widgets, state management, app projects, and career resources. Become a Flutter developer from scratch.",
   keywords: "how to learn Flutter 2026, Flutter tutorial for beginners, Flutter learning path, Flutter development guide, Dart programming tutorial, Flutter widgets tutorial, Flutter state management, Flutter app development, mobile app development tutorial, Flutter beginner guide, learn Flutter from scratch, Flutter developer course, Flutter programming basics, Flutter project ideas, Flutter career path",
+  authors: [{ name: "Rehman Farouq" }],
   openGraph: {
     title: "How to Learn Flutter 2026 | Complete Flutter Tutorial for Beginners | Step-by-Step Guide",
     description: "Comprehensive Flutter learning guide for beginners 2026. Master Flutter development with step-by-step tutorials, learning path, best practices, Dart programming, and Flutter widgets.",
     url: "https://rehmanfarouq.site/blog/how-to-learn-flutter",
     type: "article",
     siteName: "Rehman Farouq Blog",
+    images: [
+      {
+        url: "https://rehmanfarouq.site/blog/how-to-learn-flutter/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "How to Learn Flutter Tutorial",
+      },
+    ],
+    publishedTime: new Date().toISOString(),
+    authors: ["Rehman Farouq"],
   },
   twitter: {
     card: "summary_large_image",
     title: "How to Learn Flutter 2026 | Complete Flutter Tutorial for Beginners",
     description: "Comprehensive Flutter learning guide for beginners 2026. Master Flutter development with step-by-step tutorials, learning path, and best practices.",
+    images: ["https://rehmanfarouq.site/blog/how-to-learn-flutter/twitter-image.jpg"],
+    creator: "@rehmanfarouq",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://rehmanfarouq.site/blog/how-to-learn-flutter",
   },
 }
 

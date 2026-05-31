@@ -14,17 +14,44 @@ export const metadata: Metadata = {
   title: "Responsive Web Design 2026 | Complete Guide | Mobile-First Design & CSS Grid",
   description: "Master responsive web design in 2026 with mobile-first approach, CSS Grid, Flexbox, media queries, and modern techniques. Build websites that work perfectly on all devices with practical examples.",
   keywords: "responsive web design 2026, mobile-first design, CSS Grid, Flexbox, media queries, responsive typography, CSS units, viewport meta tag, progressive enhancement, fluid layouts, adaptive design, web development, frontend design, CSS best practices, modern web design",
+  authors: [{ name: "Rehman Farouq" }],
   openGraph: {
     title: "Responsive Web Design 2026 | Complete Guide | Mobile-First Design & CSS Grid",
     description: "Master responsive web design with mobile-first approach, CSS Grid, Flexbox, and modern techniques.",
     url: "https://rehmanfarouq.site/blog/responsive-web-design-2026",
     type: "article",
     siteName: "Rehman Farouq Blog",
+    images: [
+      {
+        url: "https://rehmanfarouq.site/blog/responsive-web-design-2026/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Responsive Web Design Tutorial",
+      },
+    ],
+    publishedTime: new Date().toISOString(),
+    authors: ["Rehman Farouq"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Responsive Web Design 2026 | Complete Guide",
     description: "Master responsive web design with mobile-first approach, CSS Grid, Flexbox, and modern techniques.",
+    images: ["https://rehmanfarouq.site/blog/responsive-web-design-2026/twitter-image.jpg"],
+    creator: "@rehmanfarouq",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://rehmanfarouq.site/blog/responsive-web-design-2026",
   },
 }
 

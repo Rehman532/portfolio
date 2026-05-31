@@ -4,8 +4,28 @@ import Link from 'next/link'
 import Footer from '@/components/layout/Footer'
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Rehman Farouq Portfolio",
-  description: "Privacy policy for Rehman Farouq portfolio website.",
+  title: "Privacy Policy | Rehman Farouq Portfolio | Data Protection & User Privacy",
+  description: "Privacy policy for Rehman Farouq portfolio website. Learn how we collect, use, and protect your personal information. Understand your rights regarding data privacy, cookies, and user data protection.",
+  keywords: "privacy policy, data protection, user privacy, personal information, cookie policy, GDPR compliance, data security, portfolio privacy, website privacy policy, user rights, data collection",
+  openGraph: {
+    title: "Privacy Policy | Rehman Farouq Portfolio",
+    description: "Privacy policy for Rehman Farouq portfolio website. Learn how we protect your personal information.",
+    url: "https://rehmanfarouq.site/privacy-policy",
+    type: "website",
+    siteName: "Rehman Farouq Portfolio",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacy Policy | Rehman Farouq Portfolio",
+    description: "Privacy policy for Rehman Farouq portfolio website. Learn how we protect your personal information.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://rehmanfarouq.site/privacy-policy",
+  },
 }
 
 export default function PrivacyPolicy() {

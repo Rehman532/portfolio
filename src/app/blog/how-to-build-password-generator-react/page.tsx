@@ -15,17 +15,44 @@ export const metadata: Metadata = {
   title: "How to Build a Password Generator in React & Next.js | Complete Tutorial 2026",
   description: "Step-by-step tutorial on building a secure password generator tool in React/Next.js. Learn to create length sliders, character options, strength indicators, and copy functionality with code examples.",
   keywords: "password generator React tutorial, Next.js password generator, React password generator tutorial, build password generator, React hooks tutorial, password strength indicator, clipboard API React, React security tools, Next.js tutorial 2026, React beginner tutorial",
+  authors: [{ name: "Rehman Farouq" }],
   openGraph: {
     title: "How to Build a Password Generator in React & Next.js | Complete Tutorial",
     description: "Step-by-step tutorial with complete code examples for building a secure password generator in React.",
     url: "https://rehmanfarouq.site/blog/how-to-build-password-generator-react",
     type: "article",
     siteName: "Rehman Farouq Blog",
+    images: [
+      {
+        url: "https://rehmanfarouq.site/blog/how-to-build-password-generator-react/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Password Generator Tutorial",
+      },
+    ],
+    publishedTime: new Date().toISOString(),
+    authors: ["Rehman Farouq"],
   },
   twitter: {
     card: "summary_large_image",
     title: "How to Build a Password Generator in React & Next.js",
     description: "Complete tutorial with code examples for building a secure password generator.",
+    images: ["https://rehmanfarouq.site/blog/how-to-build-password-generator-react/twitter-image.jpg"],
+    creator: "@rehmanfarouq",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://rehmanfarouq.site/blog/how-to-build-password-generator-react",
   },
 }
 

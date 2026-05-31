@@ -15,17 +15,44 @@ export const metadata: Metadata = {
   title: "Flutter vs Next.js for Web Development in 2026 | Complete Comparison Guide",
   description: "Comprehensive comparison between Flutter and Next.js for web development. Learn key differences, use cases, performance, learning curve, job market, and when to choose each framework in 2026.",
   keywords: "Flutter vs Next.js, web development comparison 2026, Flutter web development, Next.js framework, cross-platform development, React vs Flutter, web frameworks comparison, frontend development, JavaScript vs Dart, modern web development",
+  authors: [{ name: "Rehman Farouq" }],
   openGraph: {
     title: "Flutter vs Next.js for Web Development in 2026 | Complete Comparison",
     description: "Comprehensive comparison between Flutter and Next.js for web development with code examples and personal experience.",
     url: "https://rehmanfarouq.site/blog/flutter-vs-nextjs",
     type: "article",
     siteName: "Rehman Farouq Blog",
+    images: [
+      {
+        url: "https://rehmanfarouq.site/blog/flutter-vs-nextjs/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Flutter vs Next.js Comparison",
+      },
+    ],
+    publishedTime: new Date().toISOString(),
+    authors: ["Rehman Farouq"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Flutter vs Next.js for Web Development in 2026",
     description: "Complete comparison guide for developers choosing between Flutter and Next.js.",
+    images: ["https://rehmanfarouq.site/blog/flutter-vs-nextjs/twitter-image.jpg"],
+    creator: "@rehmanfarouq",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://rehmanfarouq.site/blog/flutter-vs-nextjs",
   },
 }
 

@@ -14,17 +14,44 @@ export const metadata: Metadata = {
   title: "Modern CSS Techniques 2026 | Grid, Flexbox, Container Queries & More",
   description: "Master modern CSS with Grid, Flexbox, Container Queries, CSS Custom Properties, and advanced layout techniques. Build responsive, maintainable styles for modern web applications.",
   keywords: "modern CSS techniques, CSS Grid, Flexbox guide, Container Queries, CSS custom properties, responsive design, CSS 2026, modern layout, CSS best practices, web development",
+  authors: [{ name: "Rehman Farouq" }],
   openGraph: {
     title: "Modern CSS Techniques 2026 | Grid, Flexbox, Container Queries & More",
     description: "Complete guide to modern CSS techniques with practical examples and best practices.",
     url: "https://rehmanfarouq.site/blog/modern-css-techniques-2026",
     type: "article",
     siteName: "Rehman Farouq Blog",
+    images: [
+      {
+        url: "https://rehmanfarouq.site/blog/modern-css-techniques-2026/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Modern CSS Techniques Tutorial",
+      },
+    ],
+    publishedTime: new Date().toISOString(),
+    authors: ["Rehman Farouq"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Modern CSS Techniques 2026",
     description: "Complete guide to modern CSS with Grid, Flexbox, and Container Queries.",
+    images: ["https://rehmanfarouq.site/blog/modern-css-techniques-2026/twitter-image.jpg"],
+    creator: "@rehmanfarouq",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://rehmanfarouq.site/blog/modern-css-techniques-2026",
   },
 }
 

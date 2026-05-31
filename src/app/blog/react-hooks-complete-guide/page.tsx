@@ -14,17 +14,44 @@ export const metadata: Metadata = {
   title: "React Hooks Complete Guide 2026 | useState, useEffect, useContext & More",
   description: "Comprehensive guide to React Hooks including useState, useEffect, useContext, useReducer, useCallback, useMemo, and custom hooks. Learn modern React development with practical examples.",
   keywords: "React hooks tutorial, useState useEffect, useContext guide, useReducer useCallback, useMemo custom hooks, React complete guide, modern React development, hooks best practices, React hooks 2026",
+  authors: [{ name: "Rehman Farouq" }],
   openGraph: {
     title: "React Hooks Complete Guide 2026 | useState, useEffect, useContext & More",
     description: "Complete guide to React Hooks with practical examples and best practices.",
     url: "https://rehmanfarouq.site/blog/react-hooks-complete-guide",
     type: "article",
     siteName: "Rehman Farouq Blog",
+    images: [
+      {
+        url: "https://rehmanfarouq.site/blog/react-hooks-complete-guide/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "React Hooks Complete Guide",
+      },
+    ],
+    publishedTime: new Date().toISOString(),
+    authors: ["Rehman Farouq"],
   },
   twitter: {
     card: "summary_large_image",
     title: "React Hooks Complete Guide 2026",
     description: "Complete guide to React Hooks with practical examples and best practices.",
+    images: ["https://rehmanfarouq.site/blog/react-hooks-complete-guide/twitter-image.jpg"],
+    creator: "@rehmanfarouq",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://rehmanfarouq.site/blog/react-hooks-complete-guide",
   },
 }
 

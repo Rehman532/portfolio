@@ -15,17 +15,44 @@ export const metadata: Metadata = {
   title: "Flutter vs React Native 2026 | Complete Comparison | Performance, Development, Ecosystem",
   description: "Comprehensive Flutter vs React Native comparison 2026. Compare performance, development speed, learning curve, ecosystem, community support, cost, and real-world use cases. Choose the best framework for your mobile app development project.",
   keywords: "Flutter vs React Native 2026, Flutter React Native comparison, mobile app development frameworks, Flutter performance vs React Native, Flutter development speed, React Native development, cross-platform development, mobile app frameworks comparison, Flutter vs React Native ecosystem, Flutter vs React Native cost, mobile app development tools, Flutter vs React Native for startups, React Native vs Flutter for enterprise, mobile development best practices",
+  authors: [{ name: "Rehman Farouq" }],
   openGraph: {
     title: "Flutter vs React Native 2026 | Complete Comparison | Performance, Development, Ecosystem",
     description: "Comprehensive Flutter vs React Native comparison 2026. Compare performance, development speed, ecosystem, community support, cost, and real-world use cases for mobile app development.",
     url: "https://rehmanfarouq.site/blog/flutter-vs-react-native",
     type: "article",
     siteName: "Rehman Farouq Blog",
+    images: [
+      {
+        url: "https://rehmanfarouq.site/blog/flutter-vs-react-native/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Flutter vs React Native Comparison",
+      },
+    ],
+    publishedTime: new Date().toISOString(),
+    authors: ["Rehman Farouq"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Flutter vs React Native 2026 | Complete Comparison",
     description: "Comprehensive Flutter vs React Native comparison 2026. Compare performance, development speed, ecosystem, and real-world use cases for mobile app development.",
+    images: ["https://rehmanfarouq.site/blog/flutter-vs-react-native/twitter-image.jpg"],
+    creator: "@rehmanfarouq",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://rehmanfarouq.site/blog/flutter-vs-react-native",
   },
 }
 
