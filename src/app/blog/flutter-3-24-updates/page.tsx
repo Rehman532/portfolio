@@ -232,7 +232,7 @@ SegmentedButton(
   ],
   selected: {'day'},
   onSelectionChanged: (Set<String> newSelection) {
-    print('Selected: $newSelection');
+    print('Selected: \$newSelection');
   },
 )}`}
                 </pre>
@@ -272,7 +272,7 @@ ListView.builder(
   itemCount: 1000,
   itemBuilder: (context, index) {
     return ListTile(
-      title: Text('Item $index'),
+      title: Text('Item \$index'),
     );
   },
   cacheExtent: 500, // Improved caching
@@ -435,7 +435,7 @@ class NativeBridge {
       final String result = await platform.invokeMethod('getData');
       return result;
     } on PlatformException catch (e) {
-      return 'Failed: ${e.message}';
+      return 'Failed: \${e.message}';
     }
   }
 
@@ -443,7 +443,7 @@ class NativeBridge {
     try {
       await platform.invokeMethod('sendData', {'data': data});
     } on PlatformException catch (e) {
-      print('Error: ${e.message}');
+      print('Error: \${e.message}');
     }
   }
 }
@@ -453,7 +453,7 @@ import 'package:workmanager/workmanager.dart';
 
 void callbackDispatcher() {
   Workmanager().executeTask((task, inputData) {
-    print('Task executed: $task');
+    print('Task executed: \$task');
     return Future.value(true);
   });
 }
@@ -617,7 +617,7 @@ NavigationRail(
   ],
   selectedIndex: 0,
   onDestinationSelected: (index) {
-    print('Selected: $index');
+    print('Selected: \$index');
   },
 )}`}
                 </pre>
