@@ -9,20 +9,20 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "Person",
-  "name": "Rehman Farouq",
-  "url": "https://rehmanfarouq.site",
-  "image": "https://rehmanfarouq.site/images/profile'photo.jpeg",
-  "sameAs": [
+  name: "Rehman Farouq",
+  url: "https://rehmanfarouq.site",
+  image: "https://rehmanfarouq.site/images/profile'photo.jpeg",
+  sameAs: [
     "https://github.com/Rehman532",
     "https://www.linkedin.com/in/rehman-farouq-93727526b",
-    "https://x.com/RehmanFarouq"
+    "https://x.com/RehmanFarouq",
   ],
-  "jobTitle": "Flutter & Next.js Developer",
-  "worksFor": {
+  jobTitle: "Flutter & Next.js Developer",
+  worksFor: {
     "@type": "Organization",
-    "name": "Freelance"
+    name: "Freelance",
   },
-  "knowsAbout": [
+  knowsAbout: [
     "Flutter",
     "Next.js",
     "React Native",
@@ -31,13 +31,14 @@ const structuredData = {
     "Firebase",
     "Mobile App Development",
     "Web Development",
-    "UI/UX Design"
+    "UI/UX Design",
   ],
-  "offers": {
+  offers: {
     "@type": "Service",
-    "serviceType": "Mobile and Web Development",
-    "description": "Full-stack development services specializing in Flutter and Next.js applications"
-  }
+    serviceType: "Mobile and Web Development",
+    description:
+      "Full-stack development services specializing in Flutter and Next.js applications",
+  },
 };
 
 const geistSans = Geist({
@@ -52,10 +53,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Rehman Farouq - Flutter & Next.js Developer | Portfolio",
-  description: "Portfolio of Rehman Farouq, a Flutter and Next.js developer specializing in modern mobile and web applications. Expert in cross-platform development, UI/UX design, and full-stack solutions.",
+  description:
+    "Portfolio of Rehman Farouq, a Flutter and Next.js developer specializing in modern mobile and web applications. Expert in cross-platform development, UI/UX design, and full-stack solutions.",
   keywords: [
     "Flutter Developer",
-    "Next.js Developer", 
+    "Next.js Developer",
     "Mobile App Development",
     "Web Development",
     "React Native",
@@ -146,7 +148,7 @@ export const metadata: Metadata = {
     "Web Manifest",
     "Push Notifications",
     "Offline First Development",
-    "Rehman Farouq"
+    "Rehman Farouq",
   ],
   authors: [{ name: "Rehman Farouq" }],
   creator: "Rehman Farouq",
@@ -162,7 +164,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Rehman Farouq - Flutter & Next.js Developer",
-    description: "Portfolio of Rehman Farouq, a Flutter and Next.js developer specializing in modern mobile and web applications.",
+    description:
+      "Portfolio of Rehman Farouq, a Flutter and Next.js developer specializing in modern mobile and web applications.",
     url: "https://rehmanfarouq.site",
     siteName: "Rehman Farouq Portfolio",
     locale: "en_US",
@@ -179,7 +182,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Rehman Farouq - Flutter & Next.js Developer",
-    description: "Portfolio of Rehman Farouq, a Flutter and Next.js developer specializing in modern mobile and web applications.",
+    description:
+      "Portfolio of Rehman Farouq, a Flutter and Next.js developer specializing in modern mobile and web applications.",
     images: ["/images/og-image.jpg"],
     creator: "@rehmanfarouq",
   },
@@ -198,6 +202,16 @@ export const metadata: Metadata = {
     google: "Af031QRH-FLO9XpOc3-tLuG5Cfl66H05TS98FE9gaiQ",
     yandex: "35172ef26395dce4",
   },
+  other: {
+    "og:locale": "en_US",
+    "article:author": "Rehman Farouq",
+    "theme-color": "#000000",
+    "apple-mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-status-bar-style": "black-translucent",
+    "mobile-web-app-capable": "yes",
+    "msapplication-TileColor": "#000000",
+    "msapplication-config": "/browserconfig.xml",
+  },
 };
 
 export default function RootLayout({
@@ -208,6 +222,53 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/* Essential Meta Tags */}
+        <meta charSet="UTF-8" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes"
+        />
+        <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
+
+        {/* Theme and App Meta Tags */}
+        <meta name="theme-color" content="#000000" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content="black-translucent"
+        />
+        <meta name="apple-mobile-web-app-title" content="Rehman Farouq" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="msapplication-TileColor" content="#000000" />
+
+        {/* SEO Meta Tags */}
+        <meta name="language" content="en-US" />
+        <meta name="revisit-after" content="7 days" />
+        <meta name="author" content="Rehman Farouq" />
+        <meta name="email" content="rehmanfarouq9@gmail.com" />
+        <meta
+          name="copyright"
+          content="© 2024-2026 Rehman Farouq. All rights reserved."
+        />
+
+        {/* Preconnect to External Resources */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link rel="dns-prefetch" href="https://cdn.vercel-analytics.com" />
+
+        {/* Icon Links */}
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/manifest.json" />
+
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://rehmanfarouq.site" />
+
+        {/* Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}

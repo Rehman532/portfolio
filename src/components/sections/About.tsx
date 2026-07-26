@@ -1,161 +1,185 @@
-'use client'
+"use client";
 
-import { Award, Users, Clock, TrendingUp, MapPin } from 'lucide-react'
-import FadeIn from '@/components/ui/FadeIn'
-import Counter from '@/components/ui/Counter'
+import { Award, Clock, MapPin, TrendingUp, Users } from "lucide-react";
+import { motion } from "framer-motion";
+import Counter from "@/components/ui/Counter";
 
 const About = () => {
   const technologies = [
-    { 
-      name: 'Flutter', 
-      image: '/images/flutter.png', 
-      level: 95, 
-      color: 'from-blue-500 to-blue-600' 
+    {
+      name: "Flutter",
+      image: "/images/flutter.png",
+      level: 95,
+      color: "from-blue-500 to-cyan-500",
     },
-    { 
-      name: 'Dart', 
-      image: '/images/dart.png', 
-      level: 90, 
-      color: 'from-blue-600 to-blue-700' 
+    {
+      name: "Dart",
+      image: "/images/dart.png",
+      level: 90,
+      color: "from-blue-600 to-indigo-600",
     },
-    { 
-      name: 'Next.js', 
-      image: '/images/nextjs.png', 
-      level: 85, 
-      color: 'from-purple-500 to-purple-600' 
+    {
+      name: "Next.js",
+      image: "/images/nextjs.png",
+      level: 85,
+      color: "from-purple-500 to-fuchsia-500",
     },
-    { 
-      name: 'Tailwind CSS', 
-      image: '/images/tailwind.png', 
-      level: 88, 
-      color: 'from-teal-500 to-green-500' 
+    {
+      name: "Tailwind CSS",
+      image: "/images/tailwind.png",
+      level: 88,
+      color: "from-teal-500 to-emerald-500",
     },
-    { 
-      name: 'Firebase', 
-      image: '/images/firebase.png', 
-      level: 82, 
-      color: 'from-orange-500 to-yellow-500' 
+    {
+      name: "Firebase",
+      image: "/images/firebase.png",
+      level: 82,
+      color: "from-orange-500 to-amber-500",
     },
-    { 
-      name: 'REST APIs', 
-      image: '/images/api.png', 
-      level: 92, 
-      color: 'from-green-500 to-emerald-500' 
-    }
-  ]
+    {
+      name: "REST APIs",
+      image: "/images/api.png",
+      level: 92,
+      color: "from-green-500 to-lime-500",
+    },
+  ];
 
   const stats = [
-    { icon: <Users size={24} />, label: 'Happy Clients', value: 50 },
-    { icon: <Clock size={24} />, label: 'Hours Coded', value: 8000 },
-    { icon: <Award size={24} />, label: 'Apps Published', value: 15 },
-    { icon: <TrendingUp size={24} />, label: 'Performance', value: 100 }
-  ]
+    { icon: <Users size={22} />, label: "Happy Clients", value: 50 },
+    { icon: <Clock size={22} />, label: "Hours Coded", value: 8000 },
+    { icon: <Award size={22} />, label: "Apps Published", value: 15 },
+    { icon: <TrendingUp size={22} />, label: "Performance", value: 100 },
+  ];
 
   return (
-    <section id="about" className="relative py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-gray-50 dark:from-gray-900 via-gray-100 dark:via-gray-800 to-gray-50 dark:to-gray-900 overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-      </div>
+    <section
+      id="about"
+      className="relative overflow-hidden px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24"
+    >
+      <div className="absolute inset-0 bg-linear-to-br from-blue-500/8 via-transparent to-purple-500/8 dark:from-blue-500/12 dark:to-purple-500/12" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
-          <FadeIn direction="up">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground dark:text-white mb-4 sm:mb-6">
-              About <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Me</span>
-            </h2>
-            <div className="w-16 sm:w-20 lg:w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-4 sm:mb-6"></div>
-            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-base sm:text-lg">
-              Results-driven developer with expertise in Flutter and Next.js development
+      <div className="relative mx-auto max-w-7xl">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6 }}
+          className="mb-10 text-center sm:mb-14 lg:mb-16"
+        >
+          <h2 className="mb-4 text-3xl font-bold text-slate-900 dark:text-white sm:text-4xl lg:text-5xl">
+            About{" "}
+            <span className="bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              Me
+            </span>
+          </h2>
+          <div className="mx-auto mb-4 h-1 w-20 rounded-full bg-linear-to-r from-blue-500 to-purple-500" />
+          <p className="mx-auto max-w-2xl text-base text-slate-600 dark:text-slate-400 sm:text-lg">
+            I build thoughtful digital experiences that look sharp, feel fast,
+            and solve real problems.
+          </p>
+        </motion.div>
+
+        <div className="grid items-start gap-8 lg:grid-cols-2 lg:gap-10">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6 }}
+            className="section-shell p-6 sm:p-8"
+          >
+            <h3 className="mb-4 text-2xl font-semibold text-slate-900 dark:text-white sm:text-3xl">
+              Professional <span className="text-blue-500">Summary</span>
+            </h3>
+            <p className="mb-6 text-base leading-8 text-slate-600 dark:text-slate-300">
+              I am a results-driven developer focused on creating exceptional
+              mobile and web experiences. My work blends product thinking,
+              modern UI systems, and reliable engineering so projects launch
+              smoothly and stay easy to scale.
             </p>
-          </FadeIn>
-        </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-          {/* Left side - About content */}
-          <div className="space-y-6 sm:space-y-8">
-            <FadeIn direction="left" delay={200}>
-              <div className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 rounded-2xl p-4 sm:p-6 lg:p-8 shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 hover:scale-105">
-                <h3 className="text-2xl sm:text-3xl font-semibold text-foreground dark:text-white mb-4 sm:mb-6">
-                  Professional <span className="text-blue-400">Summary</span>
-                </h3>
-                <p className="text-gray-700 dark:text-gray-300 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base lg:text-lg">
-                  I am a results-driven Flutter Developer specializing in mobile and web application development. 
-I build high-performance applications using Flutter, Dart, and modern web technologies. 
-My expertise includes integrating REST APIs, developing scalable websites, and implementing 
-modern UI/UX designs to deliver efficient, responsive, and engaging digital experiences.
+            <div className="mb-6 flex items-center gap-3 rounded-2xl border border-slate-200/70 bg-white/70 p-4 shadow-sm dark:border-slate-700/60 dark:bg-slate-900/70">
+              <MapPin className="text-blue-500" size={20} />
+              <div>
+                <p className="font-medium text-slate-900 dark:text-white">
+                  Based in Gujrat, Pakistan
                 </p>
-                
-                <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6 p-3 sm:p-4 bg-gray-50/50 dark:bg-gray-900/50 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 rounded-xl hover:bg-gray-100/70 dark:hover:bg-gray-900/70 transition-colors duration-300">
-                  <MapPin className="text-blue-400" size={20} />
-                  <div>
-                    <p className="text-foreground dark:text-white font-medium text-sm sm:text-base">Location</p>
-                    <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm">Tapyiala, Tehsile Kharian, District Gujrat</p>
+                <p className="text-sm text-slate-600 dark:text-slate-400">
+                  Available for remote collaboration and on-site projects
+                </p>
+              </div>
+            </div>
+
+            <div className="grid gap-3 sm:grid-cols-2">
+              {stats.map((stat, index) => (
+                <div
+                  key={index}
+                  className="rounded-2xl border border-slate-200/70 bg-slate-50/70 p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:bg-white dark:border-slate-700/60 dark:bg-slate-900/70 dark:hover:bg-slate-800/70"
+                >
+                  <div className="mb-2 flex items-center gap-2 text-blue-500">
+                    {stat.icon}
+                  </div>
+                  <div className="text-xl font-bold text-slate-900 dark:text-white">
+                    <Counter
+                      end={stat.value}
+                      suffix={stat.label === "Performance" ? "%" : "+"}
+                      className="inline-block"
+                    />
+                  </div>
+                  <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6 }}
+            className="section-shell p-6 sm:p-8"
+          >
+            <h3 className="mb-6 text-2xl font-semibold text-slate-900 dark:text-white sm:text-3xl">
+              Core <span className="text-purple-500">Stack</span>
+            </h3>
+            <div className="space-y-4">
+              {technologies.map((tech, index) => (
+                <div
+                  key={index}
+                  className="group rounded-2xl border border-slate-200/70 bg-white/70 p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-400/50 dark:border-slate-700/60 dark:bg-slate-900/70"
+                >
+                  <div className="mb-2 flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800">
+                        <img
+                          src={tech.image}
+                          alt={tech.name}
+                          className="h-5 w-5 object-contain"
+                        />
+                      </div>
+                      <span className="font-medium text-slate-900 dark:text-white">
+                        {tech.name}
+                      </span>
+                    </div>
+                    <span className="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300">
+                      {tech.level}%
+                    </span>
+                  </div>
+                  <div className="h-2.5 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-800">
+                    <div
+                      className={`h-full rounded-full bg-linear-to-r ${tech.color}`}
+                      style={{ width: `${tech.level}%` }}
+                    />
                   </div>
                 </div>
-                
-                {/* Animated Stats grid */}
-                <div className="grid grid-cols-2 gap-3 sm:gap-4">
-                  {stats.map((stat, index) => (
-                    <div key={index} className="bg-gray-50/50 dark:bg-gray-900/50 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 p-3 sm:p-4 rounded-xl hover:bg-gray-100/70 dark:hover:bg-gray-900/70 transition-colors duration-300 group">
-                      <div className="flex items-center gap-2 sm:gap-3 mb-2">
-                        <span className="text-blue-400 group-hover:scale-110 transition-transform duration-300">{stat.icon}</span>
-                        <span className="text-foreground dark:text-white font-bold text-lg sm:text-xl">
-                          <Counter end={stat.value} suffix={stat.label === 'Performance' ? '%' : '+'} className="inline-block" />
-                        </span>
-                      </div>
-                      <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm">{stat.label}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </FadeIn>
-          </div>
-
-          {/* Right side - Technologies */}
-          <div className="space-y-6 sm:space-y-8">
-            <FadeIn direction="right" delay={400}>
-              <div className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 rounded-2xl p-4 sm:p-6 lg:p-8 shadow-2xl hover:shadow-purple-500/10 transition-all duration-500 hover:scale-105">
-                <h3 className="text-2xl sm:text-3xl font-semibold text-foreground dark:text-white mb-6 sm:mb-8">
-                  Core <span className="text-purple-400">Technologies</span>
-                </h3>
-                <div className="space-y-4 sm:space-y-6">
-                  {technologies.map((tech, index) => (
-                    <div key={index} className="group">
-                      <div className="flex items-center justify-between mb-2 sm:mb-3">
-                        <div className="flex items-center gap-2 sm:gap-3">
-                         <div className="w-12 h-12 sm:w-10 sm:h-10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                            <img
-                               src={tech.image}
-                      alt={tech.name}
-                       className="w-5 h-5 sm:w-6 sm:h-6 object-contain"
-                          />
-                              </div>
-                          <span className="text-foreground dark:text-white font-semibold text-sm sm:text-base lg:text-lg group-hover:text-blue-400 transition-colors duration-300">{tech.name}</span>
-                        </div>
-                        <span className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm font-medium bg-gray-200/50 dark:bg-gray-700/50 px-2 sm:px-3 py-1 rounded-full group-hover:bg-gray-300/50 dark:group-hover:bg-gray-600/50 transition-colors duration-300">
-                          {tech.level}%
-                        </span>
-                      </div>
-                      <div className="relative w-full bg-gray-200/50 dark:bg-gray-700/50 rounded-full h-2 sm:h-3 overflow-hidden">
-                        <div 
-                          className={`absolute top-0 left-0 h-full bg-gradient-to-r ${tech.color} rounded-full transition-all duration-1500 ease-out shadow-lg`}
-                          style={{ width: `${tech.level}%` }}
-                        >
-                          <div className="absolute inset-0 bg-white/20 animate-pulse"></div>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </FadeIn>
-          </div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default About
+export default About;

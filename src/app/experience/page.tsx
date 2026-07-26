@@ -1,17 +1,22 @@
-import { Metadata } from 'next'
-import { ArrowLeft } from 'lucide-react'
-import Link from 'next/link'
-import Experience from '@/components/sections/Experience'
-import Footer from '@/components/layout/Footer'
-import AnimatedSection from '@/components/ui/AnimatedSection'
+import { Metadata } from "next";
+import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
+import Experience from "@/components/sections/Experience";
+import Footer from "@/components/layout/Footer";
+import AnimatedSection from "@/components/ui/AnimatedSection";
 
 export const metadata: Metadata = {
-  title: "Professional Experience & Career History | Full Stack Developer | Flutter, React, Next.js Developer Journey",
-  description: "Explore Rehman Farouq's comprehensive professional experience and career journey. Discover work history, companies, roles, and achievements in Flutter development, React projects, Next.js applications, and full stack development. View career progression and technical expertise growth.",
-  keywords: "professional experience, developer career history, full stack developer experience, Flutter developer jobs, React development experience, Next.js developer roles, software engineer career, web development experience, mobile app development career, programming professional background, tech career journey, developer work history, software development experience, IT professional experience",
+  title:
+    "Professional Experience & Career History | Full Stack Developer | Flutter, React, Next.js Developer Journey",
+  description:
+    "Explore Rehman Farouq's comprehensive professional experience and career journey. Discover work history, companies, roles, and achievements in Flutter development, React projects, Next.js applications, and full stack development. View career progression and technical expertise growth.",
+  keywords:
+    "professional experience, developer career history, full stack developer experience, Flutter developer jobs, React development experience, Next.js developer roles, software engineer career, web development experience, mobile app development career, programming professional background, tech career journey, developer work history, software development experience, IT professional experience",
   openGraph: {
-    title: "Professional Experience & Career History | Full Stack Developer | Flutter, React, Next.js Developer Journey",
-    description: "Explore Rehman Farouq's comprehensive professional experience and career journey. Discover work history, companies, roles, and achievements in Flutter, React, Next.js development.",
+    title:
+      "Professional Experience & Career History | Full Stack Developer | Flutter, React, Next.js Developer Journey",
+    description:
+      "Explore Rehman Farouq's comprehensive professional experience and career journey. Discover work history, companies, roles, and achievements in Flutter, React, Next.js development.",
     url: "https://rehmanfarouq.site/experience",
     type: "website",
     siteName: "Rehman Farouq Portfolio",
@@ -19,9 +24,21 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Professional Experience & Career History | Full Stack Developer",
-    description: "Explore Rehman Farouq's comprehensive professional experience and career journey. Discover work history, companies, roles, and achievements in Flutter, React, Next.js development.",
+    description:
+      "Explore Rehman Farouq's comprehensive professional experience and career journey. Discover work history, companies, roles, and achievements in Flutter, React, Next.js development.",
   },
-}
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://rehmanfarouq.site/experience",
+  },
+  other: {
+    "og:locale": "en_US",
+    "article:author": "Rehman Farouq",
+  },
+};
 
 export default function ExperiencePage() {
   return (
@@ -30,7 +47,7 @@ export default function ExperiencePage() {
       <nav className="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border-b border-gray-200/50 dark:border-gray-700/50 animate-in slide-in-from-top duration-500">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <Link 
+            <Link
               href="/"
               className="flex items-center gap-3 text-gray-600 dark:text-gray-300 hover:text-foreground dark:hover:text-white transition-all duration-300 hover:scale-105"
             >
@@ -38,9 +55,13 @@ export default function ExperiencePage() {
               <span className="font-medium">Back to Home</span>
             </Link>
             <div className="flex items-center gap-2">
-              <span className="text-sm text-gray-500 dark:text-gray-400">Portfolio</span>
+              <span className="text-sm text-gray-500 dark:text-gray-400">
+                Portfolio
+              </span>
               <span className="text-gray-300 dark:text-gray-600">|</span>
-              <span className="text-sm font-medium text-purple-600 dark:text-purple-400">Experience</span>
+              <span className="text-sm font-medium text-purple-600 dark:text-purple-400">
+                Experience
+              </span>
             </div>
           </div>
         </div>
@@ -58,5 +79,5 @@ export default function ExperiencePage() {
       {/* Footer */}
       <Footer />
     </div>
-  )
+  );
 }

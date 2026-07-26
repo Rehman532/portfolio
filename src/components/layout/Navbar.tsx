@@ -1,121 +1,119 @@
-'use client'
+"use client";
 
-import { useState, useEffect } from 'react'
-import { Menu, X, Sparkles } from 'lucide-react'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { useState, useEffect } from "react";
+import { Menu, X, Sparkles } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
-  const pathname = usePathname()
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navItems = [
-    { label: 'Home', href: '/' },
-    { label: 'About', href: '/about' },
-    { label: 'Experience', href: '/experience' },
-    { label: 'Projects', href: '/projects' },
-    { label: 'Skills', href: '/skills' },
-    { label: 'Tools', href: '/tools' },
-    { label: 'Blog', href: '/blog' },
-    { label: 'Testimonials', href: '/testimonials' },
-    // { label: 'Contact', href: '/contact' }
-  ]
+    { label: "Home", href: "/" },
+    { label: "About", href: "/about" },
+    { label: "Experience", href: "/experience" },
+    { label: "Projects", href: "/projects" },
+    { label: "Skills", href: "/skills" },
+    { label: "Tools", href: "/tools" },
+    { label: "Blog", href: "/blog" },
+    { label: "Testimonials", href: "/testimonials" },
+  ];
 
   return (
     <nav
-      className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl mx-auto rounded-2xl transition-all duration-500 ${
+      className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl mx-auto rounded-full transition-all duration-500 animate-slide-down ${
         scrolled
-          ? 'bg-white/60 dark:bg-gray-900/60 backdrop-blur-2xl shadow-2xl shadow-blue-500/5 border border-white/20 dark:border-gray-800/50'
-          : 'bg-white/20 dark:bg-gray-900/20 backdrop-blur-xl shadow-lg shadow-black/5 border border-transparent'
+          ? "bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xl shadow-[0_20px_60px_rgba(15,23,42,0.16)] border border-white/70 dark:border-slate-800/70"
+          : "bg-white/40 dark:bg-slate-900/30 backdrop-blur-xl border border-transparent"
       }`}
     >
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          
-          {/* Logo - glowing circle + initials */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-9 h-9 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-blue-500/25 group-hover:shadow-blue-500/40 transition-shadow">
+          <Link
+            href="/"
+            className="flex items-center gap-2 group animate-fade-scale delay-100"
+          >
+            <div className="w-9 h-9 rounded-full bg-linear-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-blue-500/25 group-hover:shadow-blue-500/40 transition-all duration-300 group-hover:scale-125 group-hover:rotate-12 animate-fade-up">
               RF
             </div>
-            <span className="font-semibold text-gray-800 dark:text-white hidden sm:inline group-hover:text-blue-600 dark:group-hover:text-blue-400 transition">
+            <span className="font-semibold text-slate-800 dark:text-white hidden sm:inline group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 animate-fade-up delay-100">
               Rehman Farouq
             </span>
           </Link>
 
-          {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-1">
-            {navItems.map((item) => (
+            {navItems.map((item, index) => (
               <Link
                 key={item.label}
                 href={item.href}
-                className={`relative px-3 py-2 text-sm font-medium rounded-xl transition-all duration-300 ${
+                className={`relative px-3 py-2 text-sm font-medium rounded-full transition-all duration-300 animate-fade-scale transform hover:-translate-y-1 ${
                   pathname === item.href
-                    ? 'text-white dark:text-white bg-blue-500 shadow-lg shadow-blue-500/30'
-                    : 'text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100/80 dark:hover:bg-gray-800/80'
+                    ? "text-white bg-linear-to-r from-blue-500 to-purple-600 shadow-lg shadow-purple-500/20 animate-bounce-in"
+                    : "text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100/80 dark:hover:bg-slate-800/80 hover:shadow-md"
                 }`}
+                style={{ animationDelay: `${50 + index * 30}ms` }}
               >
                 {item.label}
-                {/* Inactive underline animation */}
-                {pathname !== item.href && (
-                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-blue-500 rounded-full transition-all duration-300 group-hover:w-3/4 opacity-0 group-hover:opacity-100"></span>
-                )}
               </Link>
             ))}
-            
-            {/* CTA Button */}
+
             <Link
-              href="/contact"
-              className="ml-3 px-5 py-2.5 text-sm font-semibold rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 hover:scale-105 transition-all duration-300 flex items-center gap-2"
+              href="#contact"
+              className="ml-3 px-5 py-2.5 text-sm font-semibold rounded-full bg-linear-to-r from-blue-500 to-purple-600 text-white shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 hover:scale-110 hover:-translate-y-1 transition-all duration-300 flex items-center gap-2 animate-fade-scale transform delay-300"
             >
-              <Sparkles size={16} />
+              <Sparkles size={16} className="animate-spin-slow" />
               Let&apos;s Talk
             </Link>
           </div>
 
-          {/* Mobile Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            className="md:hidden p-2 rounded-full text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors hover:scale-110 transform hover:-translate-y-1 animate-fade-scale delay-100"
             aria-label="Toggle menu"
           >
-            {isOpen ? <X size={22} /> : <Menu size={22} />}
+            {isOpen ? (
+              <X size={22} className="animate-rotate-in" />
+            ) : (
+              <Menu size={22} className="animate-slide-left" />
+            )}
           </button>
         </div>
 
-        {/* Mobile Menu - smooth dropdown */}
         <div
           className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-            isOpen ? 'max-h-[500px] opacity-100 pb-4' : 'max-h-0 opacity-0'
+            isOpen ? "max-h-125 opacity-100 pb-4" : "max-h-0 opacity-0"
           }`}
         >
-          <div className="rounded-2xl bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl border border-gray-200/50 dark:border-gray-800/50 p-2 space-y-1">
-            {navItems.map((item) => (
+          <div className="rounded-2xl bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border border-slate-200/60 dark:border-slate-800/60 p-2 space-y-1">
+            {navItems.map((item, index) => (
               <Link
                 key={item.label}
                 href={item.href}
                 onClick={() => setIsOpen(false)}
-                className={`block px-4 py-2.5 rounded-xl text-sm font-medium transition-all ${
+                className={`block px-4 py-2.5 rounded-xl text-sm font-medium transition-all animate-fade-scale transform hover:-translate-x-1 ${
                   pathname === item.href
-                    ? 'bg-blue-500 text-white shadow-md shadow-blue-500/20'
-                    : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
+                    ? "bg-linear-to-r from-blue-500 to-purple-600 text-white shadow-md shadow-purple-500/20 animate-bounce-in"
+                    : "text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 hover:shadow-md"
                 }`}
+                style={{ animationDelay: `${50 + index * 30}ms` }}
               >
                 {item.label}
               </Link>
             ))}
             <Link
-              href="/contact"
+              href="#contact"
               onClick={() => setIsOpen(false)}
-              className="block px-4 py-2.5 mt-2 rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 text-white text-sm font-semibold text-center shadow-lg shadow-purple-500/20"
+              className="block px-4 py-2.5 mt-2 rounded-xl bg-linear-to-r from-blue-500 to-purple-600 text-white text-sm font-semibold text-center shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 hover:scale-105 transition-all duration-300 transform hover:-translate-y-1 animate-fade-scale delay-300"
             >
               Let&apos;s Talk
             </Link>
@@ -123,7 +121,7 @@ const Navbar = () => {
         </div>
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
